@@ -12,7 +12,7 @@ email: lovehuria@gmail.com
 twitter_username: LoveHuria
 github_username:  lhuria94
 gplus_username:  lovehuria
-#disqus_username: lorem_ipsum
+disqus_username: love_huria
 
 # Build settings
 markdown: kramdown
@@ -32,8 +32,6 @@ compress_html:
 links:
   - title: Home
     url: /
-  - title: Series
-    url: /series
   - title: Tags
     url: /tags
   - title: About Me
