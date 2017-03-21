@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Making Docker Compose Work with Drupal"
-date: 2016-07-21 03:21:35
+date: 2017-02-21 03:21:35
 image: '/assets/img/'
 description: 'How to make docker compose work with Drupal'
 tags:
