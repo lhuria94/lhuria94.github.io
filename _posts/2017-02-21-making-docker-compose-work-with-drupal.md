@@ -9,6 +9,7 @@ tags:
 - docker
 - drupal
 - git
+- planet drupal
 categories:
 - Continuous Integration
 - Productivity

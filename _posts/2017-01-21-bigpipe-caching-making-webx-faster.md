@@ -8,6 +8,7 @@ tags:
 - performance
 - drupal
 - drupal 8
+- planet drupal
 categories:
 - Performance
 - Drupal 8
