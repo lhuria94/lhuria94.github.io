@@ -62,7 +62,8 @@ For example:
 
 Something very informative in a simple tweet I found:
 
-{% twitter https://twitter.com/Crell/status/539547553608761344 %}
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">If your docblock doesn&#39;t offer more information than is available from reading the func signature, you are just wasting my time. <a href="https://twitter.com/hashtag/RealDocs?src=hash">#RealDocs</a></p>&mdash; Larry Garfield (@Crell) <a href="https://twitter.com/Crell/status/539547553608761344">December 1, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 **Formatting**
 
