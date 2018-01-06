@@ -4,6 +4,7 @@ title: "Making Docker Compose Work with Drupal"
 date: 2017-02-21 03:21:35
 image: '/assets/img/'
 description: 'How to make docker compose work with Drupal'
+main-class: 'devops'
 tags:
 - continuous integration
 - docker

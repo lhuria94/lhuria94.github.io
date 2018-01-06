@@ -4,6 +4,7 @@ title: "Docker: A Microcontainer for Faster Software Workflows"
 date: 2017-02-11 07:32:44
 image: '/assets/img/'
 description: 'First steps to use docker'
+main-class: 'devops'
 tags:
 - continuous integration
 - docker
