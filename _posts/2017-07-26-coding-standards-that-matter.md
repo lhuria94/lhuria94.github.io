@@ -4,6 +4,7 @@ title: "Keeping It Clean: Coding Standards That Matter"
 date: 2017-07-26 06:00:00
 image: '/assets/img/'
 description: 'Some common practices we all should follow.'
+main-class: 'misc'
 tags:
 - code quality
 - coding standards

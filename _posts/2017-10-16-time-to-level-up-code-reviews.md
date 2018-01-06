@@ -4,6 +4,7 @@ title: "Time to level up Code Reviews"
 date: 2017-10-16 06:00:00
 image: '/assets/img/'
 description: 'This is a short and crisp summary of how we do code reviews.'
+main-class: 'misc'
 tags:
 - code quality
 - coding standards
