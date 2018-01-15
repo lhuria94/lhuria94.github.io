@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Must have custom drush commands in every Drupal project"
-date: 2018-01-15 00:00:00
+date: 2018-01-16 00:00:00
 image: '/assets/img/'
 description: 'This post explains how to create custom drush commands which are in must have list for every Drupal project'
 main-class: 'drupal'
