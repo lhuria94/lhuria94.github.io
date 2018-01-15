@@ -15,7 +15,7 @@ categories:
 twitter_text: 'This post explains how to create custom drush commands which should be in must have list for every Drupal project'
 ---
 
-I am working on a project where we use Drush commands A LOT .... seriously like a lot. That said, while working on the project, I found few drush commands which come quite handy in our day to day operations. We use these commands mostly with deploy hooks and also while working locally.
+I am working on a project where we use Drush commands a lot .... seriously like A LOT.. That said, while working on the project, I found few drush commands which come quite handy in our day to day operations. We use these commands mostly with deploy hooks and also while working locally.
 
 Everyone uses Drush commands which are kinda in daily use while working on Drupal and we just can’t imagine our life without it in terms of increasing our productivity.
 
