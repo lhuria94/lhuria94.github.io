@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Emboss your footprints in the Drupal Sand - Drupal Camp Goa 2018, Call for sessions"
-date: 2018-01-26 10:00:00
+date: 2018-01-26 00:00:00
 image: '/assets/img/2018-01-26-drupal-camp-goa-2018-call-for-sessions/drupal-camp-goa-2018.jpg'
 description: ''
 main-class: 'drupal'
