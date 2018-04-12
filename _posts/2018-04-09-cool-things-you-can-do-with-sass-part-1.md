@@ -31,7 +31,7 @@ Sass lets you use features like variables, nesting, inheritance and all with a C
 
 You must be thinking, then what is the difference between Sass and Scss?
 
-Sass is itself carved into two types of syntaxes/file types: `.sass` & `.sass`.
+Sass is itself carved into two types of syntaxes/file types: `.sass` & `.scss`.
 
 **Sass** (Older syntax) was not quite accepted by a large audience. The reason was mostly because it's indent based instead of braces and it didn’t require semicolons, which increases the probability of human errors while writing.
 
