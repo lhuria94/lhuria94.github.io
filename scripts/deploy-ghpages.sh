@@ -11,9 +11,6 @@ set -e
 pwd
 remote=$(git config remote.origin.url)
 
-# make a directory to put the gp-pages branch
-mkdir master-branch
-cd master-branch
 # now lets setup a new repo so we can update the gh-pages branch
 git config --global user.email "$GH_EMAIL" > /dev/null 2>&1
 git config --global user.name "$GH_NAME" > /dev/null 2>&1
@@ -41,9 +38,4 @@ fi
 #git commit --allow-empty -m "Deploy to GitHub pages [ci skip]"
 # and push, but send any output to /dev/null to hide anything sensitive
 git push --force --quiet origin master
-# go back to where we started and remove the gh-pages git repo we made and used
-# for deployment
-cd ..
-rm -rf master-branch
-
 echo "Finished Deployment!"
