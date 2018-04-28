@@ -15,8 +15,8 @@ current_branc=$(git rev-parse --abbrev-ref HEAD)
 echo current_branc
 
 # make a directory to put the gp-pages branch
-mkdir master-branch
-cd master-branch
+mkdir ../master-branch
+cd ../master-branch
 # now lets setup a new repo so we can update the gh-pages branch
 git config --global user.email "$GH_EMAIL" > /dev/null 2>&1
 git config --global user.name "$GH_NAME" > /dev/null 2>&1
@@ -37,7 +37,7 @@ fi
 
 # copy over or recompile the new site
 pwd
-cp -r /home/ubuntu/lhuria94.github.io/ /home/ubuntu/lhuria94.github.io/master-branch/
+cp -a "/home/ubuntu/lhuria94.github.io/" .
 
 # stage any changes and new files
 git add -A
