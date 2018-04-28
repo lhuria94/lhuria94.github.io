@@ -2,7 +2,7 @@ deployment:
   automerge:
     branch: [dev-1.0]
     commands:
-      - ./merge_to_master.sh
+      - ./scripts/deploy-ghpages.sh build
 test:
   override:
     - echo "test"
