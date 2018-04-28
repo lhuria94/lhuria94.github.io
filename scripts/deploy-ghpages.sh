@@ -27,7 +27,7 @@ then
     git checkout master
     # delete any old site as we are going to replace it
     # Note: this explodes if there aren't any, so moving it here for now
-    git pull "$remote" dev-1.0
+    git merge master dev-1.0
 else
     git checkout --orphan master
 fi
