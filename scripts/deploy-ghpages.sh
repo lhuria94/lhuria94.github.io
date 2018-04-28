@@ -45,9 +45,9 @@ current_branc1=$(git rev-parse --abbrev-ref HEAD)
 echo $current_branc1
 #cp -R -u -p /home/ubuntu/lhuria94.github.io/. /home/ubuntu/master-branch/
 # stage any changes and new files
-git add -A
+#git add -A
 # now commit, ignoring branch gh-pages doesn't seem to work, so trying skip
-git commit -m "Deploy to GitHub pages [ci skip]"
+#git commit -m "Deploy to GitHub pages [ci skip]"
 # and push, but send any output to /dev/null to hide anything sensitive
 git push --force origin master
 
