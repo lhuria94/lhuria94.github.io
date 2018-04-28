@@ -12,7 +12,7 @@ pwd
 remote=$(git config remote.origin.url)
 
 current_branc=$(git rev-parse --abbrev-ref HEAD)
-echo current_branc
+echo $current_branc
 
 # make a directory to put the gp-pages branch
 mkdir ../master-branch
@@ -37,7 +37,9 @@ fi
 
 # copy over or recompile the new site
 pwd
-cp -a "/home/ubuntu/lhuria94.github.io/" .
+cp -a /home/ubuntu/lhuria94.github.io/ /home/ubuntu/master-branch
+
+echo ls -al
 
 # stage any changes and new files
 git add -A
