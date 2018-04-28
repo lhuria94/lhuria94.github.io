@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Bigpipe Caching: Making123 Web 2x Faster"
+title: "Bigpipe Caching: Making Web 2x Faster"
 date: 2017-01-21 05:21:35
 image: '/assets/img/'
 description: 'How Bigpipe came in picture for making web 2x faster'
