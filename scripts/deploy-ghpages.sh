@@ -37,7 +37,7 @@ fi
 
 # copy over or recompile the new site
 pwd
-cp -a /home/ubuntu/lhuria94.github.io/ /home/ubuntu/master-branch
+cp -a /home/ubuntu/lhuria94.github.io/. /home/ubuntu/master-branch/.
 
 echo ls -al
 
