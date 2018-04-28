@@ -28,6 +28,7 @@ git remote add --fetch origin "$remote"
 if git rev-parse --verify origin/master > /dev/null 2>&1
 then
     git checkout master
+    echo $(ls -al)
     # delete any old site as we are going to replace it
     # Note: this explodes if there aren't any, so moving it here for now
     git rm -rf .
@@ -37,9 +38,8 @@ fi
 
 # copy over or recompile the new site
 pwd
-cp -a /home/ubuntu/lhuria94.github.io/. /home/ubuntu/master-branch/.
-
-echo ls -al
+echo $(ls -al)
+cp -a /home/ubuntu/lhuria94.github.io/. /home/ubuntu/master-branch/
 
 # stage any changes and new files
 git add -A
