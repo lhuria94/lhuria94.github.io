@@ -40,16 +40,16 @@ pwd
 current_branc1=$(git rev-parse --abbrev-ref HEAD)
 echo $current_branc1
 #cp -a /home/ubuntu/lhuria94.github.io/. /home/ubuntu/master-branch/
-git clone git@github.com:lhuria94/lhuria94.github.io.git .
-git checkout master
-git fetch --all
-git pull "$remote" dev-1.0
-
 # stage any changes and new files
 git add -A
 # now commit, ignoring branch gh-pages doesn't seem to work, so trying skip
 git commit -m "Deploy to GitHub pages [ci skip]"
 # and push, but send any output to /dev/null to hide anything sensitive
+git push --force origin master
+
+git fetch --all
+git pull "$remote" dev-1.0
+
 git push --force origin master
 # go back to where we started and remove the gh-pages git repo we made and used
 # for deployment
