@@ -35,7 +35,7 @@ else
 fi
 
 # copy over or recompile the new site
-cp -r * "/home/ubuntu/lhuria94.github.io/"
+cp -a "/home/ubuntu/lhuria94.github.io/" .
 
 # stage any changes and new files
 git add -A
