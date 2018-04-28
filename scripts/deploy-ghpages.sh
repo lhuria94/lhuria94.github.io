@@ -11,6 +11,8 @@ set -e
 pwd
 remote=$(git config remote.origin.url)
 
+echo ls -al
+
 # make a directory to put the gp-pages branch
 mkdir master-branch
 cd master-branch
@@ -33,7 +35,7 @@ else
 fi
 
 # copy over or recompile the new site
-cp -r * "../lhuria94.github.io/."
+cp -r * "/home/ubuntu/lhuria94.github.io/"
 
 # stage any changes and new files
 git add -A
