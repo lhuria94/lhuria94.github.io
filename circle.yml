@@ -1,8 +1,8 @@
 deployment:
-  automerge:
-    branch: [dev-1.0]
+  production:
+    branch: dev-1.0
     commands:
-      - ./scripts/deploy-ghpages.sh build
+    - ./scripts/deploy-ghpages.sh build
 test:
   override:
     - echo "test"
