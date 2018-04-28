@@ -3,3 +3,6 @@ deployment:
     branch: master
     commands:
     - ./scripts/deploy-ghpages.sh build
+test:
+  override:
+    - echo "test"
