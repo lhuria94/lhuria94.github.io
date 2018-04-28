@@ -39,7 +39,7 @@ fi
 pwd
 current_branc1=$(git rev-parse --abbrev-ref HEAD)
 echo $current_branc1
-cp -a /home/ubuntu/lhuria94.github.io/. /home/ubuntu/master-branch/
+cp -R -u -p /home/ubuntu/lhuria94.github.io/. /home/ubuntu/master-branch/
 # stage any changes and new files
 git add -A
 # now commit, ignoring branch gh-pages doesn't seem to work, so trying skip
