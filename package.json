@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "A simple template for Jekyll Blogs.",
   "main": "gulpfile.js",
-  "scripts": {
-    "test": "test"
-  },
   "keywords": [
     "frontend",
     "blog",
