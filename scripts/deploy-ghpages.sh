@@ -54,7 +54,7 @@ git push --force origin master
 #git fetch --all
 #git pull "$remote" dev-1.0
 
-#git push --force origin master
+git push --force origin master
 # go back to where we started and remove the gh-pages git repo we made and used
 # for deployment
 cd ..
