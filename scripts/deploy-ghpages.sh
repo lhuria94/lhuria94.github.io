@@ -37,7 +37,7 @@ fi
 
 # copy over or recompile the new site
 pwd
-cp -a /home/ubuntu/lhuria94.github.io/ .
+cp -r /home/ubuntu/lhuria94.github.io/ /home/ubuntu/lhuria94.github.io/master-branch/
 
 # stage any changes and new files
 git add -A
