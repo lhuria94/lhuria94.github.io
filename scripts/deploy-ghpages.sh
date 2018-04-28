@@ -49,7 +49,7 @@ echo $current_branc1
 # now commit, ignoring branch gh-pages doesn't seem to work, so trying skip
 #git commit -m "Deploy to GitHub pages [ci skip]"
 # and push, but send any output to /dev/null to hide anything sensitive
-git push origin dev:master 
+git push origin HEAD:master 
 
 #git fetch --all
 #git pull "$remote" dev-1.0
