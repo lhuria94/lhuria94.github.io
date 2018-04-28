@@ -38,7 +38,11 @@ fi
 
 # copy over or recompile the new site
 pwd
-cp -a /home/ubuntu/lhuria94.github.io/. /home/ubuntu/master-branch/
+#cp -a /home/ubuntu/lhuria94.github.io/. /home/ubuntu/master-branch/
+git clone git@github.com:lhuria94/lhuria94.github.io.git
+git checkout master
+git fetch --all
+git pull "$remote" dev-1.0
 
 # stage any changes and new files
 git add .
