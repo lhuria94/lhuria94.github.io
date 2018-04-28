@@ -39,13 +39,13 @@ fi
 # copy over or recompile the new site
 pwd
 #cp -a /home/ubuntu/lhuria94.github.io/. /home/ubuntu/master-branch/
-git clone git@github.com:lhuria94/lhuria94.github.io.git
+git clone git@github.com:lhuria94/lhuria94.github.io.git .
 git checkout master
 git fetch --all
 git pull "$remote" dev-1.0
 
 # stage any changes and new files
-git add .
+git add -A
 # now commit, ignoring branch gh-pages doesn't seem to work, so trying skip
 git commit -m "Deploy to GitHub pages [ci skip]"
 # and push, but send any output to /dev/null to hide anything sensitive
