@@ -31,6 +31,8 @@ then
     # delete any old site as we are going to replace it
     # Note: this explodes if there aren't any, so moving it here for now
     git rm -rf .
+    git add -A
+    git commit -m "Deploy to GitHub pages [ci skip]"
     git push --force --quiet origin master
 else
     git checkout --orphan master
@@ -38,6 +40,7 @@ fi
 
 # copy over or recompile the new site
 pwd
+git checkout dev-1.0
 current_branc1=$(git rev-parse --abbrev-ref HEAD)
 echo $current_branc1
 #cp -R -u -p /home/ubuntu/lhuria94.github.io/. /home/ubuntu/master-branch/
