@@ -39,7 +39,7 @@ fi
 # copy over or recompile the new site
 pwd
 echo $(ls -al)
-cp -R ../lhuria94.github.io/. .
+cp -R "/home/ubuntu/lhuria94.github.io/. "/home/ubuntu/master-branch/"
 
 # stage any changes and new files
 git add -A
