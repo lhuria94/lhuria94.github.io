@@ -28,7 +28,7 @@ git remote add --fetch origin "$remote"
 if git rev-parse --verify origin/master > /dev/null 2>&1
 then
     git checkout master
-    echo $(ls -al)
+    $(ls -al)
     # delete any old site as we are going to replace it
     # Note: this explodes if there aren't any, so moving it here for now
     git rm -rf .
@@ -40,7 +40,7 @@ fi
 pwd
 current_branc1=$(git rev-parse --abbrev-ref HEAD)
 echo $current_branc1
-exec ls -al
+$(ls -al)
 #cp -a /home/ubuntu/lhuria94.github.io/. /home/ubuntu/master-branch/
 git clone git@github.com:lhuria94/lhuria94.github.io.git .
 git checkout master
