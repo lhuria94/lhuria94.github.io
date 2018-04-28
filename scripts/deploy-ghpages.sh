@@ -18,8 +18,7 @@ fi
 git checkout -b master
 
 # Build site.
-bower install
-bundle exec jekyll build
+jekyll build
 
 # Delete and move files.
 find . -maxdepth 1 ! -name '_site' ! -name '.git' ! -name '.gitignore' -exec rm -rf {} \;
