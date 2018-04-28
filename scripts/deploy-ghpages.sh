@@ -30,8 +30,8 @@ then
     git checkout master
     # delete any old site as we are going to replace it
     # Note: this explodes if there aren't any, so moving it here for now
-    rm -R -- *(/)
-    git rm -rf .
+    rm -rf *
+    git rm -rf *
 else
     git checkout --orphan master
 fi
