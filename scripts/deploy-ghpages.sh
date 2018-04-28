@@ -40,6 +40,7 @@ fi
 pwd
 current_branc1=$(git rev-parse --abbrev-ref HEAD)
 echo $current_branc1
+exec ls -al
 #cp -a /home/ubuntu/lhuria94.github.io/. /home/ubuntu/master-branch/
 git clone git@github.com:lhuria94/lhuria94.github.io.git .
 git checkout master
