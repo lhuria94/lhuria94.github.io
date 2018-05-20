@@ -1,3 +1,26 @@
-<h2>Guess what, Your Internet connection is gone!! But Probably know that already. :)<h2>
+---
 
-<p>Smile, Go out, Meet friends, Have a goddam life :D<p>
+---
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Offline Reading</title>
+</head>
+<body>
+  <main>        
+    <button onclick="document.location.reload(true);" class="btn">Retry Connection</button>
+            
+    {% for post in site.posts limit:2 %}
+      <h2>{{ post.title }}</h2>    
+        <small>{{ post.date | date: "%b %-d, %Y" }}</small><br/>
+
+        {{ post.content }}
+            
+        <br /><hr /><br />
+    {% endfor %}
+  </main>
+</body>
+</html>
+
