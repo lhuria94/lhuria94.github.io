@@ -1,7 +1,4 @@
 (function( $, window, undefined ) {
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js');
-  }
   // Menu
   $("a#slide").click(function(){
     $("#sidebar,a#slide,#fade").addClass("slide");
