@@ -13,7 +13,7 @@ jobs:
           name: Deploy Release to GitHub
           command: |
             if [ $CIRCLE_BRANCH == 'dev-1.0' ]; then
-              bash .circleci/setup-github.sh
+              bash .circleci/deploy-github.sh
             fi
 workflows:
   version: 2
