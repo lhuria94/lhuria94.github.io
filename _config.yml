@@ -39,6 +39,3 @@ links:
 
 # exclude my node related stuff
 exclude: ['package.json', 'src', 'node_modules']
-
-# GEM plugins
-gems: ["emoji_for_jekyll"]
