@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run: npm install
       - run: npm install gulp gulp-cli
-      - run: gulp
+      - run: node_modules/gulp/bin/gulp.js --gulpfile ./gulpfile.js
       - deploy:
           name: Deploy Release to GitHub
           command: |
