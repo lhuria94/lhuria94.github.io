@@ -22,7 +22,7 @@ var jekyllCommand = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll';
  * Build the Jekyll Site
  */
 gulp.task('jekyll-build', function (done) {
-	//browserSync.notify(messages.jekyllBuild);
+	browserSync.notify(messages.jekyllBuild);
 	return cp.spawn(jekyllCommand, ['build'], {stdio: 'inherit'})
 		.on('close', done);
 });
