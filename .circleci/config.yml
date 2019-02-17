@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run: npm install
       - run: npm install gulp gulp-cli
-      - run: node_modules/gulp/bin/gulp.js --gulpfile ./gulpfile.js
+      - run: node_modules/gulp/bin/gulp.js --gulpfile ./gulpfile.js jekyll-build
       - deploy:
           name: Deploy Release to GitHub
           command: |
