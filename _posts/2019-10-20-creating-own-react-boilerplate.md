@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Creating your own React Boilerplate - For Beginners'
-date: 2018-10-20 00:00:00
+date: 2019-10-20 00:00:00
 image: '/assets/img/2019-10-20-creating-own-react-boilerplate'
 description: ''
 main-class: 'react'
