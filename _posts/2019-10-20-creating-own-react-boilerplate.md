@@ -91,8 +91,8 @@ To complete the setup, we would need to create a file called `.babelrc` and defi
 ![Babel rc file](/assets/img/2019-10-20-creating-own-react-boilerplate/babelrc-file.png)
 To setup the `babel-loader` and make it work as a web pack loader, we would need to define the configuration like below in a file called `webpack.config.js` at the root of the project:
 ![Webpack config file](/assets/img/2019-10-20-creating-own-react-boilerplate/webpack-config.png)
-If we want to decode the configuration, then its just just telling Webpack to take in js, jsx code and use babel for transpiling and output the ES5 browser compatible code.
-4. **HTML Webpack Plugin**: This plugin helps to generate HTML files which ultimately servers Webpack generated bundles. That means, when webpack creates a new javascript bundled file, then it also needs a html file to server on the client side with the latest changes. <br/>
+If we want to decode the configuration, then its just telling Webpack to take in js, jsx code and use babel for transpiling and output the ES5 browser compatible code.
+4. **HTML Webpack Plugin**: This plugin helps to generate HTML files which ultimately serves Webpack generated bundles. That means, when webpack creates a new javascript bundled file, then it also needs a html file to server on the client side with the latest changes. <br/>
 Let's install the plugin and the loader as a dev dependency:
 ![Add html plugin](/assets/img/2019-10-20-creating-own-react-boilerplate/yarn-add-html-plugin.png)
 
@@ -111,7 +111,7 @@ module.exports = {
           loader: "babel-loader"
         }
       },
-      // Add HTML loader to server HTML files.
+      // Add HTML loader to serve HTML files.
       {
         test: /\.html$/,
         use: [
@@ -163,7 +163,7 @@ Should get something like this in your terminal:
 ![Yarn start App](/assets/img/2019-10-20-creating-own-react-boilerplate/yarn-start-success.png)
 And we're all set here.
 
-> You can check out the boilerplater for the complete folder structure [here][github-url].
+> You can check out the boilerplate for the complete folder structure [here][github-url].
 
 Thanks for reading. 😃
 
