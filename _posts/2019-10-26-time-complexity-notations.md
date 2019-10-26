@@ -12,6 +12,7 @@ categories:
 - Performance
 - Javascript
 twitter_text: 'Understanding Time complexity - Big O Notations'
+cover_image: '/assets/img/2019-10-26-time-complexity-notations/cover.png'
 ---
 
 Lately, I have gotten an interest in algorithms, the first one I chose to understand deeply is how sorting algorithms work and their time complexity. However, this post is not to explain sorting algorithms, instead, we will take a step back and understand time complexity [Big O Notation] in the simplest way possible.
