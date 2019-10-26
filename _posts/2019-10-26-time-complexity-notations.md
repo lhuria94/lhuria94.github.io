@@ -57,7 +57,7 @@ While calculating, we should always think of both the “best” & “worst” s
 
 *For example*: If we were to match a specific element in an array, then it can be the very first one or the last one, so in that case, we can assume its O(n).
 *Let’s take an example here*:
-![Linear Time Algorithm](/assets/img/2019-10-26-time-complexity-notations/linear.png)
+![Linear Time Algorithm](/assets/img/2019-10-26-time-complexity-notations/linear-time.png)
 * **Quadratic-Time complexity - O(n2) - Order N Squared**:
 
 As the name suggests, the time to execute a program is proportional to the square of the input size. That means, in our program, when we are trying to perform two operations which are kind of a combination of Linear and Constant time complexity, then those are called Quadratic-time complexity.
@@ -65,7 +65,7 @@ As the name suggests, the time to execute a program is proportional to the squar
 This type of complexity is commonly used with sorting algorithms. 
 
 *Let’s try to understand by taking an example*: 
-![Quadratic Time Algorithm](/assets/img/2019-10-26-time-complexity-notations/quad.png)
+![Quadratic Time Algorithm](/assets/img/2019-10-26-time-complexity-notations/quad-time.png)
 In this example, it is clear that we first have a single filter loop at the top iterating over an array once, then we have a nested loop that is looking for similar salaries of the employees by iterating through the array again.
 
 * **Logarithmic-Time Algorithm - O(log n) - Order log N**:
