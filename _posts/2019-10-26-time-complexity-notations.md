@@ -14,7 +14,7 @@ categories:
 twitter_text: 'Understanding Time complexity - Big O Notations'
 ---
 
-Lately, I have gotten an interest in algorithms, the first one I chose to understand a bit deeply is how sorting algorithms work and their time complexity. However, this post is not to explain sorting algorithms, instead, we will take a step back and see how we measure time complexity [Big O Notation] in the simplest way possible.
+Lately, I have gotten an interest in algorithms, the first one I chose to understand deeply is how sorting algorithms work and their time complexity. However, this post is not to explain sorting algorithms, instead, we will take a step back and understand time complexity [Big O Notation] in the simplest way possible.
 
 ### Before we go any further, let's understand what is an Algorithm:
 
