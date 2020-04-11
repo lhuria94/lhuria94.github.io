@@ -1,0 +1,76 @@
+I"_<blockquote>
+  <p>Heads up! The structure proposed in this post is not official, its just worked nicely for me and hopefully it will help someone else on this earth. 🙂</p>
+</blockquote>
+
+<p>Here we are, writing my first post around React Native after successfully launching an app in the App Store. Not at all showing off. It was a Team effort.</p>
+
+<p>But it really gave me an insight with respect to “How to work around mobile apps” after being in web stack for so long. Fantastic change and am really in love with “React Native”. 🤩</p>
+
+<p>This post is specifically about how to structure your React native apps/projects in terms folders/files.</p>
+
+<h3 id="background-of-why-this-is-even-helpful">Background of “Why this is even helpful”</h3>
+<p>React is created by <a href="https://opensource.facebook.com/">Facebook</a> and being used by a variety of organizations. So, Instead of being opinionated on the folder/file structure of the application, its left to the individuals to decide how they would like to build it.</p>
+
+<p>This further leads to different approaches proposed by either community or individuals solving different problems.</p>
+
+<h3 id="structure-we-follow">Structure we follow</h3>
+<p>Below Structure assumes the following (But not mandatory in all projects):</p>
+<ul>
+  <li>You have Redux in your architecture</li>
+  <li>You have support for dark mode as well</li>
+</ul>
+
+<p><img src="/assets/img/2020-04-11-structure-react-native-project/structure.png" alt="Structure" /></p>
+
+<p>If you look at the above structure, most of it is self explanatory. However I would like to focus on some of the aspects.</p>
+
+<ul>
+  <li><strong>src/api</strong>
+    <ul>
+      <li>helper.js - This file will have helper methods w.r.t any code related to apis. Like get, post, put etc.</li>
+      <li>utils.js - Here we could add usual utility functions.</li>
+    </ul>
+  </li>
+  <li><strong>assets</strong>
+    <ul>
+      <li>icons - Keep all of your icons (SVGs) or any other format you usually use.</li>
+      <li>images - Keep all of your images (background images), logos etc.</li>
+      <li>themes
+        <ul>
+          <li>light.js - Have all of your light theme styles here such as color palette, fonts etc.</li>
+          <li>dark.js - Have all of your dark theme styles here.</li>
+          <li>themeProvider.js - This will contain the logic of deciding which theme to use based on User’s preferences.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>components</strong>
+    <ul>
+      <li>common - This will contain re-usable isolated components like button, input, tabs etc.</li>
+      <li>sections - This will contain reusable sections like navigation i.e sidebar, bottom navigation etc.</li>
+    </ul>
+  </li>
+  <li><strong>config</strong> - I find this particularly very useful, we keep all the configurations with respect to say forms, static lists, action messages, validation messages etc.</li>
+  <li><strong>features</strong> - A lot of people call this directory as components as well, which seem confusing to me as we can have more components inside features as well. This will have standard modules/features, basically functionality of the site.</li>
+  <li><strong>global</strong> - This will have global functions which can be reused throughout the application.</li>
+  <li><strong>routes</strong> - This will have site level navigation defined.
+    <ul>
+      <li>routes.navigator.js</li>
+    </ul>
+  </li>
+  <li><strong>store</strong> - This will contain the app level state management which will serve the app current state.</li>
+</ul>
+
+<blockquote>
+  <p>Keep in mind, that this structure is not specific to react-native, we could use in “React” projects as well. That’s totally upto us.
+Furthermore, the structure does not include core files such as package.json, bable, eslint etc.</p>
+</blockquote>
+
+<p>Thats all. If you would like to read more about it, I’d refer few good links to go through:</p>
+<ul>
+  <li><a href="https://medium.com/react-native-training/best-practices-for-creating-react-native-apps-part-1-66311c746df3">Best Practices for React native apps</a></li>
+</ul>
+
+<p>Thanks for reading. 😃</p>
+
+:ET
