@@ -4,7 +4,7 @@ title: 'Structure a React Native App'
 date: 2020-04-11 00:00:00
 image: '/assets/img/2020-04-11-structure-react-native-project'
 description: ''
-main-class: 'js'
+main-class: 'react'
 tags:
 - javascript
 - architecture
