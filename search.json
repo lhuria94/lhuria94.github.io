@@ -1,13 +1,99 @@
----
----
 [
-  {% for post in site.posts %}
+  
     {
-      "title"    : "{{ post.title | escape }}",
-      "tags"     : "{{ post.tags | array_to_sentence_string }}",
-      "categories"     : "{{ post.main-class }}",
-      "url"      : "{{ site.baseurl }}{{ post.url }}",
-      "date"     : "{{ post.date | date_to_string}}"
-    } {% unless forloop.last %},{% endunless %}
-  {% endfor %}
+      "title"    : "What is IAM? (A beginner&#39;s guide)",
+      "tags"     : "iam, architecture, security, cloud, authentication, and authorization",
+      "categories"     : "iam",
+      "url"      : "/what-is-iam/",
+      "date"     : "25 May 2020"
+    } ,
+  
+    {
+      "title"    : "Structure a React Native App",
+      "tags"     : "javascript, architecture, mobile, react-native, react, and structure",
+      "categories"     : "react",
+      "url"      : "/structure-react-native-project-copy/",
+      "date"     : "11 Apr 2020"
+    } ,
+  
+    {
+      "title"    : "Understanding Time complexity - Big O Notations",
+      "tags"     : "javascript and performance",
+      "categories"     : "js",
+      "url"      : "/time-complexity-notations/",
+      "date"     : "26 Oct 2019"
+    } ,
+  
+    {
+      "title"    : "Creating your own React Boilerplate - For Beginners",
+      "tags"     : "react, javascript, and frontend",
+      "categories"     : "react",
+      "url"      : "/creating-own-react-boilerplate/",
+      "date"     : "20 Oct 2019"
+    } ,
+  
+    {
+      "title"    : "Cool things you can do with Sass - Part 1",
+      "tags"     : "drupal, planet drupal, css, sass, and scss",
+      "categories"     : "sass",
+      "url"      : "/cool-things-you-can-do-with-sass-part-1/",
+      "date"     : "09 Apr 2018"
+    } ,
+  
+    {
+      "title"    : "Emboss your footprints in the Drupal Sand - Drupal Camp Goa 2018, Call for sessions",
+      "tags"     : "drupal camp, drupal, and planet drupal",
+      "categories"     : "drupal",
+      "url"      : "/drupal-camp-goa-2018-call-for-sessions/",
+      "date"     : "26 Jan 2018"
+    } ,
+  
+    {
+      "title"    : "Must have custom drush commands in every Drupal project",
+      "tags"     : "drush, drupal, and planet drupal",
+      "categories"     : "drupal",
+      "url"      : "/must-have-drush-commands-in-drupal/",
+      "date"     : "16 Jan 2018"
+    } ,
+  
+    {
+      "title"    : "Time to level up Code Reviews",
+      "tags"     : "code quality, coding standards, general, drupal, and planet drupal",
+      "categories"     : "misc",
+      "url"      : "/time-to-level-up-code-reviews/",
+      "date"     : "16 Oct 2017"
+    } ,
+  
+    {
+      "title"    : "Keeping It Clean: Coding Standards That Matter",
+      "tags"     : "code quality, coding standards, general, drupal, and planet drupal",
+      "categories"     : "misc",
+      "url"      : "/coding-standards-that-matter/",
+      "date"     : "26 Jul 2017"
+    } ,
+  
+    {
+      "title"    : "Making Docker Compose Work with Drupal",
+      "tags"     : "continuous integration, docker, drupal, git, and planet drupal",
+      "categories"     : "devops",
+      "url"      : "/making-docker-compose-work-with-drupal/",
+      "date"     : "21 Feb 2017"
+    } ,
+  
+    {
+      "title"    : "Docker: A Microcontainer for Faster Software Workflows",
+      "tags"     : "continuous integration, docker, drupal, git, and planet drupal",
+      "categories"     : "devops",
+      "url"      : "/docker-microcontainers-for-faster-workflows/",
+      "date"     : "11 Feb 2017"
+    } ,
+  
+    {
+      "title"    : "Bigpipe Caching: Making Web 2x Faster",
+      "tags"     : "performance, drupal, drupal 8, and planet drupal",
+      "categories"     : "drupal8",
+      "url"      : "/bigpipe-caching-making-webx-faster/",
+      "date"     : "21 Jan 2017"
+    } 
+  
 ]

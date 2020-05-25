@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/BlogPosting" class="post-drupal">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Must have custom drush commands in every Drupal project</title>
+    <meta name="description" content="This post explains how to create custom drush commands which are in must have list for every Drupal project">
+
+    <!-- Google Authorship Markup -->
+    <link rel="author" href="https://plus.google.com/+lovehuria?rel=author">
+
+    <link rel="canonical" href="https://lhuria94.github.io/lhuria94.github.io/" />
+
+    <!-- Social: Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@LoveHuria">
+    <meta name="twitter:title" content="Must have custom drush commands in every Drupal project">
+    <meta name="twitter:description" content="This post explains how to create custom drush commands which are in must have list for every Drupal project">
+    
+    <meta property="twitter:image:src" content="https://lhuria94.github.io/assets/img/">
+    
+
+    <!-- Social: Facebook / Open Graph -->
+    <meta property="og:url" content="https://lhuria94.github.io/must-have-drush-commands-in-drupal/">
+    <meta property="og:title" content="Must have custom drush commands in every Drupal project">
+    
+    <meta property="og:image" content="https://lhuria94.github.io/assets/img/">
+    
+    <meta property="og:description" content="This post explains how to create custom drush commands which are in must have list for every Drupal project">
+    <meta property="og:site_name" content="Love Huria - Drupal, Javascript, Web">
+
+    <!-- Social: Google+ / Schema.org  -->
+    <meta itemprop="name" content="Must have custom drush commands in every Drupal project"/>
+    <meta itemprop="description" content="This post explains how to create custom drush commands which are in must have list for every Drupal project">
+    <meta itemprop="image" content="https://lhuria94.github.io/assets/img/blog-image.png"/>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/assets/img/icons/favicon.ico" type="image/x-icon" />
+    <!-- Windows 8 Tile Icons -->
+    <meta name="application-name" content="Love Huria Blog">
+    <meta name="msapplication-TileColor" content="#0562DC">
+    <meta name="msapplication-square70x70logo" content="smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="widetile.png" />
+    <meta name="msapplication-square310x310logo" content="largetile.png" />
+    <!-- Android Lolipop Theme Color -->
+    <meta name="theme-color" content="">
+
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://lhuria94.github.io/must-have-drush-commands-in-drupal/">
+    <link rel="alternate" type="application/rss+xml" title="Love Huria - Drupal, Javascript, Web" href="https://lhuria94.github.io/feed.xml" />
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-100420990-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+</head>
+
+    <body>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" version="1.1"><defs><symbol id="icon-menu" viewBox="0 0 1024 1024"><path class="path1" d="M128 213.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 725.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 469.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5z"/></symbol><symbol id="icon-search" viewBox="0 0 951 1024"><path class="path1" d="M658.286 475.429q0-105.714-75.143-180.857t-180.857-75.143-180.857 75.143-75.143 180.857 75.143 180.857 180.857 75.143 180.857-75.143 75.143-180.857zM950.857 950.857q0 29.714-21.714 51.429t-51.429 21.714q-30.857 0-51.429-21.714l-196-195.429q-102.286 70.857-228 70.857-81.714 0-156.286-31.714t-128.571-85.714-85.714-128.571-31.714-156.286 31.714-156.286 85.714-128.571 128.571-85.714 156.286-31.714 156.286 31.714 128.571 85.714 85.714 128.571 31.714 156.286q0 125.714-70.857 228l196 196q21.143 21.143 21.143 51.429z"/></symbol><symbol id="icon-close" viewBox="0 0 805 1024"><path class="path1" d="M741.714 755.429q0 22.857-16 38.857l-77.714 77.714q-16 16-38.857 16t-38.857-16l-168-168-168 168q-16 16-38.857 16t-38.857-16l-77.714-77.714q-16-16-16-38.857t16-38.857l168-168-168-168q-16-16-16-38.857t16-38.857l77.714-77.714q16-16 38.857-16t38.857 16l168 168 168-168q16-16 38.857-16t38.857 16l77.714 77.714q16 16 16 38.857t-16 38.857l-168 168 168 168q16 16 16 38.857z"/></symbol><symbol id="icon-twitter" viewBox="0 0 951 1024"><path class="path1" d="M925.714 233.143q-38.286 56-92.571 95.429 0.571 8 0.571 24 0 74.286-21.714 148.286t-66 142-105.429 120.286-147.429 83.429-184.571 31.143q-154.857 0-283.429-82.857 20 2.286 44.571 2.286 128.571 0 229.143-78.857-60-1.143-107.429-36.857t-65.143-91.143q18.857 2.857 34.857 2.857 24.571 0 48.571-6.286-64-13.143-106-63.714t-42-117.429v-2.286q38.857 21.714 83.429 23.429-37.714-25.143-60-65.714t-22.286-88q0-50.286 25.143-93.143 69.143 85.143 168.286 136.286t212.286 56.857q-4.571-21.714-4.571-42.286 0-76.571 54-130.571t130.571-54q80 0 134.857 58.286 62.286-12 117.143-44.571-21.143 65.714-81.143 101.714 53.143-5.714 106.286-28.571z"/></symbol><symbol id="icon-facebook" viewBox="0 0 585 1024"><path class="path1" d="M548 6.857v150.857h-89.714q-49.143 0-66.286 20.571t-17.143 61.714v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571q0-106.286 59.429-164.857t158.286-58.571q84 0 130.286 6.857z"/></symbol><symbol id="icon-google-plus" viewBox="0 0 951 1024"><path class="path1" d="M420 454.857q0 20.571 18.286 40.286t44.286 38.857 51.714 42 44 59.429 18.286 81.143q0 51.429-27.429 98.857-41.143 69.714-120.571 102.571t-170.286 32.857q-75.429 0-140.857-23.714t-98-78.571q-21.143-34.286-21.143-74.857 0-46.286 25.429-85.714t67.714-65.714q74.857-46.857 230.857-57.143-18.286-24-27.143-42.286t-8.857-41.714q0-20.571 12-48.571-26.286 2.286-38.857 2.286-84.571 0-142.571-55.143t-58-139.714q0-46.857 20.571-90.857t56.571-74.857q44-37.714 104.286-56t124.286-18.286h238.857l-78.857 50.286h-74.857q42.286 36 64 76t21.714 91.429q0 41.143-14 74t-33.714 53.143-39.714 37.143-34 35.143-14 37.714zM336.571 400q21.714 0 44.571-9.429t37.714-24.857q30.286-32.571 30.286-90.857 0-33.143-9.714-71.429t-27.714-74-48.286-59.143-66.857-23.429q-24 0-47.143 11.143t-37.429 30q-26.857 33.714-26.857 91.429 0 26.286 5.714 55.714t18 58.857 29.714 52.857 42.857 38.286 55.143 14.857zM337.714 898.857q33.143 0 63.714-7.429t56.571-22.286 41.714-41.714 15.714-62.286q0-14.286-4-28t-8.286-24-15.429-23.714-16.857-20-22-19.714-20.857-16.571-23.714-17.143-20.857-14.857q-9.143-1.143-27.429-1.143-30.286 0-60 4t-61.429 14.286-55.429 26.286-39.143 42.571-15.429 60.286q0 40 20 70.571t52.286 47.429 68 25.143 72.857 8.286zM800.571 398.286h121.714v61.714h-121.714v125.143h-60v-125.143h-121.143v-61.714h121.143v-124h60v124z"/></symbol></defs></svg>
+
+        <header class="bar-header">
+    <h1 class="logo">
+        <a href="/"></a>
+    </h1>
+</header>
+<div class="search-wrapper">
+    <div class="search-form">
+        <input type="text" class="search-field" placeholder="Search...">
+        <svg class="icon-remove-sign"><use xlink:href="#icon-close"></use></svg>
+        <ul class="search-results search-list"></ul>
+    </div>
+</div>
+
+<div id="fade" class="overlay"></div>
+<a id="slide" class="slideButton fade">
+    <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
+    <svg id="close" class="icon-menu"><use xlink:href="#icon-close"></use></svg>
+</a>
+<aside id="sidebar">
+<nav id="navigation">
+  <h2>MENU</h2>
+  <ul>
+    
+      <li><a href="https://lhuria94.github.io/">Home</a></li>
+    
+      <li><a href="https://lhuria94.github.io/tags">Tags</a></li>
+    
+      <li><a href="https://lhuria94.github.io/about">About Me</a></li>
+    
+    <li><a class="feed" href="https://lhuria94.github.io/feed.xml" title="Atom/RSS feed">Feed</a></li>
+  </ul>
+</nav>
+</aside>
+<a id="search" class="dosearch">
+    <svg class="icon-menu icon-search"><use xlink:href="#icon-search"></use></svg>
+</a>
+
+<header class="header-post" role="banner">
+     <div class="content">
+        
+            <time itemprop="datePublished" datetime="2018-01-16T00:00:00+00:00" class="date">16 Jan 2018</time>
+        
+        <h1 class="post-title" itemprop="name">Must have custom drush commands in every Drupal project</h1>
+        <p itemprop="description" class="subtitle">This post explains how to create custom drush commands which are in must have list for every Drupal project</p>
+    </div>
+</header>
+        <style>
+  .l {
+      position: fixed;
+      z-index: 9999;
+      right: 15px;
+      bottom: 15px;
+  }
+  .l {
+      background-color: rgba(0,0,0,0.7);
+      border-radius: 0.75em;
+      box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.3) inset;
+      color: #fdea7b;
+      font-size: 1.5em;
+      display: inline-flex;
+      align-items: center;
+      margin: auto;
+      padding: 0.15em;
+      width: 3em;
+      height: 1.5em;
+      transition: background-color 0.1s 0.3s ease-out, box-shadow 0.1s 0.3s ease-out;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      cursor: pointer;
+  }
+  .l:before, .l:after {
+      content: "";
+      display: block;
+  }
+  .l:before {
+      background-color: #d7d7d7;
+      border-radius: 50%;
+      width: 1.2em;
+      height: 1.2em;
+      transition: background-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
+      z-index: 1;
+  }
+  .l:after {
+      background:
+          linear-gradient(transparent 50%, rgba(0,0,0,0.15) 0) 0 50% / 50% 100%,
+          repeating-linear-gradient(90deg,#bbb 0,#bbb,#bbb 20%,#999 20%,#999 40%) 0 50% / 50% 100%,
+          radial-gradient(circle at 50% 50%,#888 25%, transparent 26%);
+      background-repeat: no-repeat;
+      border: 0.25em solid transparent;
+      border-left: 0.4em solid #d8d8d8;
+      border-right: 0 solid transparent;
+      transition: border-left-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
+      transform: translateX(-22.5%);
+      transform-origin: 25% 50%;
+      width: 1.2em;
+      height: 1em;
+  }
+  /* Checked */
+  .l:focus {
+      /* Normally an anti-A11Y practice, but set to remove an annoyance just for this demo */
+      outline: 0;
+  }
+  .l:checked {
+      background-color: rgba(0,0,0,0.45);
+      box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.1) inset;
+  }
+  .l:checked:before {
+      background-color: currentColor;
+      transform: translateX(125%)
+  }
+  .l:checked:after {
+      border-left-color: currentColor;
+      transform: translateX(-2.5%) rotateY(180deg);
+  }
+  </style>
+  <input id="night-mode" class="l" type="checkbox" aria-label="nigth-mode">
+        <section class="post">
+
+            <article role="article" id="post" class="post-content" itemprop="articleBody">
+                <p>I am working on a project where we use Drush commands a lot …. seriously like A LOT.. That said, while working on the project, I found few drush commands which come quite handy in our day to day operations. We use these commands mostly with deploy hooks and also while working locally.</p>
+
+<p>Everyone uses Drush commands which are kinda in daily use while working on Drupal and we just can’t imagine our life without it in terms of increasing our productivity.</p>
+
+<p>We want to be more and more productive right? Yes, we do. :)</p>
+
+<h2 id="a-little-bit-about-drush">A little bit about Drush</h2>
+<p>Drush is an awesome command line shell and Unix scripting interface for Drupal. It is a very useful tool and its core ships with lots of useful commands for interacting with code like modules/themes/profiles. It does a lot of things like running update.php, executes sql queries and DB migrations, run cron or clear cache etc.</p>
+
+<p>Even Though there are a bunch of commands available and can be found <a href="https://drushcommands.com/">here</a>, which are continuously making our lives easier, we still feel the urge to have custom Drush commands that suits our project needs and can improve overall team efficiency.</p>
+
+<p>Creating custom Drush commands is very easy, Drupal provides hooks to integrate with our custom modules. Infact, there is not much difference between creating custom Drush commands with Drupal 7/ Drupal 8.</p>
+
+<h2 id="coming-back-to-this-post">Coming back to this post</h2>
+<p>Here I am gonna mention few custom Drush commands which can be really handy while working on a project and can save plenty of your time.</p>
+
+<p>Following are the things we should have automated using Drush commands:</p>
+<ul>
+  <li>Database checks: This includes checking the number of threats with respect to the database, as if any unwanted module is enabled, PHP filter, ensuring errors and warnings are off etc.</li>
+  <li>Clearing specific cache: This is useful when we would like to target a specific cid and bin using cache_clear_all() via the Drush command.</li>
+  <li>Rebuilding theme (This is not similar to clearing theme-registry): There is no option as of now to rebuild theme when we add CSS or JS files in a themes .info file.</li>
+</ul>
+
+<h2 id="database-checks">Database checks</h2>
+<p>The first step, we need is to call the hook provided by Drupal. This is required to define the description of the hook, defining an alias with an example.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">/**
+ * Implements drush_command().
+ */</span>
+<span class="n">function</span> <span class="n">my_module_drush_command</span><span class="p">()</span> <span class="p">{</span>
+  <span class="vg">$items</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="vg">$items</span><span class="p">[</span><span class="s1">'my-module-run-db-checks'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'description'</span> <span class="o">=&gt;</span> <span class="s1">'Checking potential issues on the database to ensure it is production ready.'</span><span class="p">,</span>
+    <span class="s1">'callback'</span> <span class="o">=&gt;</span> <span class="s1">'my_module_run_db_checks'</span><span class="p">,</span>
+    <span class="s1">'examples'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+      <span class="s1">'drush my-module-db-checks'</span> <span class="o">=&gt;</span> <span class="s1">'Run few database checks on the respected target.'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s1">'aliases'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'my-module-run-db-checks'</span><span class="p">],</span>
+  <span class="p">];</span>
+
+  <span class="k">return</span> <span class="vg">$items</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Now what is required is to create the callback function with whatever things we want to check to ensure that there isn’t any potential threat to the system. Following are the things we must have:</p>
+
+<ul>
+  <li>Checking if PHP Errors and warnings are off.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">/**
+ * Run an audit against a database to check for potential issues.
+ */</span>
+<span class="n">function</span> <span class="n">my_module_run_db_checks</span><span class="p">()</span> <span class="p">{</span>
+  <span class="vg">$errors</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="sr">//</span> <span class="no">Hide</span> <span class="n">all</span> <span class="no">PHP</span> <span class="n">errors</span><span class="o">.</span>
+  <span class="vg">$er_query</span> <span class="o">=</span> <span class="n">db_query</span><span class="p">(</span><span class="s2">"SELECT CONVERT( value
+    USING utf8 ) AS error_reporting_level
+    FROM variable
+    WHERE name = 'error_level'
+    LIMIT 0 , 30
+  "</span><span class="p">);</span>
+  <span class="vg">$record</span> <span class="o">=</span> <span class="vg">$er_query</span><span class="o">-&gt;</span><span class="n">fetchObject</span><span class="p">();</span>
+  <span class="vg">$error_level</span> <span class="o">=</span> <span class="n">unserialize</span><span class="p">(</span><span class="vg">$record</span><span class="o">-&gt;</span><span class="n">error_reporting_level</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="vg">$error_level</span> <span class="o">!==</span> <span class="s2">"0"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="vg">$errors</span><span class="p">[</span><span class="s1">'php_errors_visible'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'PHP errors are not hidden. Errors will be visible on the site.'</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="sr">//</span> <span class="no">Check</span> <span class="k">if</span> <span class="n">there</span> <span class="n">is</span> <span class="n">any</span> <span class="n">error</span> <span class="n">found</span><span class="p">.</span>
+  <span class="nf">if</span> <span class="p">(</span><span class="n">empty</span><span class="p">(</span><span class="vg">$errors</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">drush_log</span><span class="p">(</span><span class="s1">'DB checks completed. No problems were found.'</span><span class="p">,</span> <span class="s1">'success'</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="p">{</span>
+    <span class="n">drush_log</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">The following issues were found with this site:"</span><span class="p">,</span> <span class="s1">'error'</span><span class="p">);</span>
+    <span class="n">foreach</span> <span class="p">(</span><span class="vg">$errors</span> <span class="n">as</span> <span class="vg">$key</span> <span class="o">=&gt;</span> <span class="vg">$value</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">drush_log</span><span class="p">(</span><span class="s1">'- '</span> <span class="o">.</span> <span class="vg">$value</span><span class="p">,</span> <span class="s1">'error'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<ul>
+  <li>Checking if all the unnecessary modules (For example: Devel, Since XSS vulnerabilities are the #1 vulnerability found in Drupal 7 contrib modules, it’s always recommended to disable the ‘devel’ module on production sites and (if possible) entirely remove it.) are disabled. (We will just add the following to the above callback, also we can easily add more modules the list).</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">//</span> <span class="no">Check</span> <span class="k">if</span> <span class="n">stage</span> <span class="n">file</span> <span class="n">proxy</span> <span class="n">isn</span><span class="s1">'t enabled.
+$sfp_status_query = db_select('</span><span class="nb">system</span><span class="s1">', '</span><span class="n">s</span><span class="s1">')
+  -&gt;fields('</span><span class="n">s</span><span class="s1">', ['</span><span class="nb">name</span><span class="s1">', '</span><span class="n">status</span><span class="s1">'])
+  -&gt;condition('</span><span class="n">s</span><span class="p">.</span><span class="nf">name</span><span class="s1">', '</span><span class="n">stage_file_proxy</span><span class="s1">', '</span><span class="o">=</span><span class="s1">')
+  -&gt;execute()
+  -&gt;fetchAssoc();
+
+if ($sfp_status_query['</span><span class="n">status</span><span class="s1">'] === 1) {
+  $errors['</span><span class="n">dblog_enabled</span><span class="s1">'] = '</span><span class="no">Stage</span> <span class="n">file</span> <span class="n">proxy</span> <span class="k">module</span> <span class="nn">is</span> <span class="n">still</span> <span class="n">enabled</span><span class="o">.</span><span class="s1">';
+}
+
+// Check if database logging isn'</span><span class="n">t</span> <span class="n">enabled</span><span class="o">.</span>
+<span class="vg">$dblog_status_query</span> <span class="o">=</span> <span class="n">db_select</span><span class="p">(</span><span class="s1">'system'</span><span class="p">,</span> <span class="s1">'s'</span><span class="p">)</span>
+  <span class="o">-&gt;</span><span class="n">fields</span><span class="p">(</span><span class="s1">'s'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'status'</span><span class="p">])</span>
+  <span class="o">-&gt;</span><span class="n">condition</span><span class="p">(</span><span class="s1">'s.name'</span><span class="p">,</span> <span class="s1">'dblog'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">)</span>
+  <span class="o">-&gt;</span><span class="n">execute</span><span class="p">()</span>
+  <span class="o">-&gt;</span><span class="n">fetchAssoc</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="vg">$dblog_status_query</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="vg">$errors</span><span class="p">[</span><span class="s1">'dblog_enabled'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Database logging is still enabled. This will cause unnecessary read and write queries.'</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="sr">//</span> <span class="no">Make</span> <span class="n">sure</span> <span class="s1">'devel'</span> <span class="k">module</span> <span class="nn">isn</span><span class="s1">'t enabled.
+$devel_status_query = db_select('</span><span class="nb">system</span><span class="s1">', '</span><span class="n">s</span><span class="s1">')
+  -&gt;fields('</span><span class="n">s</span><span class="s1">', ['</span><span class="nb">name</span><span class="s1">', '</span><span class="n">status</span><span class="s1">'])
+  -&gt;condition('</span><span class="n">s</span><span class="p">.</span><span class="nf">name</span><span class="s1">', '</span><span class="n">devel</span><span class="s1">', '</span><span class="o">=</span><span class="s1">')
+  -&gt;execute()
+  -&gt;fetchAssoc();
+
+if ($devel_status_query['</span><span class="n">status</span><span class="s1">'] === 1) {
+  $errors['</span><span class="n">devel_module_enabled</span><span class="s1">'] = '</span><span class="no">Devel</span> <span class="k">module</span> <span class="nn">is</span> <span class="n">still</span> <span class="n">enabled</span><span class="o">.</span><span class="err">'</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<ul>
+  <li>Checking if USER ID 1 is blocked or not. The Drupal account created during installation (i.e. with user ID or UID=1) behaves differently from others. Primarily, it can bypass all access callbacks: it has permission to do everything by default. Failing to secure this account could result in potential security risks. Treat the UID=1 account as you would with root on Linux systems.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">//</span> <span class="no">Check</span> <span class="no">User</span> <span class="no">ID</span> <span class="mi">1</span> <span class="n">is</span> <span class="n">blocked</span><span class="o">.</span>
+<span class="vg">$user_status_query</span> <span class="o">=</span> <span class="n">db_select</span><span class="p">(</span><span class="s1">'users'</span><span class="p">,</span> <span class="s1">'u'</span><span class="p">)</span>
+  <span class="o">-&gt;</span><span class="n">fields</span><span class="p">(</span><span class="s1">'u'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'uid'</span><span class="p">,</span> <span class="s1">'status'</span><span class="p">])</span>
+  <span class="o">-&gt;</span><span class="n">condition</span><span class="p">(</span><span class="s1">'u.uid'</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'='</span><span class="p">)</span>
+  <span class="o">-&gt;</span><span class="n">execute</span><span class="p">()</span>
+  <span class="o">-&gt;</span><span class="n">fetchAssoc</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="vg">$user_status_query</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="vg">$errors</span><span class="p">[</span><span class="s1">'user_id_1_enabled'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'User ID 1 is still enabled. This account should be blocked for security reasons.'</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<ul>
+  <li>Checking if PHP filter is enabled or not. There are a lot of downsides when we are using PHP filter and apparently, there is a pretty awesome explanation for that on this <a href="https://drupal.stackexchange.com/questions/2509/what-are-the-downsides-of-using-php-filter-code-in-blocks-nodes-views-args-et">post</a>.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">//</span> <span class="no">PHP</span> <span class="n">filter</span> <span class="n">should</span> <span class="n">not</span> <span class="n">be</span> <span class="n">enabled</span> <span class="n">on</span> <span class="n">any</span> <span class="n">site</span><span class="o">.</span>
+<span class="vg">$php_filter_status_query</span> <span class="o">=</span> <span class="n">db_select</span><span class="p">(</span><span class="s1">'filter_format'</span><span class="p">,</span> <span class="s1">'f'</span><span class="p">)</span>
+  <span class="o">-&gt;</span><span class="n">fields</span><span class="p">(</span><span class="s1">'f'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'format'</span><span class="p">,</span> <span class="s1">'status'</span><span class="p">])</span>
+  <span class="o">-&gt;</span><span class="n">condition</span><span class="p">(</span><span class="s1">'f.format'</span><span class="p">,</span> <span class="s1">'php_code'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">)</span>
+  <span class="o">-&gt;</span><span class="n">execute</span><span class="p">()</span>
+  <span class="o">-&gt;</span><span class="n">fetchAssoc</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="vg">$php_filter_status_query</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="vg">$errors</span><span class="p">[</span><span class="s1">'php_filter_enabled'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'The PHP filter is still enabled and could cause potential security issues.'</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>For all these checks, we just need to go to the terminal and run the following command:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">drush</span> <span class="n">my</span><span class="o">-</span><span class="n">module</span><span class="o">-</span><span class="n">run</span><span class="o">-</span><span class="n">db</span><span class="o">-</span><span class="n">checks</span></code></pre></figure>
+
+<h2 id="clearing-specific-cache">Clearing specific cache</h2>
+<p>We need to follow the same step i.e. we need is to call the hook provided by Drupal for defining the command definition, description etc.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">/**
+ * Implements drush_command().
+ */</span>
+<span class="n">function</span> <span class="n">my_module_drush_command</span><span class="p">()</span> <span class="p">{</span>
+  <span class="vg">$items</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="vg">$items</span><span class="p">[</span><span class="s1">'my-module-cc-cache-bin'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'description'</span> <span class="o">=&gt;</span> <span class="s1">'Clear a specific cache bin.'</span><span class="p">,</span>
+    <span class="s1">'callback'</span> <span class="o">=&gt;</span> <span class="s1">'my_module_cc_cache_bin'</span><span class="p">,</span>
+    <span class="s1">'examples'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+      <span class="s1">'drush my-module-cc-cb cid_you_want_to_clear cache_table'</span> <span class="o">=&gt;</span> <span class="s1">'Clear passed cid from passed table.'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s1">'arguments'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+      <span class="s1">'cid'</span> <span class="o">=&gt;</span> <span class="n">dt</span><span class="p">(</span><span class="s1">'CID for items to clear'</span><span class="p">),</span>
+      <span class="s1">'cache_bin'</span>   <span class="o">=&gt;</span> <span class="n">dt</span><span class="p">(</span><span class="s1">'A required cache bin argument.'</span><span class="p">),</span>
+      <span class="s1">'wildcard'</span> <span class="o">=&gt;</span> <span class="n">dt</span><span class="p">(</span><span class="s1">'Whether to do a wildcard delete'</span><span class="p">),</span>
+    <span class="p">],</span>
+    <span class="s1">'aliases'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'my-module-cc-cb'</span><span class="p">],</span>
+  <span class="p">];</span>
+
+  <span class="k">return</span> <span class="vg">$items</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Now, we need to define the callback which will do the fun part:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">/**
+ * Exposes cache_clear_all to drush for deploy hooks.
+ *
+ * @param string|string[] $cid
+ *   Cache id or array of cache ids to clear.
+ * @param string $bin
+ *   The bin name to clear.
+ * @param bool $wildcard
+ *   Default false, whether to use wildcard matching.
+ */</span>
+<span class="n">function</span> <span class="n">my_module_cc_cache_bin</span><span class="p">(</span><span class="vg">$cid</span><span class="p">,</span> <span class="vg">$bin</span><span class="p">,</span> <span class="vg">$wildcard</span> <span class="o">=</span> <span class="no">FALSE</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">cache_clear_all</span><span class="p">(</span><span class="vg">$cid</span><span class="p">,</span> <span class="vg">$bin</span><span class="p">,</span> <span class="vg">$wildcard</span><span class="p">);</span>
+  <span class="n">drush_log</span><span class="p">(</span><span class="s1">'Cleared cids: '</span> <span class="o">.</span> <span class="vg">$cid</span> <span class="o">.</span> <span class="s1">' in bin: '</span> <span class="o">.</span> <span class="vg">$bin</span><span class="p">,</span> <span class="s1">'ok'</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>To clear cache id or array of cids from specific cache table, we just need to go to the terminal and run the following command:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">drush</span> <span class="n">my</span><span class="o">-</span><span class="n">module</span><span class="o">-</span><span class="n">cc</span><span class="o">-</span><span class="n">cb</span> <span class="n">cid_you_want_to_clear</span> <span class="n">cache_table</span></code></pre></figure>
+
+<h2 id="rebuilding-theme-data">Rebuilding theme data</h2>
+
+<p>Since we know how to define an custom drush command, we can just skip to the callback directly. ;)</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">/**
+ * Rebuilding theme data properly.
+ */</span>
+<span class="n">function</span> <span class="n">my_module_rebuild_theme</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">system_rebuild_theme_data</span><span class="p">();</span>
+  <span class="n">drush_log</span><span class="p">(</span><span class="s1">'Theme data rebuilt.'</span><span class="p">,</span> <span class="s1">'ok'</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Now we can rebuild theme data easily with a custom drush command.</p>
+
+<blockquote>
+  <p>Similarly, we can add custom Drush commands as per our use and project’s need and obviously we can improvise the scripts, do additional work. This post covers important Drush commands which are essential in our day to day projects plus it also explains how we can create custom Drush commands, YAY BONUS!! :D</p>
+</blockquote>
+
+
+            </article>
+
+            <section class="share">
+    <h3>Share</h3>
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;This post explains how to create custom drush commands which should be in must have list for every Drupal project&quot;%20https://lhuria94.github.io/must-have-drush-commands-in-drupal/%20via%20&#64;LoveHuria&hashtags=drush,drupal,planet drupal,"
+    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+        <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
+    </a>
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=https://lhuria94.github.io/must-have-drush-commands-in-drupal/"
+    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+        <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
+    </a>
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=https://lhuria94.github.io/must-have-drush-commands-in-drupal/"
+    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+        <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
+    </a>
+</section>
+            <section class="author" itemprop="author">
+    <div class="details" itemscope itemtype="http://schema.org/Person">
+        <img itemprop="image" class="img-rounded" src="/assets/img/blog-author.jpg" alt="">
+        <p class="def">Author</p>
+        <h3 class="name">
+            <a itemprop="name" href="https://plus.google.com/+lovehuria/posts">Love Huria</a>
+        </h3>
+        <p class="desc">Senior Full Stack Web Developer at Srijan Technologies</p>
+        <p><a itemprop="email" class="email" href="mailto:lovehuria@gmail.com">lovehuria@gmail.com</a></p>
+        <p><a itemprop="github" class="github" href="https://github.com/lhuria94">github.com/lhuria94</a></p>
+    </div>
+</section>
+
+            
+                <section class="comments">
+    <h3>Comments</h3>
+    <div id="disqus_thread"></div>
+</section>
+<script type="text/javascript">
+/**
+ *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function() {
+    this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document,
+        s = d.createElement('script');
+    s.src = 'https://lhuria94-github-io.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+            
+            <footer>
+    <p>Copyright © 2019 Love Huria, Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a></p>
+</footer>
+<script src="/assets/js/main.js"></script>
+
+        </section>
+    </body>
+</html>

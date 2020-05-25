@@ -1,16 +1,121 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    {% for page in site.pages %}
+    
         <url>
-            <loc>{{ page.url | prepend: site.baseurl | prepend: site.url }}</loc>
+            <loc>https://lhuria94.github.io/about/index.html</loc>
         </url>
-    {% endfor %}
-    {% for post in site.posts %}
+    
         <url>
-            <loc>{{ post.url | prepend: site.baseurl | prepend: site.url }}</loc>
+            <loc>https://lhuria94.github.io/category/devops/</loc>
         </url>
-  {% endfor %}
+    
+        <url>
+            <loc>https://lhuria94.github.io/category/drupal/</loc>
+        </url>
+    
+        <url>
+            <loc>https://lhuria94.github.io/category/drupal8/</loc>
+        </url>
+    
+        <url>
+            <loc>https://lhuria94.github.io/feed.xml</loc>
+        </url>
+    
+        <url>
+            <loc>https://lhuria94.github.io/category/git/</loc>
+        </url>
+    
+        <url>
+            <loc>https://lhuria94.github.io/category/iam/</loc>
+        </url>
+    
+        <url>
+            <loc>https://lhuria94.github.io/</loc>
+        </url>
+    
+        <url>
+            <loc>https://lhuria94.github.io/category/js/</loc>
+        </url>
+    
+        <url>
+            <loc>https://lhuria94.github.io/category/misc/</loc>
+        </url>
+    
+        <url>
+            <loc>https://lhuria94.github.io/category/php/</loc>
+        </url>
+    
+        <url>
+            <loc>https://lhuria94.github.io/category/react/</loc>
+        </url>
+    
+        <url>
+            <loc>https://lhuria94.github.io/category/sass/</loc>
+        </url>
+    
+        <url>
+            <loc>https://lhuria94.github.io/search.json</loc>
+        </url>
+    
+        <url>
+            <loc>https://lhuria94.github.io/series/index.html</loc>
+        </url>
+    
+        <url>
+            <loc>https://lhuria94.github.io/sitemap.xml</loc>
+        </url>
+    
+        <url>
+            <loc>https://lhuria94.github.io/tags/index.html</loc>
+        </url>
+    
+    
+        <url>
+            <loc>https://lhuria94.github.io/what-is-iam/</loc>
+        </url>
+  
+        <url>
+            <loc>https://lhuria94.github.io/structure-react-native-project-copy/</loc>
+        </url>
+  
+        <url>
+            <loc>https://lhuria94.github.io/time-complexity-notations/</loc>
+        </url>
+  
+        <url>
+            <loc>https://lhuria94.github.io/creating-own-react-boilerplate/</loc>
+        </url>
+  
+        <url>
+            <loc>https://lhuria94.github.io/cool-things-you-can-do-with-sass-part-1/</loc>
+        </url>
+  
+        <url>
+            <loc>https://lhuria94.github.io/drupal-camp-goa-2018-call-for-sessions/</loc>
+        </url>
+  
+        <url>
+            <loc>https://lhuria94.github.io/must-have-drush-commands-in-drupal/</loc>
+        </url>
+  
+        <url>
+            <loc>https://lhuria94.github.io/time-to-level-up-code-reviews/</loc>
+        </url>
+  
+        <url>
+            <loc>https://lhuria94.github.io/coding-standards-that-matter/</loc>
+        </url>
+  
+        <url>
+            <loc>https://lhuria94.github.io/making-docker-compose-work-with-drupal/</loc>
+        </url>
+  
+        <url>
+            <loc>https://lhuria94.github.io/docker-microcontainers-for-faster-workflows/</loc>
+        </url>
+  
+        <url>
+            <loc>https://lhuria94.github.io/bigpipe-caching-making-webx-faster/</loc>
+        </url>
+  
 </urlset>
