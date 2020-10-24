@@ -149,7 +149,7 @@ data-styled.g55[id="sc-global-gLPWrd1"]{content:"sc-global-gLPWrd1,"}/*!sc*/
 </blockquote>
 <p>So, I thought about penning this down, because initially, I had to do a lot of exploration, at some places I got lost as well; therefore I am optimistic that this post will help someone who’s trying to achieve the same.</p>
 <p>Before we get into the tech side of it i.e any of the groundwork; it's essential that the scope and designs are clearly communicated to Business stakeholders considering what are we going to cover in a defined time-frame.</p>
-<h1 id="getting-started-with-discovery-and-design-phase">Getting started with "Discovery and Design" phase</h1>
+<h1 id="getting-started-with-the-discovery-and-design-phase">Getting started with the "Discovery and Design" phase</h1>
 <p>For any project, or to be specific mobile-application in our case; laying down different features required in the system like offline capability, barcode scanners, background streaming, user's privacy &#x26; standard business requirements should be discussed and sorted out in its initial phase.</p>
 <p>I have seen it happen that in the mobile world; one thing could be obvious to your stakeholder but not to you.</p>
 <p>That's what this discovery and design phase includes.</p>
@@ -157,11 +157,11 @@ data-styled.g55[id="sc-global-gLPWrd1"]{content:"sc-global-gLPWrd1,"}/*!sc*/
 <p>This included:</p>
 <ul>
 <li>the list of features we were going to deliver to the client with all possible workflows and getting their approvals on it keeping in mind any kind of change requests asked by the business during this phase.</li>
-<li>the list of devices we were going to test mentioning different resolutions, OS etc.</li>
-<li>the list of devices which would be tested on simulators or on a real device.</li>
+<li>the list of devices we were going to test mentioning different resolutions, OS, etc.</li>
+<li>the list of devices that would be tested on simulators or on a real device.</li>
 </ul>
 <h2 id="focusing-on-user-experience">Focusing on user experience</h2>
-<p>We believed in total transparency of showcasing the designs, having weekly demos, getting feedback from the stakeholders pro-actively. These meetings were important for everyone to understand how the mobile application will look and behave like; ultimately coming to consensus.</p>
+<p>We believed in total transparency of showcasing the designs, having weekly demos, getting feedback from the stakeholders pro-actively. These meetings were important for everyone to understand how the mobile application will look and behave like; ultimately coming to a consensus.</p>
 <h3 id="important-stakeholders-who-should-participate-during-this-activity">Important stakeholders who should participate during this activity</h3>
 <ul>
 <li>Design Lead</li>
@@ -170,7 +170,7 @@ data-styled.g55[id="sc-global-gLPWrd1"]{content:"sc-global-gLPWrd1,"}/*!sc*/
 <li>Business stakeholders</li>
 </ul>
 <h2 id="nfrs">NFRs</h2>
-<p>Along with the features list and scope, we also thought about NFRs from a mobile app perspective. NFRs should also be discussed and priortized amongst your stakeholders, there is a need sometimes to put the perspective in place; otherwise it will be just a clone of your web application.</p>
+<p>Along with the features list and scope, we also thought about NFRs from a mobile app perspective. NFRs should also be discussed and prioritized amongst your stakeholders, there is a need sometimes to put the perspective in place; otherwise, it will be just a clone of your web application.</p>
 <h3 id="some-examples-of-nfr-may-include">Some examples of NFR may include</h3>
 <ul>
 <li><code class="language-text">Responsiveness:</code> In this case, handle any kind of interruption usually by calls, text messages, switching apps, etc, and reverting back to the same state which you were doing before the interruption without losing your progress.</li>
@@ -193,14 +193,14 @@ data-styled.g55[id="sc-global-gLPWrd1"]{content:"sc-global-gLPWrd1,"}/*!sc*/
 </ul>
 <h1 id="technical-phase">Technical Phase</h1>
 <h2 id="bootstrap">Bootstrap</h2>
-<p>What gives me the confidence to execute anything, in general, is breaking down things into smaller chunks and that is the case even with new tech or a tech which I am confident with. If I have to give advice to someone on how to start a new project, I would say, sit down alone, think through and prepare a rough list of how would you want to break and execute. Define tasks and their outcomes.</p>
+<p>What gives me the confidence to execute anything, in general, is breaking down things into smaller chunks and that is the case even with new tech or tech which I am confident with. If I have to give advice to someone on how to start a new project, I would say, sit down alone, think through and prepare a rough list of how would you want to break and execute. Define tasks and their outcomes.</p>
 <p>And this is the first step I did!! </p>
 <h2 id="setting-up-react-native-on-local-along-with-code-versioning">Setting up React native on local along with code versioning</h2>
 <p>As choosing a technology or a framework was a pre-requisite, setting up React native on local made sense. You might be thinking, what’s the big deal with that. There is NOT.
 It just gives a sense of achievement we kickstarted and it's not like you are not going to need it. 😉 </p>
 <h3 id="tasks-to-be-done-as-part-of-setting-up-rn-on-local">Tasks to be done as part of setting up RN on local</h3>
 <ul>
-<li>Setup a Github or Gitlab or bitbucket (Whatever you may like to use) with standard environment branches like development, staging, UAT &#x26; Production</li>
+<li>Set up a Github or Gitlab or bitbucket (Whatever you may like to use) with standard environment branches like development, staging, UAT &#x26; Production</li>
 <li>Setup the minimalistic React native application using RN CLI or Expo (I am not here to help you choose the one). But as a matter of fact, we chose RN CLI just because of the simplicity.</li>
 <li>Setup environment files (We used React native config package to use inside the application, it's pretty good).</li>
 <li>Add a basic Readme file with instructions for the team on how to run the app on local.
@@ -219,7 +219,7 @@ It just gives a sense of achievement we kickstarted and it's not like you are no
 <p>When you have a team working remotely, it's hard to have them follow the rules w.r.t structuring your components, files, directories, etc since React does not enforce any. So, sitting with the team and hear our how would they like to structure the application and why. Consolidate things, and define rules on what to call what, what to put where, etc. This worked perfectly for us and it went super smooth.</p>
 <p>I have a short post specifically for this. Check it <a href="https://lhuria94.github.io/structure-react-native-project%20copy/" target="_blank" rel="nofollow noopener noreferrer">out</a></p>
 <h2 id="analyse-essential-librariespackages-to-be-used">Analyse essential libraries/packages to be used</h2>
-<p>When you are working on React/React-native or any other JS framework, one of the important decision is to decide on the libraries. From my experience, a single bad decision on choosing a library that is going to be widely used can end up as a complete app refactor. That’s something happened to me, so I’d argue that you take your time, check the pros and cons of the library, compare it with others, and then decide.</p>
+<p>When you are working on React/React-native or any other JS framework, one of the important decision is to decide on the libraries. From my experience, a single bad decision on choosing a library that is going to be widely used can end up as a complete app refactor. That’s something that happened to me, so I’d argue that you take your time, check the pros and cons of the library, compare it with others, and then decide.</p>
 <h3 id="what-we-look-for-in-a-library">What we look for in a library:</h3>
 <ul>
 <li>Regular updates</li>
@@ -267,6 +267,6 @@ For that, it's essential that we keep the strategy of plugging in modes as and w
 <li>Automate the build &#x26; distribution process via CI/CD service (e.g. App Center)</li>
 </ul>
 <h2 id="choose-a-profiling-tool">Choose a Profiling tool</h2>
-<p>Profiling tool is necessary in order to look for potential bottlenecks during development. And this process should come as a part of your development cycle without worrying about the impacts/problems that might show up later.</p>
-<p>Thats all I had!</p>
+<p>A profiling tool is necessary in order to look for potential bottlenecks during development. And this process should come as a part of your development cycle without worrying about the impacts/problems that might show up later.</p>
+<p>That's all I had!</p>
 <p>Thanks for reading. 😃</p></div></section><section class="styled__RecommendedWrapper-c0obzs-0 heKbJR"><a class="styled__RecommendedLink-c0obzs-1 DhHOv previous" direction="left" href="/what-is-iam/">What is IAM? (A beginner&#x27;s guide)</a></section><section class="styled__CommentsWrapper-sc-1q8vbcb-0 hPHayL"><h2 class="styled__CommentsTitle-sc-1q8vbcb-1 bEUYFl">Comments</h2><div><div id="disqus_thread"></div></div></section></main></section></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/how-to-plan-and-execute-your-first-mobile-app-using-react-native/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-c5bded9e8116eaabdffc.js"],"app":["/app-82a12aa7f03a1e327cb7.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-ad6431e4664bcf916d19.js"],"component---src-pages-404-js":["/component---src-pages-404-js-e4d79d45234512f9474e.js"],"component---src-pages-about-js":["/component---src-pages-about-js-ff1eefa76dbdcd7cb7cb.js"],"component---src-pages-cursos-js":["/component---src-pages-cursos-js-b38f079114ef5acb8b9c.js"],"component---src-pages-search-js":["/component---src-pages-search-js-2190c1d8a746580e2de0.js"],"component---src-pages-series-js":["/component---src-pages-series-js-65f20223e6e7ac1f816e.js"],"component---src-templates-blog-list-js":["/component---src-templates-blog-list-js-b2a7c71f8dc68f3dd5a1.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-8dd243ec5ded56782f7e.js"]};/*]]>*/</script><script src="/polyfill-c5bded9e8116eaabdffc.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-8dd243ec5ded56782f7e.js" async=""></script><script src="/4525b1c2b02ad2e5ed069bdfee89f10821ffeb3f-88a41b98ac108115ea89.js" async=""></script><script src="/c920ec033e559e3d21b2f44264ae3005d993ef01-615806a2ce7e54440f22.js" async=""></script><script src="/app-82a12aa7f03a1e327cb7.js" async=""></script><script src="/532a2f07-98241c9de7d7b4ffe645.js" async=""></script><script src="/framework-a291878e40d05716050a.js" async=""></script><script src="/styles-540f25bd5e5cb35d6f53.js" async=""></script><script src="/webpack-runtime-6dfeec4f484ac48c5eef.js" async=""></script></body></html>
