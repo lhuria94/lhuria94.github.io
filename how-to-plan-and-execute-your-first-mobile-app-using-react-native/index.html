@@ -1,0 +1,279 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="8kDtWUmUQEh7QXoj_shRaxcgYAVpHs_YQ7TeniN0kmI"/><style data-href="/styles.884fc4cd88bb91762961.css">.tl-edges{max-width:100%;overflow-x:hidden}.tl-wrapper{width:100%;float:left;position:relative}.tl-wrapper+.tl-wrapper{margin-left:-100%;margin-right:0}code[class*=language-],pre[class*=language-]{color:#ccc;background:none;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><meta name="generator" content="Gatsby 2.24.85"/><title data-react-helmet="true">How to plan and execute your first mobile app using React Native | Love Huria</title><meta data-react-helmet="true" name="aplication-name" content="Love Huria Blog"/><meta data-react-helmet="true" name="description" content="Technical Lead | Consultant (Drupal/PHP/Laravel, React, React Native) at Srijan Technologies"/><meta data-react-helmet="true" property="og:image" content="https://lhuria94.github.io/assets/img/2020-05-25-how-to-plan-and-execute-your-first-mobile-app-using-react-native"/><meta data-react-helmet="true" property="og:title" content="How to plan and execute your first mobile app using React Native"/><meta data-react-helmet="true" property="og:description" content="Technical Lead | Consultant (Drupal/PHP/Laravel, React, React Native) at Srijan Technologies"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"/><meta data-react-helmet="true" name="twitter:image:src" content="https://lhuria94.github.io/assets/img/2020-05-25-how-to-plan-and-execute-your-first-mobile-app-using-react-native"/><meta data-react-helmet="true" name="twitter:creator" content="@lovehuria"/><meta data-react-helmet="true" name="twitter:title" content="How to plan and execute your first mobile app using React Native"/><meta data-react-helmet="true" name="twitter:description" content="Technical Lead | Consultant (Drupal/PHP/Laravel, React, React Native) at Srijan Technologies"/><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><style data-styled="" data-styled-version="5.1.0">.hPLjUw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+@media (max-width:1170px){.hPLjUw{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding-top:4.125rem;}}/*!sc*/
+data-styled.g25[id="styled__LayoutWrapper-qchwrn-0"]{content:"hPLjUw,"}/*!sc*/
+.hQYTXd{background:var(--background);min-height:100vh;padding:0 3.75rem 0 20rem;-webkit-transition:background 0.5s ease,color 0.5s ease;transition:background 0.5s ease,color 0.5s ease;width:100%;}/*!sc*/
+body#card .hQYTXd{grid-template-areas:'cards' 'pagination';}/*!sc*/
+@media (max-width:1170px){.hQYTXd{padding:0 0 3rem 0;}}/*!sc*/
+data-styled.g26[id="styled__LayoutMain-qchwrn-1"]{content:"hQYTXd,"}/*!sc*/
+.huSLRw{color:var(--postColor);margin:auto;max-width:70rem;padding:5rem 5rem 0;}/*!sc*/
+@media (max-width:1170px){.huSLRw{padding:3rem 0 0;max-width:100%;}}/*!sc*/
+data-styled.g27[id="base__PostHeader-sc-17fg8w0-0"]{content:"huSLRw,"}/*!sc*/
+.cOlZFa{font-size:4rem;font-weight:700;padding:0 1.4rem;margin:1rem auto;}/*!sc*/
+@media (max-width:1170px){.cOlZFa{font-size:2.8rem;line-height:1.1;padding:0 1rem;}}/*!sc*/
+data-styled.g28[id="base__PostTitle-sc-17fg8w0-1"]{content:"cOlZFa,"}/*!sc*/
+.dQtoxT{font-size:2rem;font-weight:200;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.dQtoxT{font-size:1.6rem;line-height:1.3;padding:0 1rem;}}/*!sc*/
+data-styled.g29[id="base__PostDescription-sc-17fg8w0-2"]{content:"dQtoxT,"}/*!sc*/
+.dhsbwc{font-size:1.1rem;font-weight:100;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.dhsbwc{padding:0 1rem;}}/*!sc*/
+data-styled.g30[id="base__PostDate-sc-17fg8w0-3"]{content:"dhsbwc,"}/*!sc*/
+.kXGJvp{margin:auto;max-width:70rem;padding:2rem 5rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp{padding:2rem 0;max-width:100%;}}/*!sc*/
+.kXGJvp p,.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp ul,.kXGJvp ol,.kXGJvp .tags,.kXGJvp iframe,.kXGJvp .button-post{color:var(--postColor);font-size:1.25rem;font-weight:300;line-height:1.7;-webkit-letter-spacing:0.069rem;-moz-letter-spacing:0.069rem;-ms-letter-spacing:0.069rem;letter-spacing:0.069rem;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp p,.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp ul,.kXGJvp ol,.kXGJvp .tags,.kXGJvp iframe,.kXGJvp .button-post{padding:0 1rem;word-break:break-word;}}/*!sc*/
+.kXGJvp p{margin:0 auto 1.6rem;}/*!sc*/
+.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp h5{margin:2.4rem auto 1rem;}/*!sc*/
+.kXGJvp ul,.kXGJvp ol{list-style:disc;padding-left:2.5rem;margin:0 auto 1.6rem;}/*!sc*/
+.kXGJvp li{padding:0.625rem 0;}/*!sc*/
+.kXGJvp li > ul{margin-bottom:0;}/*!sc*/
+.kXGJvp p code,.kXGJvp li code{word-wrap:break-word;}/*!sc*/
+.kXGJvp img{display:block;max-width:100%;margin:1.875rem auto;}/*!sc*/
+.kXGJvp iframe{padding:0 1.6rem 1.6rem;width:100%;}/*!sc*/
+@media (max-width:1170px){.kXGJvp iframe{padding:0 1rem;}}/*!sc*/
+.kXGJvp blockquote{color:var(--postColor);border-left:0.3rem solid var(--highlight);padding:0 1.875rem;margin:3.125rem auto;}/*!sc*/
+.kXGJvp hr{border:1px solid var(--borders);margin:3rem auto;}/*!sc*/
+.kXGJvp #twitter-widget-0,.kXGJvp .instagram-media,.kXGJvp .twitter-tweet{margin:20px auto !important;}/*!sc*/
+.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp h5{font-weight:800;-webkit-letter-spacing:0.069rem;-moz-letter-spacing:0.069rem;-ms-letter-spacing:0.069rem;letter-spacing:0.069rem;line-height:1.4;}/*!sc*/
+.kXGJvp h1{font-size:2.8rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h1{font-size:1.875rem;}}/*!sc*/
+.kXGJvp h2{font-size:2.1rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h2{font-size:1.375rem;}}/*!sc*/
+.kXGJvp h3{font-size:1.6rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h3{font-size:1.125rem;}}/*!sc*/
+.kXGJvp h4{font-size:1.4rem;}/*!sc*/
+.kXGJvp h5{font-size:1.2rem;}/*!sc*/
+.kXGJvp strong{font-weight:700;}/*!sc*/
+.kXGJvp .gatsby-resp-image-background-image{z-index:2;opacity:1 !important;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image{box-shadow:none !important;-webkit-transition:opacity 0.2s;transition:opacity 0.2s;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image.lazyload{opacity:0;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image.lazyloaded{opacity:1;z-index:3;}/*!sc*/
+.kXGJvp .gatsby-highlight{padding:0 1.6rem 1.6rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp .gatsby-highlight{padding:0;}}/*!sc*/
+.kXGJvp .instagram-media{margin:1rem auto !important;}/*!sc*/
+.kXGJvp a{border-bottom:1px dashed var(--highlight);color:var(--highlight);-webkit-text-decoration:none;text-decoration:none;-webkit-transition:opacity 0.5s;transition:opacity 0.5s;}/*!sc*/
+.kXGJvp a svg{color:var(--postColor);}/*!sc*/
+.kXGJvp a:hover{opacity:0.8;}/*!sc*/
+data-styled.g31[id="base__MainContent-sc-17fg8w0-4"]{content:"kXGJvp,"}/*!sc*/
+.heKbJR{border-bottom:1px solid var(--borders);border-top:1px solid var(--borders);background:var(--mediumBackground);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+data-styled.g51[id="styled__RecommendedWrapper-c0obzs-0"]{content:"heKbJR,"}/*!sc*/
+.DhHOv{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:var(--mediumBackground);color:var(--highlight);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding:3rem;-webkit-text-decoration:none;text-decoration:none;-webkit-transition:background 0.5s ease;transition:background 0.5s ease;width:50%;}/*!sc*/
+@media (max-width:1170px){.DhHOv{padding:2rem 1rem;line-height:1.3;font-size:.9rem;}}/*!sc*/
+.DhHOv:hover{background:var(--borders);}/*!sc*/
+.DhHOv.previous{border-right:1px solid var(--borders);}/*!sc*/
+.DhHOv.next{-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;}/*!sc*/
+.DhHOv.next:only-child{margin-left:auto;border-left:1px solid var(--borders);}/*!sc*/
+.DhHOv.previous:before{content:'\2190';margin-right:0.5rem;}/*!sc*/
+.DhHOv.next:after{content:'\2192';margin-left:0.5rem;}/*!sc*/
+data-styled.g52[id="styled__RecommendedLink-c0obzs-1"]{content:"DhHOv,"}/*!sc*/
+.hPHayL{margin:auto;max-width:70rem;padding:3rem 6.4rem 3rem;}/*!sc*/
+@media (max-width:1170px){.hPHayL{padding:3rem 1.4rem 0;max-width:100%;}}/*!sc*/
+.hPHayL iframe[src*='ads-iframe']{display:none;}/*!sc*/
+.hPHayL #disqus_thread a{color:var(--highlight) !important;}/*!sc*/
+data-styled.g53[id="styled__CommentsWrapper-sc-1q8vbcb-0"]{content:"hPHayL,"}/*!sc*/
+.bEUYFl{color:var(--postColor);font-size:2.1rem;font-weight:700;padding-bottom:2rem;}/*!sc*/
+@media (max-width:1170px){.bEUYFl{font-size:1.375rem;}}/*!sc*/
+data-styled.g54[id="styled__CommentsTitle-sc-1q8vbcb-1"]{content:"bEUYFl,"}/*!sc*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}/*!sc*/
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}/*!sc*/
+body{line-height:1;}/*!sc*/
+ol,ul{list-style:none;}/*!sc*/
+blockquote,q{quotes:none;}/*!sc*/
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}/*!sc*/
+table{border-collapse:collapse;border-spacing:0;}/*!sc*/
+*{box-sizing:border-box;}/*!sc*/
+body{background:var(--background);line-height:1;font-size:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}/*!sc*/
+img{display:block;width:100%;height:auto;}/*!sc*/
+body.dark{--borders:#38444d;--texts:#8899a6;--postColor:#fff;--highlight:#1fa1f2;--mediumBackground:#192734;--background:#16202c;--white:#fff;--black:#222;}/*!sc*/
+body.light{--borders:#dedede;--postColor:#111;--texts:#555555;--highlight:#1fa1f2;--mediumBackground:#f0f0f3;--background:#fff;--white:#fff;--black:#222;}/*!sc*/
+data-styled.g55[id="sc-global-gLPWrd1"]{content:"sc-global-gLPWrd1,"}/*!sc*/
+</style><link rel="alternate" type="application/rss+xml" title="Love Huria Blog - RSS Feed" href="/feed.xml"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-6dfeec4f484ac48c5eef.js"/><link as="script" rel="preload" href="/styles-540f25bd5e5cb35d6f53.js"/><link as="script" rel="preload" href="/framework-a291878e40d05716050a.js"/><link as="script" rel="preload" href="/532a2f07-98241c9de7d7b4ffe645.js"/><link as="script" rel="preload" href="/app-82a12aa7f03a1e327cb7.js"/><link as="script" rel="preload" href="/c920ec033e559e3d21b2f44264ae3005d993ef01-615806a2ce7e54440f22.js"/><link as="script" rel="preload" href="/4525b1c2b02ad2e5ed069bdfee89f10821ffeb3f-88a41b98ac108115ea89.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-8dd243ec5ded56782f7e.js"/><link as="fetch" rel="preload" href="/page-data/how-to-plan-and-execute-your-first-mobile-app-using-react-native/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/185390462.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/844308772.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body class="dark"><script>
+              (function() {
+                window.__onThemeChange = function() {};
+                function setTheme(newTheme) {
+                  window.__theme = newTheme;
+                  preferredTheme = newTheme;
+                  document.body.className = newTheme;
+                  window.__onThemeChange(newTheme);
+                }
+                var preferredTheme;
+                try {
+                  preferredTheme = localStorage.getItem('theme');
+                } catch (err) { }
+                window.__setPreferredTheme = function(newTheme) {
+                  setTheme(newTheme);
+                  try {
+                    localStorage.setItem('theme', newTheme);
+                  } catch (err) {}
+                }
+
+                setTheme(preferredTheme || 'dark');
+
+                window.__onDisplayChange = function() {};
+                function setDisplay(newDisplay) {
+                  window.__display = newDisplay;
+                  preferredDisplay = newDisplay;
+                  document.body.id = newDisplay;
+                  window.__onDisplayChange(newDisplay);
+                }
+                var preferredDisplay;
+                try {
+                  preferredDisplay = localStorage.getItem('display');
+                } catch (err) { }
+                window.__setPreferredDisplay = function(newDisplay) {
+                  setDisplay(newDisplay);
+                  try {
+                    localStorage.setItem('display', newDisplay);
+                  } catch (err) {}
+                }
+
+                setDisplay(preferredDisplay || 'list');
+              })();
+            </script><noscript>Your browser does not support JavaScript! =)</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="tl-edges"><div class="tl-wrapper tl-wrapper--mount tl-wrapper-status--entered" style="z-index:1;opacity:1"><section class="styled__LayoutWrapper-qchwrn-0 hPLjUw"><main class="styled__LayoutMain-qchwrn-1 hQYTXd"><header class="base__PostHeader-sc-17fg8w0-0 huSLRw"><p class="base__PostDate-sc-17fg8w0-3 dhsbwc">23 October 2020<!-- --> • <!-- -->7<!-- --> min read</p><h1 class="base__PostTitle-sc-17fg8w0-1 cOlZFa">How to plan and execute your first mobile app using React Native</h1><h2 class="base__PostDescription-sc-17fg8w0-2 dQtoxT"></h2></header><section class="base__MainContent-sc-17fg8w0-4 kXGJvp"><div><blockquote>
+<p>To give some background, I steered a project this year which was a hell of a challenge for me. "A corporate B2B2C mobile application". In this project, I understood the meaning of contributing not only from a programming point of view but also thinking through all aspects of it i.e. planning, setting up a foundation, asking the right questions to business, identifying tools, development/deployment practices along with keeping in mind that app also needs to be delivered on time.</p>
+</blockquote>
+<p>So, I thought about penning this down, because initially, I had to do a lot of exploration, at some places I got lost as well; therefore I am optimistic that this post will help someone who’s trying to achieve the same.</p>
+<p>Before we get into the tech side of it i.e any of the groundwork; it's essential that the scope and designs are clearly communicated to Business stakeholders considering what are we going to cover in a defined time-frame.</p>
+<h1 id="getting-started-with-discovery-and-design-phase">Getting started with "Discovery and Design" phase</h1>
+<p>For any project, or to be specific mobile-application in our case; laying down different features required in the system like offline capability, barcode scanners, background streaming, user's privacy &#x26; standard business requirements should be discussed and sorted out in its initial phase.</p>
+<p>I have seen it happen that in the mobile world; one thing could be obvious to your stakeholder but not to you.</p>
+<p>That's what this discovery and design phase includes.</p>
+<h2 id="listing-down-requirements">Listing down requirements</h2>
+<p>This included:</p>
+<ul>
+<li>the list of features we were going to deliver to the client with all possible workflows and getting their approvals on it keeping in mind any kind of change requests asked by the business during this phase.</li>
+<li>the list of devices we were going to test mentioning different resolutions, OS etc.</li>
+<li>the list of devices which would be tested on simulators or on a real device.</li>
+</ul>
+<h2 id="focusing-on-user-experience">Focusing on user experience</h2>
+<p>We believed in total transparency of showcasing the designs, having weekly demos, getting feedback from the stakeholders pro-actively. These meetings were important for everyone to understand how the mobile application will look and behave like; ultimately coming to consensus.</p>
+<h3 id="important-stakeholders-who-should-participate-during-this-activity">Important stakeholders who should participate during this activity</h3>
+<ul>
+<li>Design Lead</li>
+<li>Technical Lead</li>
+<li>Project Managers</li>
+<li>Business stakeholders</li>
+</ul>
+<h2 id="nfrs">NFRs</h2>
+<p>Along with the features list and scope, we also thought about NFRs from a mobile app perspective. NFRs should also be discussed and priortized amongst your stakeholders, there is a need sometimes to put the perspective in place; otherwise it will be just a clone of your web application.</p>
+<h3 id="some-examples-of-nfr-may-include">Some examples of NFR may include</h3>
+<ul>
+<li><code class="language-text">Responsiveness:</code> In this case, handle any kind of interruption usually by calls, text messages, switching apps, etc, and reverting back to the same state which you were doing before the interruption without losing your progress.</li>
+<li><code class="language-text">Screen Adaption:</code> With different mobile devices, we get various screen sizes and applications should be able to adapt to it.</li>
+<li><code class="language-text">Slow Connection / Handling n/w coverage:</code> Here, need to take care of the slow connection, show a proper message in case the app is not able to perform certain operations.</li>
+<li><code class="language-text">Performance:</code> This covers app startup time, quick scrolls, switching b/w operations, etc.</li>
+<li><code class="language-text">Security:</code> This means mostly using an encrypted data store (e.g. keychain), enabling ATS for secure communication, etc.</li>
+</ul>
+<h2 id="get-your-style-guide-ready">Get your Style-guide ready</h2>
+<p>Once you are sorted with designs, getting them approved; the next task for the designer would be to get the style guide ready for the developers to reference. It's highly important in order to start any of the development work or strategize your components.</p>
+<h3 id="usual-aspects-of-style-guide-are">Usual aspects of style-guide are</h3>
+<ul>
+<li>Font sizes, family to be used</li>
+<li>Error/success message variations</li>
+<li>Toast messages variations</li>
+<li>Type of buttons</li>
+<li>Color palette (Branding)</li>
+<li>Form fields variations (Text, Checkbox, Radio, Switch, etc.)</li>
+<li>..so on</li>
+</ul>
+<h1 id="technical-phase">Technical Phase</h1>
+<h2 id="bootstrap">Bootstrap</h2>
+<p>What gives me the confidence to execute anything, in general, is breaking down things into smaller chunks and that is the case even with new tech or a tech which I am confident with. If I have to give advice to someone on how to start a new project, I would say, sit down alone, think through and prepare a rough list of how would you want to break and execute. Define tasks and their outcomes.</p>
+<p>And this is the first step I did!! </p>
+<h2 id="setting-up-react-native-on-local-along-with-code-versioning">Setting up React native on local along with code versioning</h2>
+<p>As choosing a technology or a framework was a pre-requisite, setting up React native on local made sense. You might be thinking, what’s the big deal with that. There is NOT.
+It just gives a sense of achievement we kickstarted and it's not like you are not going to need it. 😉 </p>
+<h3 id="tasks-to-be-done-as-part-of-setting-up-rn-on-local">Tasks to be done as part of setting up RN on local</h3>
+<ul>
+<li>Setup a Github or Gitlab or bitbucket (Whatever you may like to use) with standard environment branches like development, staging, UAT &#x26; Production</li>
+<li>Setup the minimalistic React native application using RN CLI or Expo (I am not here to help you choose the one). But as a matter of fact, we chose RN CLI just because of the simplicity.</li>
+<li>Setup environment files (We used React native config package to use inside the application, it's pretty good).</li>
+<li>Add a basic Readme file with instructions for the team on how to run the app on local.
+<img src="/assets/img/2020-05-25-how-to-plan-and-execute-your-first-mobile-app-using-react-native/readme.png" alt="readme"></li>
+</ul>
+<h2 id="next-step-wasenforcing-linting-using-pre-commit-hooks-editor-configurations">Next step was...Enforcing linting using Pre-commit hooks, editor configurations</h2>
+<p>This was really important, because when reviewing code; you will see a lot of indent issues, basic standards not being followed in the team. So, it makes sense to set it up in the first place and enforce it.</p>
+<h3 id="tasks-to-be-done-as-part-of-enforcing-standards">Tasks to be done as part of enforcing standards</h3>
+<ul>
+<li>Setup Linter and Prettier rules for the application</li>
+<li>Add a pre-commit hook with ESlint rules in place</li>
+<li>Define an editor config to be used by the team (Assuming we’re using VS code) 😉
+<img src="/assets/img/2020-05-25-how-to-plan-and-execute-your-first-mobile-app-using-react-native/vsconfig.png" alt="vsconfig"></li>
+</ul>
+<h2 id="decide-on-the-directory-structure">Decide on the directory structure</h2>
+<p>When you have a team working remotely, it's hard to have them follow the rules w.r.t structuring your components, files, directories, etc since React does not enforce any. So, sitting with the team and hear our how would they like to structure the application and why. Consolidate things, and define rules on what to call what, what to put where, etc. This worked perfectly for us and it went super smooth.</p>
+<p>I have a short post specifically for this. Check it <a href="https://lhuria94.github.io/structure-react-native-project-copy/" target="_blank" rel="nofollow noopener noreferrer">out</a></p>
+<h2 id="analyse-essential-librariespackages-to-be-used">Analyse essential libraries/packages to be used</h2>
+<p>When you are working on React/React-native or any other JS framework, one of the important decision is to decide on the libraries. From my experience, a single bad decision on choosing a library that is going to be widely used can end up as a complete app refactor. That’s something happened to me, so I’d argue that you take your time, check the pros and cons of the library, compare it with others, and then decide.</p>
+<h3 id="what-we-look-for-in-a-library">What we look for in a library:</h3>
+<ul>
+<li>Regular updates</li>
+<li>Open issues</li>
+<li>Community adoption &#x26; support</li>
+<li>Size</li>
+<li>Documentation</li>
+</ul>
+<h3 id="examples-of-most-common-use-cases-for-analysis">Examples of most common use-cases for analysis:</h3>
+<ul>
+<li>Forms Library or Custom forms</li>
+<li>Styled components or SCSS or a mix of both</li>
+<li>Choosing Storybook</li>
+<li>File upload/picker</li>
+<li>UI library or Custom components/theme</li>
+</ul>
+<h2 id="setup-basic-typography">Setup basic Typography</h2>
+<p>Assuming that we have a style guide provided by the UI designer, the next step would be to analyze and come up with the list of re-usable typographies that will be used throughout the application.
+This is necessary since you don't want the team to create the styles again and again when they feel the need.</p>
+<h3 id="example-of-typography-components">Example of Typography components:</h3>
+<ul>
+<li>Heading</li>
+<li>SubHeading</li>
+<li>Section</li>
+<li>Body</li>
+<li>Paragraph</li>
+<li>Link</li>
+</ul>
+<h2 id="setup-theme">Setup Theme</h2>
+<p>When you are working on a mobile app, there is a good chance that you will need to take care of dark mode as well.
+For that, it's essential that we keep the strategy of plugging in modes as and when required.</p>
+<h3 id="tasks-we-did-to-make-sure-our-app-is-ready-for-dark-mode-requirements-as-and-when-asked">Tasks we did to make sure our app is ready for dark mode requirements as and when asked</h3>
+<ul>
+<li>Setup a theme provider</li>
+<li>Create both light.js and dark.js theme</li>
+<li>Setup the branding colors, fonts, basic spacers, etc.</li>
+</ul>
+<h3 id="what-is-iam-identity-and-access-management">What is IAM (Identity and access management)?</h3>
+<p>If we wanted to understand in simple words, let's break it down:</p>
+<ul>
+<li><strong>The first word is Identity ~</strong> This, we can relate to the punch card attendance system. It's usually a flat and stiff paper and contains digital information, people just need to wave near a reader, and then ensures whether the correct person is logging in/out. Similarly, here it also means <code class="language-text">verifying the user who they claim to be</code>.</li>
+<li><strong>Second is Access ~</strong> This determines what level of access is provided to an individual. An easy way to understand is if you go to a nightclub/Casino, and there are guards taking care of who is allowed to come in, who can access the VIP area.</li>
+<li><strong>Third is Management ~</strong> All of this falls under IT (Security) departments to manage the access control, policies, reporting, etc.</li>
+</ul>
+<h1 id="qa-phase">QA Phase</h1>
+<h2 id="setup-beta-application">Setup beta application</h2>
+<p>In order to set up the distribution means or link the application to a business entity, we would need an application setup in the App Store. Using which we will be able to get our application tested via Testflight or exporting an IPA/APK file respectively.</p>
+<h3 id="tasks-to-do-here">Tasks to do here</h3>
+<ul>
+<li>Setup test application for different environments</li>
+<li>Enable QA’s to download the app via Testflight</li>
+<li>Automate the build &#x26; distribution process via CI/CD service (e.g. App Center)</li>
+</ul>
+<h2 id="choose-a-profiling-tool">Choose a Profiling tool</h2>
+<p>Profiling tool is necessary in order to look for potential bottlenecks during development. And this process should come as a part of your development cycle without worrying about the impacts/problems that might show up later.</p>
+<p>Thats all I had!</p>
+<p>Thanks for reading. 😃</p></div></section><section class="styled__RecommendedWrapper-c0obzs-0 heKbJR"><a class="styled__RecommendedLink-c0obzs-1 DhHOv previous" direction="left" href="/what-is-iam/">What is IAM? (A beginner&#x27;s guide)</a></section><section class="styled__CommentsWrapper-sc-1q8vbcb-0 hPHayL"><h2 class="styled__CommentsTitle-sc-1q8vbcb-1 bEUYFl">Comments</h2><div><div id="disqus_thread"></div></div></section></main></section></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/how-to-plan-and-execute-your-first-mobile-app-using-react-native/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-c5bded9e8116eaabdffc.js"],"app":["/app-82a12aa7f03a1e327cb7.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-ad6431e4664bcf916d19.js"],"component---src-pages-404-js":["/component---src-pages-404-js-e4d79d45234512f9474e.js"],"component---src-pages-about-js":["/component---src-pages-about-js-ff1eefa76dbdcd7cb7cb.js"],"component---src-pages-cursos-js":["/component---src-pages-cursos-js-b38f079114ef5acb8b9c.js"],"component---src-pages-search-js":["/component---src-pages-search-js-2190c1d8a746580e2de0.js"],"component---src-pages-series-js":["/component---src-pages-series-js-65f20223e6e7ac1f816e.js"],"component---src-templates-blog-list-js":["/component---src-templates-blog-list-js-b2a7c71f8dc68f3dd5a1.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-8dd243ec5ded56782f7e.js"]};/*]]>*/</script><script src="/polyfill-c5bded9e8116eaabdffc.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-8dd243ec5ded56782f7e.js" async=""></script><script src="/4525b1c2b02ad2e5ed069bdfee89f10821ffeb3f-88a41b98ac108115ea89.js" async=""></script><script src="/c920ec033e559e3d21b2f44264ae3005d993ef01-615806a2ce7e54440f22.js" async=""></script><script src="/app-82a12aa7f03a1e327cb7.js" async=""></script><script src="/532a2f07-98241c9de7d7b4ffe645.js" async=""></script><script src="/framework-a291878e40d05716050a.js" async=""></script><script src="/styles-540f25bd5e5cb35d6f53.js" async=""></script><script src="/webpack-runtime-6dfeec4f484ac48c5eef.js" async=""></script></body></html>
