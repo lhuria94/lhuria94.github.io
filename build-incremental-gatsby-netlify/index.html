@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="8kDtWUmUQEh7QXoj_shRaxcgYAVpHs_YQ7TeniN0kmI"/><style data-href="/styles.884fc4cd88bb91762961.css">.tl-edges{max-width:100%;overflow-x:hidden}.tl-wrapper{width:100%;float:left;position:relative}.tl-wrapper+.tl-wrapper{margin-left:-100%;margin-right:0}code[class*=language-],pre[class*=language-]{color:#ccc;background:none;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><meta name="generator" content="Gatsby 2.24.85"/><title data-react-helmet="true">Como habilitar builds incrementais do Gatsby no Netlify | Love Huria</title><meta data-react-helmet="true" name="aplication-name" content="Love Huria Blog"/><meta data-react-helmet="true" name="description" content="Tenha builds muito mais rápidos com a nova atualização do Gatsby Incremental Build."/><meta data-react-helmet="true" property="og:image" content="https://lhuria94.github.io/assets/img/netlify/main.png"/><meta data-react-helmet="true" property="og:title" content="Como habilitar builds incrementais do Gatsby no Netlify"/><meta data-react-helmet="true" property="og:description" content="Tenha builds muito mais rápidos com a nova atualização do Gatsby Incremental Build."/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"/><meta data-react-helmet="true" name="twitter:image:src" content="https://lhuria94.github.io/assets/img/netlify/main.png"/><meta data-react-helmet="true" name="twitter:creator" content="@lovehuria"/><meta data-react-helmet="true" name="twitter:title" content="Como habilitar builds incrementais do Gatsby no Netlify"/><meta data-react-helmet="true" name="twitter:description" content="Tenha builds muito mais rápidos com a nova atualização do Gatsby Incremental Build."/><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><style data-styled="" data-styled-version="5.1.0">.hPLjUw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+@media (max-width:1170px){.hPLjUw{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding-top:4.125rem;}}/*!sc*/
+data-styled.g25[id="styled__LayoutWrapper-qchwrn-0"]{content:"hPLjUw,"}/*!sc*/
+.hQYTXd{background:var(--background);min-height:100vh;padding:0 3.75rem 0 20rem;-webkit-transition:background 0.5s ease,color 0.5s ease;transition:background 0.5s ease,color 0.5s ease;width:100%;}/*!sc*/
+body#card .hQYTXd{grid-template-areas:'cards' 'pagination';}/*!sc*/
+@media (max-width:1170px){.hQYTXd{padding:0 0 3rem 0;}}/*!sc*/
+data-styled.g26[id="styled__LayoutMain-qchwrn-1"]{content:"hQYTXd,"}/*!sc*/
+.huSLRw{color:var(--postColor);margin:auto;max-width:70rem;padding:5rem 5rem 0;}/*!sc*/
+@media (max-width:1170px){.huSLRw{padding:3rem 0 0;max-width:100%;}}/*!sc*/
+data-styled.g27[id="base__PostHeader-sc-17fg8w0-0"]{content:"huSLRw,"}/*!sc*/
+.cOlZFa{font-size:4rem;font-weight:700;padding:0 1.4rem;margin:1rem auto;}/*!sc*/
+@media (max-width:1170px){.cOlZFa{font-size:2.8rem;line-height:1.1;padding:0 1rem;}}/*!sc*/
+data-styled.g28[id="base__PostTitle-sc-17fg8w0-1"]{content:"cOlZFa,"}/*!sc*/
+.dQtoxT{font-size:2rem;font-weight:200;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.dQtoxT{font-size:1.6rem;line-height:1.3;padding:0 1rem;}}/*!sc*/
+data-styled.g29[id="base__PostDescription-sc-17fg8w0-2"]{content:"dQtoxT,"}/*!sc*/
+.dhsbwc{font-size:1.1rem;font-weight:100;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.dhsbwc{padding:0 1rem;}}/*!sc*/
+data-styled.g30[id="base__PostDate-sc-17fg8w0-3"]{content:"dhsbwc,"}/*!sc*/
+.kXGJvp{margin:auto;max-width:70rem;padding:2rem 5rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp{padding:2rem 0;max-width:100%;}}/*!sc*/
+.kXGJvp p,.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp ul,.kXGJvp ol,.kXGJvp .tags,.kXGJvp iframe,.kXGJvp .button-post{color:var(--postColor);font-size:1.25rem;font-weight:300;line-height:1.7;-webkit-letter-spacing:0.069rem;-moz-letter-spacing:0.069rem;-ms-letter-spacing:0.069rem;letter-spacing:0.069rem;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp p,.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp ul,.kXGJvp ol,.kXGJvp .tags,.kXGJvp iframe,.kXGJvp .button-post{padding:0 1rem;word-break:break-word;}}/*!sc*/
+.kXGJvp p{margin:0 auto 1.6rem;}/*!sc*/
+.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp h5{margin:2.4rem auto 1rem;}/*!sc*/
+.kXGJvp ul,.kXGJvp ol{list-style:disc;padding-left:2.5rem;margin:0 auto 1.6rem;}/*!sc*/
+.kXGJvp li{padding:0.625rem 0;}/*!sc*/
+.kXGJvp li > ul{margin-bottom:0;}/*!sc*/
+.kXGJvp p code,.kXGJvp li code{word-wrap:break-word;}/*!sc*/
+.kXGJvp img{display:block;max-width:100%;margin:1.875rem auto;}/*!sc*/
+.kXGJvp iframe{padding:0 1.6rem 1.6rem;width:100%;}/*!sc*/
+@media (max-width:1170px){.kXGJvp iframe{padding:0 1rem;}}/*!sc*/
+.kXGJvp blockquote{color:var(--postColor);border-left:0.3rem solid var(--highlight);padding:0 1.875rem;margin:3.125rem auto;}/*!sc*/
+.kXGJvp hr{border:1px solid var(--borders);margin:3rem auto;}/*!sc*/
+.kXGJvp #twitter-widget-0,.kXGJvp .instagram-media,.kXGJvp .twitter-tweet{margin:20px auto !important;}/*!sc*/
+.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp h5{font-weight:800;-webkit-letter-spacing:0.069rem;-moz-letter-spacing:0.069rem;-ms-letter-spacing:0.069rem;letter-spacing:0.069rem;line-height:1.4;}/*!sc*/
+.kXGJvp h1{font-size:2.8rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h1{font-size:1.875rem;}}/*!sc*/
+.kXGJvp h2{font-size:2.1rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h2{font-size:1.375rem;}}/*!sc*/
+.kXGJvp h3{font-size:1.6rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h3{font-size:1.125rem;}}/*!sc*/
+.kXGJvp h4{font-size:1.4rem;}/*!sc*/
+.kXGJvp h5{font-size:1.2rem;}/*!sc*/
+.kXGJvp strong{font-weight:700;}/*!sc*/
+.kXGJvp .gatsby-resp-image-background-image{z-index:2;opacity:1 !important;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image{box-shadow:none !important;-webkit-transition:opacity 0.2s;transition:opacity 0.2s;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image.lazyload{opacity:0;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image.lazyloaded{opacity:1;z-index:3;}/*!sc*/
+.kXGJvp .gatsby-highlight{padding:0 1.6rem 1.6rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp .gatsby-highlight{padding:0;}}/*!sc*/
+.kXGJvp .instagram-media{margin:1rem auto !important;}/*!sc*/
+.kXGJvp a{border-bottom:1px dashed var(--highlight);color:var(--highlight);-webkit-text-decoration:none;text-decoration:none;-webkit-transition:opacity 0.5s;transition:opacity 0.5s;}/*!sc*/
+.kXGJvp a svg{color:var(--postColor);}/*!sc*/
+.kXGJvp a:hover{opacity:0.8;}/*!sc*/
+data-styled.g31[id="base__MainContent-sc-17fg8w0-4"]{content:"kXGJvp,"}/*!sc*/
+.heKbJR{border-bottom:1px solid var(--borders);border-top:1px solid var(--borders);background:var(--mediumBackground);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+data-styled.g51[id="styled__RecommendedWrapper-c0obzs-0"]{content:"heKbJR,"}/*!sc*/
+.DhHOv{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:var(--mediumBackground);color:var(--highlight);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding:3rem;-webkit-text-decoration:none;text-decoration:none;-webkit-transition:background 0.5s ease;transition:background 0.5s ease;width:50%;}/*!sc*/
+@media (max-width:1170px){.DhHOv{padding:2rem 1rem;line-height:1.3;font-size:.9rem;}}/*!sc*/
+.DhHOv:hover{background:var(--borders);}/*!sc*/
+.DhHOv.previous{border-right:1px solid var(--borders);}/*!sc*/
+.DhHOv.next{-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;}/*!sc*/
+.DhHOv.next:only-child{margin-left:auto;border-left:1px solid var(--borders);}/*!sc*/
+.DhHOv.previous:before{content:'\2190';margin-right:0.5rem;}/*!sc*/
+.DhHOv.next:after{content:'\2192';margin-left:0.5rem;}/*!sc*/
+data-styled.g52[id="styled__RecommendedLink-c0obzs-1"]{content:"DhHOv,"}/*!sc*/
+.hPHayL{margin:auto;max-width:70rem;padding:3rem 6.4rem 3rem;}/*!sc*/
+@media (max-width:1170px){.hPHayL{padding:3rem 1.4rem 0;max-width:100%;}}/*!sc*/
+.hPHayL iframe[src*='ads-iframe']{display:none;}/*!sc*/
+.hPHayL #disqus_thread a{color:var(--highlight) !important;}/*!sc*/
+data-styled.g53[id="styled__CommentsWrapper-sc-1q8vbcb-0"]{content:"hPHayL,"}/*!sc*/
+.bEUYFl{color:var(--postColor);font-size:2.1rem;font-weight:700;padding-bottom:2rem;}/*!sc*/
+@media (max-width:1170px){.bEUYFl{font-size:1.375rem;}}/*!sc*/
+data-styled.g54[id="styled__CommentsTitle-sc-1q8vbcb-1"]{content:"bEUYFl,"}/*!sc*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}/*!sc*/
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}/*!sc*/
+body{line-height:1;}/*!sc*/
+ol,ul{list-style:none;}/*!sc*/
+blockquote,q{quotes:none;}/*!sc*/
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}/*!sc*/
+table{border-collapse:collapse;border-spacing:0;}/*!sc*/
+*{box-sizing:border-box;}/*!sc*/
+body{background:var(--background);line-height:1;font-size:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}/*!sc*/
+img{display:block;width:100%;height:auto;}/*!sc*/
+body.dark{--borders:#38444d;--texts:#8899a6;--postColor:#fff;--highlight:#1fa1f2;--mediumBackground:#192734;--background:#16202c;--white:#fff;--black:#222;}/*!sc*/
+body.light{--borders:#dedede;--postColor:#111;--texts:#555555;--highlight:#1fa1f2;--mediumBackground:#f0f0f3;--background:#fff;--white:#fff;--black:#222;}/*!sc*/
+data-styled.g55[id="sc-global-gLPWrd1"]{content:"sc-global-gLPWrd1,"}/*!sc*/
+</style><link rel="alternate" type="application/rss+xml" title="Love Huria Blog - RSS Feed" href="/feed.xml"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-49b21ad2fc5587bb9967.js"/><link as="script" rel="preload" href="/styles-540f25bd5e5cb35d6f53.js"/><link as="script" rel="preload" href="/framework-a291878e40d05716050a.js"/><link as="script" rel="preload" href="/532a2f07-98241c9de7d7b4ffe645.js"/><link as="script" rel="preload" href="/app-82a12aa7f03a1e327cb7.js"/><link as="script" rel="preload" href="/c920ec033e559e3d21b2f44264ae3005d993ef01-615806a2ce7e54440f22.js"/><link as="script" rel="preload" href="/4525b1c2b02ad2e5ed069bdfee89f10821ffeb3f-88a41b98ac108115ea89.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-8dd243ec5ded56782f7e.js"/><link as="fetch" rel="preload" href="/page-data/build-incremental-gatsby-netlify/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/185390462.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/844308772.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body class="dark"><script>
+              (function() {
+                window.__onThemeChange = function() {};
+                function setTheme(newTheme) {
+                  window.__theme = newTheme;
+                  preferredTheme = newTheme;
+                  document.body.className = newTheme;
+                  window.__onThemeChange(newTheme);
+                }
+                var preferredTheme;
+                try {
+                  preferredTheme = localStorage.getItem('theme');
+                } catch (err) { }
+                window.__setPreferredTheme = function(newTheme) {
+                  setTheme(newTheme);
+                  try {
+                    localStorage.setItem('theme', newTheme);
+                  } catch (err) {}
+                }
+
+                setTheme(preferredTheme || 'dark');
+
+                window.__onDisplayChange = function() {};
+                function setDisplay(newDisplay) {
+                  window.__display = newDisplay;
+                  preferredDisplay = newDisplay;
+                  document.body.id = newDisplay;
+                  window.__onDisplayChange(newDisplay);
+                }
+                var preferredDisplay;
+                try {
+                  preferredDisplay = localStorage.getItem('display');
+                } catch (err) { }
+                window.__setPreferredDisplay = function(newDisplay) {
+                  setDisplay(newDisplay);
+                  try {
+                    localStorage.setItem('display', newDisplay);
+                  } catch (err) {}
+                }
+
+                setDisplay(preferredDisplay || 'list');
+              })();
+            </script><noscript>Your browser does not support JavaScript! =)</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="tl-edges"><div class="tl-wrapper tl-wrapper--mount tl-wrapper-status--entered" style="z-index:1;opacity:1"><section class="styled__LayoutWrapper-qchwrn-0 hPLjUw"><main class="styled__LayoutMain-qchwrn-1 hQYTXd"><header class="base__PostHeader-sc-17fg8w0-0 huSLRw"><p class="base__PostDate-sc-17fg8w0-3 dhsbwc">24 April 2020<!-- --> • <!-- -->3<!-- --> min read</p><h1 class="base__PostTitle-sc-17fg8w0-1 cOlZFa">Como habilitar builds incrementais do Gatsby no Netlify</h1><h2 class="base__PostDescription-sc-17fg8w0-2 dQtoxT">Tenha builds muito mais rápidos com a nova atualização do Gatsby Incremental Build.</h2></header><section class="base__MainContent-sc-17fg8w0-4 kXGJvp"><div><h2 id="introducao">Introdução</h2>
+<p>Dando uma leve pausa dos <a href="https://lhuria94.github.io/series/#dicas-de-css" target="_blank" rel="nofollow noopener noreferrer">vídeos de dicas de CSS</a>, o post de hoje vai ser rapidinho, mas foi extremamente útil para mim e tenho certeza que será super útil para todos aqueles que já fizeram o meu <a href="https://www.udemy.com/course/gatsby-crie-um-site-pwa-com-react-graphql-e-netlify-cms/?couponCode=ESTUDEEMCASA" target="_blank" rel="nofollow noopener noreferrer">Curso de Gatsby: Crie um Site PWA com React, GraphQL e Netlify CMS</a>.</p>
+<p>Ontem o Gatsby lançou essa nova feature chamada de <a href="https://www.gatsbyjs.org/docs/page-build-optimizations-for-incremental-data-changes/" target="_blank" rel="nofollow noopener noreferrer">Experimental Page Build Optimizations for Incremental Data Changes</a>, onde eles criam um cache e fazem o build somente do que é necessário, fazendo com que certos builds que demoravam <strong>~10min</strong> passem a demorar <strong>~1min</strong>!</p>
+<p>Existem duas vantagens nisso, a primeira e mais óbvia é o ganho de tempo, já que você terá algo no ar muito mais rápido. A outra questão é que se você utiliza o <a href="https://www.netlify.com/pricing/" target="_blank" rel="nofollow noopener noreferrer">Netlify gratuito</a> deve saber que eles deixam somente <strong>300 minutos/mês</strong>. Ou seja, em 30 deploys você acabaria gastando toda a quota do mês e isso não é nada legal né?</p>
+<p>Bom, vamos deixar de papo furado e fazer logo isso funcionar né? Dá o play nessa <a href="https://open.spotify.com/playlist/37i9dQZF1DX0wMD4IoQ5aJ?si=-A5AVvQYQ76dRp_ZHFgzIQ" target="_blank" rel="nofollow noopener noreferrer">playlist de Eletronic Focus</a> e vamos nessa!</p>
+<h3 id="passo-1---atualize-o-gatsby-para-v2204-ou-maior">Passo 1 - Atualize o Gatsby para v2.20.4 ou maior</h3>
+<p>Essa nova feature veio somente na versão mais atual, então rode:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token comment"># se utilizar npm</span>
+<span class="token function">npm</span> <span class="token function">install</span> gatsby@latest
+
+<span class="token comment"># se utilizar yarn</span>
+<span class="token function">yarn</span> upgrade gatsby@latest</code></pre></div>
+<h3 id="passo-2---habilite-o-netlify-build-plugins">Passo 2 - Habilite o Netlify Build Plugins</h3>
+<p>Para que a gente consiga salvar o cache entre os builds é necessário utilizar um build plugin, como essa é uma feature bem nova do Netlify, é necessário que você habilite através do <a href="https://app.netlify.com/enable-beta" target="_blank" rel="nofollow noopener noreferrer">seguinte link</a>.</p>
+<p>Para saber mais informações do Beta, só <a href="https://docs.netlify.com/configure-builds/build-plugins/" target="_blank" rel="nofollow noopener noreferrer">entrar neste link</a>.</p>
+<h3 id="passo-3---adicione-o-gatsby-cache-netlify-build-plugin">Passo 3 - Adicione o Gatsby Cache Netlify Build Plugin</h3>
+<p>Os builds incrementais dependem completamente do cache do Gatsby, portanto precisamos habilitar o <code class="language-text">netlify-plugin-gatsby-cache</code>, que vai persistir as pastas <code class="language-text">public</code> e <code class="language-text">.cache</code> entre os builds.</p>
+<p>No seu arquivo <code class="language-text">netlify.toml</code> na raiz do projeto, adicione o seguinte:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token punctuation">[</span><span class="token punctuation">[</span>plugins<span class="token punctuation">]</span><span class="token punctuation">]</span>
+  package <span class="token operator">=</span> <span class="token string">"netlify-plugin-gatsby-cache"</span></code></pre></div>
+<h3 id="passo-4---adicione-a-flag-para-habilitar-o-gatsby-incremental-builds">Passo 4 - Adicione a flag para habilitar o Gatsby incremental builds</h3>
+<p>Atualize o comando de <code class="language-text">build</code> no seu <code class="language-text">package.json</code> para incluir a seguinte flag:</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"develop"</span><span class="token operator">:</span> <span class="token string">"gatsby develop"</span><span class="token punctuation">,</span>
+  <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages"</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>A flag <code class="language-text">--log-pages</code> irá mostrar quais páginas o Gatsby fez build em cada deploy, é opcional e se você quiser, basta remover.</p>
+<h3 id="passo-5-faca-alguma-mudanca-e-veja-funcionando">Passo 5: Faça alguma mudança e veja funcionando!</h3>
+<p>Assim que você fizer todas as mudanças acima, o site já estará preparado para os builds incrementais. Na primeira vez que você subir alguma mudança, ele irá demorar o mesmo tempo que já demora atualmente, porém já guardando os arquivos no cache.</p>
+<p>Na segunda vez que você rodar, prepare-se para um build bem mais rápido!</p>
+<h2 id="conclusao">Conclusão</h2>
+<p>É isso aí galera, foi um post rapidinho, mas que espero que seja útil para todos vocês, eu amo a dupla Gatsby+Netlify e eles estão cada vez mais se superando!</p>
+<p>E se você não chegou a fazer meu curso de Gatsby, aproveita esse <a href="https://www.udemy.com/course/gatsby-crie-um-site-pwa-com-react-graphql-e-netlify-cms/?couponCode=ESTUDEEMCASA" target="_blank" rel="nofollow noopener noreferrer">lindo cupom de desconto</a> e corre logo para estudar!</p></div></section><section class="styled__RecommendedWrapper-c0obzs-0 heKbJR"><a class="styled__RecommendedLink-c0obzs-1 DhHOv previous" direction="left" href="/structure-react-native-project copy/">Structure a React Native App</a><a class="styled__RecommendedLink-c0obzs-1 DhHOv next" direction="right" href="/what-is-iam/">What is IAM? (A beginner&#x27;s guide)</a></section><section class="styled__CommentsWrapper-sc-1q8vbcb-0 hPHayL"><h2 class="styled__CommentsTitle-sc-1q8vbcb-1 bEUYFl">Comments</h2><div><div id="disqus_thread"></div></div></section></main></section></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/build-incremental-gatsby-netlify/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-c5bded9e8116eaabdffc.js"],"app":["/app-82a12aa7f03a1e327cb7.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-ad6431e4664bcf916d19.js"],"component---src-pages-404-js":["/component---src-pages-404-js-e4d79d45234512f9474e.js"],"component---src-pages-about-js":["/component---src-pages-about-js-ff1eefa76dbdcd7cb7cb.js"],"component---src-pages-cursos-js":["/component---src-pages-cursos-js-b38f079114ef5acb8b9c.js"],"component---src-pages-search-js":["/component---src-pages-search-js-35a7c64a96ef5e25ea63.js"],"component---src-pages-series-js":["/component---src-pages-series-js-65f20223e6e7ac1f816e.js"],"component---src-templates-blog-list-js":["/component---src-templates-blog-list-js-b2a7c71f8dc68f3dd5a1.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-8dd243ec5ded56782f7e.js"]};/*]]>*/</script><script src="/polyfill-c5bded9e8116eaabdffc.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-8dd243ec5ded56782f7e.js" async=""></script><script src="/4525b1c2b02ad2e5ed069bdfee89f10821ffeb3f-88a41b98ac108115ea89.js" async=""></script><script src="/c920ec033e559e3d21b2f44264ae3005d993ef01-615806a2ce7e54440f22.js" async=""></script><script src="/app-82a12aa7f03a1e327cb7.js" async=""></script><script src="/532a2f07-98241c9de7d7b4ffe645.js" async=""></script><script src="/framework-a291878e40d05716050a.js" async=""></script><script src="/styles-540f25bd5e5cb35d6f53.js" async=""></script><script src="/webpack-runtime-49b21ad2fc5587bb9967.js" async=""></script></body></html>

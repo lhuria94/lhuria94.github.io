@@ -1,310 +1,181 @@
-<!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/BlogPosting" class="post-devops">
-    <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="8kDtWUmUQEh7QXoj_shRaxcgYAVpHs_YQ7TeniN0kmI"/><style data-href="/styles.884fc4cd88bb91762961.css">.tl-edges{max-width:100%;overflow-x:hidden}.tl-wrapper{width:100%;float:left;position:relative}.tl-wrapper+.tl-wrapper{margin-left:-100%;margin-right:0}code[class*=language-],pre[class*=language-]{color:#ccc;background:none;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><meta name="generator" content="Gatsby 2.24.85"/><title data-react-helmet="true">Making Docker Compose Work with Drupal | Love Huria</title><meta data-react-helmet="true" name="aplication-name" content="Love Huria Blog"/><meta data-react-helmet="true" name="description" content="How to make docker compose work with Drupal"/><meta data-react-helmet="true" property="og:image" content="https://lhuria94.github.io/assets/img/"/><meta data-react-helmet="true" property="og:title" content="Making Docker Compose Work with Drupal"/><meta data-react-helmet="true" property="og:description" content="How to make docker compose work with Drupal"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"/><meta data-react-helmet="true" name="twitter:image:src" content="https://lhuria94.github.io/assets/img/"/><meta data-react-helmet="true" name="twitter:creator" content="@lovehuria"/><meta data-react-helmet="true" name="twitter:title" content="Making Docker Compose Work with Drupal"/><meta data-react-helmet="true" name="twitter:description" content="How to make docker compose work with Drupal"/><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><style data-styled="" data-styled-version="5.1.0">.hPLjUw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+@media (max-width:1170px){.hPLjUw{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding-top:4.125rem;}}/*!sc*/
+data-styled.g25[id="styled__LayoutWrapper-qchwrn-0"]{content:"hPLjUw,"}/*!sc*/
+.hQYTXd{background:var(--background);min-height:100vh;padding:0 3.75rem 0 20rem;-webkit-transition:background 0.5s ease,color 0.5s ease;transition:background 0.5s ease,color 0.5s ease;width:100%;}/*!sc*/
+body#card .hQYTXd{grid-template-areas:'cards' 'pagination';}/*!sc*/
+@media (max-width:1170px){.hQYTXd{padding:0 0 3rem 0;}}/*!sc*/
+data-styled.g26[id="styled__LayoutMain-qchwrn-1"]{content:"hQYTXd,"}/*!sc*/
+.huSLRw{color:var(--postColor);margin:auto;max-width:70rem;padding:5rem 5rem 0;}/*!sc*/
+@media (max-width:1170px){.huSLRw{padding:3rem 0 0;max-width:100%;}}/*!sc*/
+data-styled.g27[id="base__PostHeader-sc-17fg8w0-0"]{content:"huSLRw,"}/*!sc*/
+.cOlZFa{font-size:4rem;font-weight:700;padding:0 1.4rem;margin:1rem auto;}/*!sc*/
+@media (max-width:1170px){.cOlZFa{font-size:2.8rem;line-height:1.1;padding:0 1rem;}}/*!sc*/
+data-styled.g28[id="base__PostTitle-sc-17fg8w0-1"]{content:"cOlZFa,"}/*!sc*/
+.dQtoxT{font-size:2rem;font-weight:200;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.dQtoxT{font-size:1.6rem;line-height:1.3;padding:0 1rem;}}/*!sc*/
+data-styled.g29[id="base__PostDescription-sc-17fg8w0-2"]{content:"dQtoxT,"}/*!sc*/
+.dhsbwc{font-size:1.1rem;font-weight:100;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.dhsbwc{padding:0 1rem;}}/*!sc*/
+data-styled.g30[id="base__PostDate-sc-17fg8w0-3"]{content:"dhsbwc,"}/*!sc*/
+.kXGJvp{margin:auto;max-width:70rem;padding:2rem 5rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp{padding:2rem 0;max-width:100%;}}/*!sc*/
+.kXGJvp p,.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp ul,.kXGJvp ol,.kXGJvp .tags,.kXGJvp iframe,.kXGJvp .button-post{color:var(--postColor);font-size:1.25rem;font-weight:300;line-height:1.7;-webkit-letter-spacing:0.069rem;-moz-letter-spacing:0.069rem;-ms-letter-spacing:0.069rem;letter-spacing:0.069rem;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp p,.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp ul,.kXGJvp ol,.kXGJvp .tags,.kXGJvp iframe,.kXGJvp .button-post{padding:0 1rem;word-break:break-word;}}/*!sc*/
+.kXGJvp p{margin:0 auto 1.6rem;}/*!sc*/
+.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp h5{margin:2.4rem auto 1rem;}/*!sc*/
+.kXGJvp ul,.kXGJvp ol{list-style:disc;padding-left:2.5rem;margin:0 auto 1.6rem;}/*!sc*/
+.kXGJvp li{padding:0.625rem 0;}/*!sc*/
+.kXGJvp li > ul{margin-bottom:0;}/*!sc*/
+.kXGJvp p code,.kXGJvp li code{word-wrap:break-word;}/*!sc*/
+.kXGJvp img{display:block;max-width:100%;margin:1.875rem auto;}/*!sc*/
+.kXGJvp iframe{padding:0 1.6rem 1.6rem;width:100%;}/*!sc*/
+@media (max-width:1170px){.kXGJvp iframe{padding:0 1rem;}}/*!sc*/
+.kXGJvp blockquote{color:var(--postColor);border-left:0.3rem solid var(--highlight);padding:0 1.875rem;margin:3.125rem auto;}/*!sc*/
+.kXGJvp hr{border:1px solid var(--borders);margin:3rem auto;}/*!sc*/
+.kXGJvp #twitter-widget-0,.kXGJvp .instagram-media,.kXGJvp .twitter-tweet{margin:20px auto !important;}/*!sc*/
+.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp h5{font-weight:800;-webkit-letter-spacing:0.069rem;-moz-letter-spacing:0.069rem;-ms-letter-spacing:0.069rem;letter-spacing:0.069rem;line-height:1.4;}/*!sc*/
+.kXGJvp h1{font-size:2.8rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h1{font-size:1.875rem;}}/*!sc*/
+.kXGJvp h2{font-size:2.1rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h2{font-size:1.375rem;}}/*!sc*/
+.kXGJvp h3{font-size:1.6rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h3{font-size:1.125rem;}}/*!sc*/
+.kXGJvp h4{font-size:1.4rem;}/*!sc*/
+.kXGJvp h5{font-size:1.2rem;}/*!sc*/
+.kXGJvp strong{font-weight:700;}/*!sc*/
+.kXGJvp .gatsby-resp-image-background-image{z-index:2;opacity:1 !important;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image{box-shadow:none !important;-webkit-transition:opacity 0.2s;transition:opacity 0.2s;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image.lazyload{opacity:0;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image.lazyloaded{opacity:1;z-index:3;}/*!sc*/
+.kXGJvp .gatsby-highlight{padding:0 1.6rem 1.6rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp .gatsby-highlight{padding:0;}}/*!sc*/
+.kXGJvp .instagram-media{margin:1rem auto !important;}/*!sc*/
+.kXGJvp a{border-bottom:1px dashed var(--highlight);color:var(--highlight);-webkit-text-decoration:none;text-decoration:none;-webkit-transition:opacity 0.5s;transition:opacity 0.5s;}/*!sc*/
+.kXGJvp a svg{color:var(--postColor);}/*!sc*/
+.kXGJvp a:hover{opacity:0.8;}/*!sc*/
+data-styled.g31[id="base__MainContent-sc-17fg8w0-4"]{content:"kXGJvp,"}/*!sc*/
+.heKbJR{border-bottom:1px solid var(--borders);border-top:1px solid var(--borders);background:var(--mediumBackground);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+data-styled.g51[id="styled__RecommendedWrapper-c0obzs-0"]{content:"heKbJR,"}/*!sc*/
+.DhHOv{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:var(--mediumBackground);color:var(--highlight);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding:3rem;-webkit-text-decoration:none;text-decoration:none;-webkit-transition:background 0.5s ease;transition:background 0.5s ease;width:50%;}/*!sc*/
+@media (max-width:1170px){.DhHOv{padding:2rem 1rem;line-height:1.3;font-size:.9rem;}}/*!sc*/
+.DhHOv:hover{background:var(--borders);}/*!sc*/
+.DhHOv.previous{border-right:1px solid var(--borders);}/*!sc*/
+.DhHOv.next{-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;}/*!sc*/
+.DhHOv.next:only-child{margin-left:auto;border-left:1px solid var(--borders);}/*!sc*/
+.DhHOv.previous:before{content:'\2190';margin-right:0.5rem;}/*!sc*/
+.DhHOv.next:after{content:'\2192';margin-left:0.5rem;}/*!sc*/
+data-styled.g52[id="styled__RecommendedLink-c0obzs-1"]{content:"DhHOv,"}/*!sc*/
+.hPHayL{margin:auto;max-width:70rem;padding:3rem 6.4rem 3rem;}/*!sc*/
+@media (max-width:1170px){.hPHayL{padding:3rem 1.4rem 0;max-width:100%;}}/*!sc*/
+.hPHayL iframe[src*='ads-iframe']{display:none;}/*!sc*/
+.hPHayL #disqus_thread a{color:var(--highlight) !important;}/*!sc*/
+data-styled.g53[id="styled__CommentsWrapper-sc-1q8vbcb-0"]{content:"hPHayL,"}/*!sc*/
+.bEUYFl{color:var(--postColor);font-size:2.1rem;font-weight:700;padding-bottom:2rem;}/*!sc*/
+@media (max-width:1170px){.bEUYFl{font-size:1.375rem;}}/*!sc*/
+data-styled.g54[id="styled__CommentsTitle-sc-1q8vbcb-1"]{content:"bEUYFl,"}/*!sc*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}/*!sc*/
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}/*!sc*/
+body{line-height:1;}/*!sc*/
+ol,ul{list-style:none;}/*!sc*/
+blockquote,q{quotes:none;}/*!sc*/
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}/*!sc*/
+table{border-collapse:collapse;border-spacing:0;}/*!sc*/
+*{box-sizing:border-box;}/*!sc*/
+body{background:var(--background);line-height:1;font-size:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}/*!sc*/
+img{display:block;width:100%;height:auto;}/*!sc*/
+body.dark{--borders:#38444d;--texts:#8899a6;--postColor:#fff;--highlight:#1fa1f2;--mediumBackground:#192734;--background:#16202c;--white:#fff;--black:#222;}/*!sc*/
+body.light{--borders:#dedede;--postColor:#111;--texts:#555555;--highlight:#1fa1f2;--mediumBackground:#f0f0f3;--background:#fff;--white:#fff;--black:#222;}/*!sc*/
+data-styled.g55[id="sc-global-gLPWrd1"]{content:"sc-global-gLPWrd1,"}/*!sc*/
+</style><link rel="alternate" type="application/rss+xml" title="Love Huria Blog - RSS Feed" href="/feed.xml"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-49b21ad2fc5587bb9967.js"/><link as="script" rel="preload" href="/styles-540f25bd5e5cb35d6f53.js"/><link as="script" rel="preload" href="/framework-a291878e40d05716050a.js"/><link as="script" rel="preload" href="/532a2f07-98241c9de7d7b4ffe645.js"/><link as="script" rel="preload" href="/app-82a12aa7f03a1e327cb7.js"/><link as="script" rel="preload" href="/c920ec033e559e3d21b2f44264ae3005d993ef01-615806a2ce7e54440f22.js"/><link as="script" rel="preload" href="/4525b1c2b02ad2e5ed069bdfee89f10821ffeb3f-88a41b98ac108115ea89.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-8dd243ec5ded56782f7e.js"/><link as="fetch" rel="preload" href="/page-data/making-docker-compose-work-with-drupal/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/185390462.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/844308772.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body class="dark"><script>
+              (function() {
+                window.__onThemeChange = function() {};
+                function setTheme(newTheme) {
+                  window.__theme = newTheme;
+                  preferredTheme = newTheme;
+                  document.body.className = newTheme;
+                  window.__onThemeChange(newTheme);
+                }
+                var preferredTheme;
+                try {
+                  preferredTheme = localStorage.getItem('theme');
+                } catch (err) { }
+                window.__setPreferredTheme = function(newTheme) {
+                  setTheme(newTheme);
+                  try {
+                    localStorage.setItem('theme', newTheme);
+                  } catch (err) {}
+                }
 
-    <title>Making Docker Compose Work with Drupal</title>
-    <meta name="description" content="How to make docker compose work with Drupal">
+                setTheme(preferredTheme || 'dark');
 
-    <!-- Google Authorship Markup -->
-    <link rel="author" href="https://plus.google.com/+lovehuria?rel=author">
+                window.__onDisplayChange = function() {};
+                function setDisplay(newDisplay) {
+                  window.__display = newDisplay;
+                  preferredDisplay = newDisplay;
+                  document.body.id = newDisplay;
+                  window.__onDisplayChange(newDisplay);
+                }
+                var preferredDisplay;
+                try {
+                  preferredDisplay = localStorage.getItem('display');
+                } catch (err) { }
+                window.__setPreferredDisplay = function(newDisplay) {
+                  setDisplay(newDisplay);
+                  try {
+                    localStorage.setItem('display', newDisplay);
+                  } catch (err) {}
+                }
 
-    <link rel="canonical" href="https://lhuria94.github.io/lhuria94.github.io/" />
-
-    <!-- Social: Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@LoveHuria">
-    <meta name="twitter:title" content="Making Docker Compose Work with Drupal">
-    <meta name="twitter:description" content="How to make docker compose work with Drupal">
-    
-    <meta property="twitter:image:src" content="https://lhuria94.github.io/assets/img/">
-    
-
-    <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="https://lhuria94.github.io/making-docker-compose-work-with-drupal/">
-    <meta property="og:title" content="Making Docker Compose Work with Drupal">
-    
-    <meta property="og:image" content="https://lhuria94.github.io/assets/img/">
-    
-    <meta property="og:description" content="How to make docker compose work with Drupal">
-    <meta property="og:site_name" content="Love Huria - Drupal, Javascript, Web">
-
-    <!-- Social: Google+ / Schema.org  -->
-    <meta itemprop="name" content="Making Docker Compose Work with Drupal"/>
-    <meta itemprop="description" content="How to make docker compose work with Drupal">
-    <meta itemprop="image" content="https://lhuria94.github.io/assets/img/blog-image.png"/>
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="/assets/img/icons/favicon.ico" type="image/x-icon" />
-    <!-- Windows 8 Tile Icons -->
-    <meta name="application-name" content="Love Huria Blog">
-    <meta name="msapplication-TileColor" content="#0562DC">
-    <meta name="msapplication-square70x70logo" content="smalltile.png" />
-    <meta name="msapplication-square150x150logo" content="mediumtile.png" />
-    <meta name="msapplication-wide310x150logo" content="widetile.png" />
-    <meta name="msapplication-square310x310logo" content="largetile.png" />
-    <!-- Android Lolipop Theme Color -->
-    <meta name="theme-color" content="">
-
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://lhuria94.github.io/making-docker-compose-work-with-drupal/">
-    <link rel="alternate" type="application/rss+xml" title="Love Huria - Drupal, Javascript, Web" href="https://lhuria94.github.io/feed.xml" />
-
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-100420990-1', 'auto');
-      ga('send', 'pageview');
-    </script>
-</head>
-
-    <body>
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" version="1.1"><defs><symbol id="icon-menu" viewBox="0 0 1024 1024"><path class="path1" d="M128 213.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 725.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 469.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5z"/></symbol><symbol id="icon-search" viewBox="0 0 951 1024"><path class="path1" d="M658.286 475.429q0-105.714-75.143-180.857t-180.857-75.143-180.857 75.143-75.143 180.857 75.143 180.857 180.857 75.143 180.857-75.143 75.143-180.857zM950.857 950.857q0 29.714-21.714 51.429t-51.429 21.714q-30.857 0-51.429-21.714l-196-195.429q-102.286 70.857-228 70.857-81.714 0-156.286-31.714t-128.571-85.714-85.714-128.571-31.714-156.286 31.714-156.286 85.714-128.571 128.571-85.714 156.286-31.714 156.286 31.714 128.571 85.714 85.714 128.571 31.714 156.286q0 125.714-70.857 228l196 196q21.143 21.143 21.143 51.429z"/></symbol><symbol id="icon-close" viewBox="0 0 805 1024"><path class="path1" d="M741.714 755.429q0 22.857-16 38.857l-77.714 77.714q-16 16-38.857 16t-38.857-16l-168-168-168 168q-16 16-38.857 16t-38.857-16l-77.714-77.714q-16-16-16-38.857t16-38.857l168-168-168-168q-16-16-16-38.857t16-38.857l77.714-77.714q16-16 38.857-16t38.857 16l168 168 168-168q16-16 38.857-16t38.857 16l77.714 77.714q16 16 16 38.857t-16 38.857l-168 168 168 168q16 16 16 38.857z"/></symbol><symbol id="icon-twitter" viewBox="0 0 951 1024"><path class="path1" d="M925.714 233.143q-38.286 56-92.571 95.429 0.571 8 0.571 24 0 74.286-21.714 148.286t-66 142-105.429 120.286-147.429 83.429-184.571 31.143q-154.857 0-283.429-82.857 20 2.286 44.571 2.286 128.571 0 229.143-78.857-60-1.143-107.429-36.857t-65.143-91.143q18.857 2.857 34.857 2.857 24.571 0 48.571-6.286-64-13.143-106-63.714t-42-117.429v-2.286q38.857 21.714 83.429 23.429-37.714-25.143-60-65.714t-22.286-88q0-50.286 25.143-93.143 69.143 85.143 168.286 136.286t212.286 56.857q-4.571-21.714-4.571-42.286 0-76.571 54-130.571t130.571-54q80 0 134.857 58.286 62.286-12 117.143-44.571-21.143 65.714-81.143 101.714 53.143-5.714 106.286-28.571z"/></symbol><symbol id="icon-facebook" viewBox="0 0 585 1024"><path class="path1" d="M548 6.857v150.857h-89.714q-49.143 0-66.286 20.571t-17.143 61.714v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571q0-106.286 59.429-164.857t158.286-58.571q84 0 130.286 6.857z"/></symbol><symbol id="icon-google-plus" viewBox="0 0 951 1024"><path class="path1" d="M420 454.857q0 20.571 18.286 40.286t44.286 38.857 51.714 42 44 59.429 18.286 81.143q0 51.429-27.429 98.857-41.143 69.714-120.571 102.571t-170.286 32.857q-75.429 0-140.857-23.714t-98-78.571q-21.143-34.286-21.143-74.857 0-46.286 25.429-85.714t67.714-65.714q74.857-46.857 230.857-57.143-18.286-24-27.143-42.286t-8.857-41.714q0-20.571 12-48.571-26.286 2.286-38.857 2.286-84.571 0-142.571-55.143t-58-139.714q0-46.857 20.571-90.857t56.571-74.857q44-37.714 104.286-56t124.286-18.286h238.857l-78.857 50.286h-74.857q42.286 36 64 76t21.714 91.429q0 41.143-14 74t-33.714 53.143-39.714 37.143-34 35.143-14 37.714zM336.571 400q21.714 0 44.571-9.429t37.714-24.857q30.286-32.571 30.286-90.857 0-33.143-9.714-71.429t-27.714-74-48.286-59.143-66.857-23.429q-24 0-47.143 11.143t-37.429 30q-26.857 33.714-26.857 91.429 0 26.286 5.714 55.714t18 58.857 29.714 52.857 42.857 38.286 55.143 14.857zM337.714 898.857q33.143 0 63.714-7.429t56.571-22.286 41.714-41.714 15.714-62.286q0-14.286-4-28t-8.286-24-15.429-23.714-16.857-20-22-19.714-20.857-16.571-23.714-17.143-20.857-14.857q-9.143-1.143-27.429-1.143-30.286 0-60 4t-61.429 14.286-55.429 26.286-39.143 42.571-15.429 60.286q0 40 20 70.571t52.286 47.429 68 25.143 72.857 8.286zM800.571 398.286h121.714v61.714h-121.714v125.143h-60v-125.143h-121.143v-61.714h121.143v-124h60v124z"/></symbol></defs></svg>
-
-        <header class="bar-header">
-    <h1 class="logo">
-        <a href="/"></a>
-    </h1>
-</header>
-<div class="search-wrapper">
-    <div class="search-form">
-        <input type="text" class="search-field" placeholder="Search...">
-        <svg class="icon-remove-sign"><use xlink:href="#icon-close"></use></svg>
-        <ul class="search-results search-list"></ul>
-    </div>
-</div>
-
-<div id="fade" class="overlay"></div>
-<a id="slide" class="slideButton fade">
-    <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
-    <svg id="close" class="icon-menu"><use xlink:href="#icon-close"></use></svg>
-</a>
-<aside id="sidebar">
-<nav id="navigation">
-  <h2>MENU</h2>
-  <ul>
-    
-      <li><a href="https://lhuria94.github.io/">Home</a></li>
-    
-      <li><a href="https://lhuria94.github.io/tags">Tags</a></li>
-    
-      <li><a href="https://lhuria94.github.io/about">About Me</a></li>
-    
-    <li><a class="feed" href="https://lhuria94.github.io/feed.xml" title="Atom/RSS feed">Feed</a></li>
-  </ul>
-</nav>
-</aside>
-<a id="search" class="dosearch">
-    <svg class="icon-menu icon-search"><use xlink:href="#icon-search"></use></svg>
-</a>
-
-<header class="header-post" role="banner">
-     <div class="content">
-        
-            <time itemprop="datePublished" datetime="2017-02-21T03:21:35+00:00" class="date">21 Feb 2017</time>
-        
-        <h1 class="post-title" itemprop="name">Making Docker Compose Work with Drupal</h1>
-        <p itemprop="description" class="subtitle">How to make docker compose work with Drupal</p>
-    </div>
-</header>
-        <style>
-  .l {
-      position: fixed;
-      z-index: 9999;
-      right: 15px;
-      bottom: 15px;
-  }
-  .l {
-      background-color: rgba(0,0,0,0.7);
-      border-radius: 0.75em;
-      box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.3) inset;
-      color: #fdea7b;
-      font-size: 1.5em;
-      display: inline-flex;
-      align-items: center;
-      margin: auto;
-      padding: 0.15em;
-      width: 3em;
-      height: 1.5em;
-      transition: background-color 0.1s 0.3s ease-out, box-shadow 0.1s 0.3s ease-out;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      cursor: pointer;
-  }
-  .l:before, .l:after {
-      content: "";
-      display: block;
-  }
-  .l:before {
-      background-color: #d7d7d7;
-      border-radius: 50%;
-      width: 1.2em;
-      height: 1.2em;
-      transition: background-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
-      z-index: 1;
-  }
-  .l:after {
-      background:
-          linear-gradient(transparent 50%, rgba(0,0,0,0.15) 0) 0 50% / 50% 100%,
-          repeating-linear-gradient(90deg,#bbb 0,#bbb,#bbb 20%,#999 20%,#999 40%) 0 50% / 50% 100%,
-          radial-gradient(circle at 50% 50%,#888 25%, transparent 26%);
-      background-repeat: no-repeat;
-      border: 0.25em solid transparent;
-      border-left: 0.4em solid #d8d8d8;
-      border-right: 0 solid transparent;
-      transition: border-left-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
-      transform: translateX(-22.5%);
-      transform-origin: 25% 50%;
-      width: 1.2em;
-      height: 1em;
-  }
-  /* Checked */
-  .l:focus {
-      /* Normally an anti-A11Y practice, but set to remove an annoyance just for this demo */
-      outline: 0;
-  }
-  .l:checked {
-      background-color: rgba(0,0,0,0.45);
-      box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.1) inset;
-  }
-  .l:checked:before {
-      background-color: currentColor;
-      transform: translateX(125%)
-  }
-  .l:checked:after {
-      border-left-color: currentColor;
-      transform: translateX(-2.5%) rotateY(180deg);
-  }
-  </style>
-  <input id="night-mode" class="l" type="checkbox" aria-label="nigth-mode">
-        <section class="post">
-
-            <article role="article" id="post" class="post-content" itemprop="articleBody">
-                <p>My last post talked about <a href="/docker-microcontainers-for-faster-workflows/">how Docker microcontainers speed up the software development workflow</a>. Now it’s time to dive into how all this applies to Drupal.</p>
-
-<p>I created a collection of <a href="https://github.com/lhuria94/docker-drupal-lamp">Docker configuration files</a> and scripts to make it easy to run Drupal. If you want to try it out, follow the steps in the README file.</p>
-
-<p>The repository is designed using the microcontainers concept, so that each Drupal site will end up with 3 containers of it’s own (Apache, MySQL and Drush containers), which are linked together, to run our application. If you want to serve a new site, you need to create separate containers.</p>
-
-<p>In theory you could re-use containers for different web applications. However, in practice, Docker containers are resource-cheap and easy to spin up. So it’s less work to run separate containers for separate applications than it is to configure each application to play nice with the other applications running on the same container (e.g.: configuring VirtualHosts and port mappings). Or at least this is what my colleague <a href="https://www.drupal.org/u/mparker17">M Parker</a> believes.</p>
-
+                setDisplay(preferredDisplay || 'list');
+              })();
+            </script><noscript>Your browser does not support JavaScript! =)</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="tl-edges"><div class="tl-wrapper tl-wrapper--mount tl-wrapper-status--entered" style="z-index:1;opacity:1"><section class="styled__LayoutWrapper-qchwrn-0 hPLjUw"><main class="styled__LayoutMain-qchwrn-1 hQYTXd"><header class="base__PostHeader-sc-17fg8w0-0 huSLRw"><p class="base__PostDate-sc-17fg8w0-3 dhsbwc">21 February 2017<!-- --> • <!-- -->5<!-- --> min read</p><h1 class="base__PostTitle-sc-17fg8w0-1 cOlZFa">Making Docker Compose Work with Drupal</h1><h2 class="base__PostDescription-sc-17fg8w0-2 dQtoxT">How to make docker compose work with Drupal</h2></header><section class="base__MainContent-sc-17fg8w0-4 kXGJvp"><div><p>My last post talked about <a href="%7B%7Bsite.baseurl%7D%7D/docker-microcontainers-for-faster-workflows/">how Docker microcontainers speed up the software development workflow</a>. Now it's time to dive into how all this applies to Drupal.</p>
+<p>I created a collection of <a href="https://github.com/lhuria94/docker-drupal-lamp" target="_blank" rel="nofollow noopener noreferrer">Docker configuration files</a> and scripts to make it easy to run Drupal. If you want to try it out, follow the steps in the README file.</p>
+<p>The repository is designed using the microcontainers concept, so that each Drupal site will end up with 3 containers of it's own (Apache, MySQL and Drush containers), which are linked together, to run our application. If you want to serve a new site, you need to create separate containers.</p>
+<p>In theory you could re-use containers for different web applications. However, in practice, Docker containers are resource-cheap and easy to spin up. So it’s less work to run separate containers for separate applications than it is to configure each application to play nice with the other applications running on the same container (e.g.: configuring VirtualHosts and port mappings). Or at least this is what my colleague <a href="https://www.drupal.org/u/mparker17" target="_blank" rel="nofollow noopener noreferrer">M Parker</a> believes.</p>
 <p>Plus, configuring applications to play nice with each other in the same container kind of violates the “create once, run anywhere” nature of Docker.</p>
-
 <h2 id="how-it-works">How it works</h2>
 <p>My repository uses the docker-compose program. Docker-compose is controlled with the docker-compose.yml file, which tells Docker which containers to start, how to network them together so they serve Drupal, and how to connect them to the host machine. This means serving the Drupal repository filesystem and mapping a port on the host machine to one of the ports in one of the containers.</p>
-
-<p>A useful tip to remember is that docker-compose ps will tell you the port mappings as shown in the screenshot below. This is useful if you don’t map them explicitly to ports on the host machine.</p>
-
-<p><img src="/assets/img/2016-07-21-making-docker-compose-work-with-drupal/terminal-docker.png" alt="Docker terminal" /></p>
-
+<p>A useful tip to remember is that docker-compose ps will tell you the port mappings as shown in the screenshot below. This is useful if you don't map them explicitly to ports on the host machine.</p>
+<p><img src="https://lhuria94.github.io/assets/img/2016-07-21-making-docker-compose-work-with-drupal/terminal-docker.png" alt="Docker terminal"></p>
 <h2 id="networking">Networking</h2>
-<p>If you’ve ever tried setting up a bunch of containers manually (without docker-compose), it is worth noting (and not very well documented in the Docker docs, unfortunately) that you don’t need to explicitly map port 3306:3306 for the mysql container, because docker-compose sets up a miniature network for containers run from the same docker-compose.yml. It also sets up hostnames between each container in the same docker-compose.yml. This means that the web container can refer to the mysql-server machine with the hostname mysql-server, and, even if you implicitly map 3306 to some random port on the​ host machine, web can talk to mysql-server on port 3306.</p>
-
-<p>Note in this case that the container running MySQL is named db, so, when you’re installing Drupal, on step 4 (“Database configuration”) of the Drupal 7 install script, you have to expand “Advanced options”, and change “Database host” from localhost to db!</p>
-
+<p>If you've ever tried setting up a bunch of containers manually (without docker-compose), it is worth noting (and not very well documented in the Docker docs, unfortunately) that you don’t need to explicitly map port 3306:3306 for the mysql container, because docker-compose sets up a miniature network for containers run from the same docker-compose.yml. It also sets up hostnames between each container in the same docker-compose.yml. This means that the web container can refer to the mysql-server machine with the hostname mysql-server, and, even if you implicitly map 3306 to some random port on the​ host machine, web can talk to mysql-server on port 3306.</p>
+<p>Note in this case that the container running MySQL is named db, so, when you're installing Drupal, on step 4 (“Database configuration”) of the Drupal 7 install script, you have to expand “Advanced options”, and change "Database host” from localhost to db!</p>
 <h2 id="filesystem">Filesystem</h2>
-<p>It is possible to put the Drupal filesystem into a container (which you might want to do if you wanted to deploy a container to a public server). However, it doesn’t really make sense for development, because most of the time, you’re changing the files quite frequently.</p>
-
-<p>To get around this requirement for a development environment, we mount the current folder (often referred to as ‘.’) to /var/www/html in the container, which matches where the current directory is mounted in all three containers. This is done with the ‘volumes’ directive in the docker-compose.yml file. The ’working_dir’ directive says “when you run the Drush command in the Drush container, pretend it’s running from /var/www/html”, which is the equivalent of ‘cd /var/ww/html’ before you run a drush command.</p>
-
-<p>So when you run the Drush command in the Drush container, it sees that it’s currently in a Drupal directory and proceeds to load the database connection information from sites/default/settings.php which tells it how to connect to the mysql on the <code class="highlighter-rouge">db</code> container with the correct credentials. (recall the <code class="highlighter-rouge">links</code> directive makes sure that the <code class="highlighter-rouge">drush</code> container can access the <code class="highlighter-rouge">db</code> container so it can connect to it on port 3306).</p>
-
+<p>It is possible to put the Drupal filesystem into a container (which you might want to do if you wanted to deploy a container to a public server). However, it doesn't really make sense for development, because most of the time, you're changing the files quite frequently.</p>
+<p>To get around this requirement for a development environment, we mount the current folder (often referred to as ‘.’) to /var/www/html in the container, which matches where the current directory is mounted in all three containers. This is done with the 'volumes' directive in the docker-compose.yml file. The ’working_dir’ directive says “when you run the Drush command in the Drush container, pretend it’s running from /var/www/html”, which is the equivalent of ‘cd /var/ww/html’ before you run a drush command.</p>
+<p>So when you run the Drush command in the Drush container, it sees that it’s currently in a Drupal directory and proceeds to load the database connection information from sites/default/settings.php which tells it how to connect to the mysql on the <code class="language-text">db</code> container with the correct credentials. (recall the <code class="language-text">links</code> directive makes sure that the <code class="language-text">drush</code> container can access the <code class="language-text">db</code> container so it can connect to it on port 3306).</p>
 <h2 id="the-drush-container">The Drush container</h2>
 <p>The drush container is a bit special because it runs a single command, and is re-created every time a Drush command is used.</p>
-
-<p>If you look at the step 9 of my <a href="https://github.com/lhuria94/docker-drupal-lamp">Docker configuration files</a> you’ll see it says…</p>
-
+<p>If you look at the step 9 of my <a href="https://github.com/lhuria94/docker-drupal-lamp" target="_blank" rel="nofollow noopener noreferrer">Docker configuration files</a> you’ll see it says…</p>
 <ul>
-  <li>Run Drush commands with:</li>
+<li>Run Drush commands with:
+{% highlight ruby %}
+USER<em>ID=$(id -u) docker-compose run --rm drush $rest</em>of<em>drush</em>command
+{% endhighlight %}</li>
 </ul>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">USER_ID</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="nb">id</span> <span class="o">-</span><span class="n">u</span><span class="p">)</span> <span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="n">drush</span> <span class="vg">$rest_of_drush_command</span></code></pre></figure>
-
-<p>… i.e.: <code class="highlighter-rouge">docker-compose run --rm drush</code>
-i.e. start the container named <code class="highlighter-rouge">drush</code>, pass it <code class="highlighter-rouge">$rest_of_drush_command</code></p>
-
-<p><img src="/assets/img/2016-07-21-making-docker-compose-work-with-drupal/docker-t-2.png" alt="Docker terminal containers" /></p>
-
-<p>If you look at the Dockerfile for <a href="https://hub.docker.com/r/mparker17/mush/~/dockerfile/">Mparker’s Dockerfile</a>, you’ll see it contains a line saying ‘ENTRYPOINT [“drush”]’. ENTRYPOINT is a variant of the CMD command which passes all the rest of the ‘docker run’ parameters to the command specified by the ENTRYPOINT line.</p>
-
-<p>So what happens when you run that ‘docker-compose run’ line is that it creates a new container from the ‘mparker17/mush’ image, with all the configuration from the ‘docker-compose.yml’ file. When that container runs, it automatically runs the ‘drush’ command, and docker-compose passes ‘$rest_of_drush_command’ to the ‘drush’ command. When the ‘drush’ command is finished, the container stops, and the ‘–rm’ thing we specified deletes the container afterwards</p>
-
-<p>Running <code class="highlighter-rouge">USER_ID=$(id -u)</code> before a command sets an environment variable that persists for that command; i.e.: when <code class="highlighter-rouge">docker-compose</code> runs, an environment variable $USER_ID exists; but $USER_ID goes away when docker-compose is finished running. You can leave out the <code class="highlighter-rouge">USER_ID=$(id -u)</code> if you add that line to your shell’s configuration. Essentially what that environment variable does is set the user account that the Drush command runs as. If you don’t specify the user account, then Docker defaults to root.</p>
-
-<p>The main reason why I do this is so that if I ask Drush to make changes to the filesystem (e.g.: download a module, run <code class="highlighter-rouge">drush make</code>, etc.) that the files are owned by me, not root (i.e.: so I don’t have to go around changing ownership permissions after I run the drush command)</p>
-
+<p>… i.e.: <code class="language-text">docker-compose run --rm drush</code>
+i.e. start the container named <code class="language-text">drush</code>, pass it <code class="language-text">$rest_of_drush_command</code></p>
+<p><img src="https://lhuria94.github.io/assets/img/2016-07-21-making-docker-compose-work-with-drupal/docker-t-2.png" alt="Docker terminal containers"></p>
+<p>If you look at the Dockerfile for <a href="https://hub.docker.com/r/mparker17/mush/~/dockerfile/" target="_blank" rel="nofollow noopener noreferrer">Mparker's Dockerfile</a>, you’ll see it contains a line saying ‘ENTRYPOINT ["drush"]’. ENTRYPOINT is a variant of the CMD command which passes all the rest of the ‘docker run’ parameters to the command specified by the ENTRYPOINT line.</p>
+<p>So what happens when you run that ‘docker-compose run’ line is that it creates a new container from the ‘mparker17/mush’ image, with all the configuration from the ‘docker-compose.yml’ file. When that container runs, it automatically runs the ‘drush’ command, and docker-compose passes ‘$rest<em>of</em>drush_command’ to the ‘drush’ command. When the ‘drush’ command is finished, the container stops, and the ‘--rm’ thing we specified deletes the container afterwards</p>
+<p>Running <code class="language-text">USER_ID=$(id -u)</code> before a command sets an environment variable that persists for that command; i.e.: when <code class="language-text">docker-compose</code> runs, an environment variable $USER<em>ID exists; but $USER</em>ID goes away when docker-compose is finished running. You can leave out the <code class="language-text">USER_ID=$(id -u)</code> if you add that line to your shell’s configuration. Essentially what that environment variable does is set the user account that the Drush command runs as. If you don’t specify the user account, then Docker defaults to root.</p>
+<p>The main reason why I do this is so that if I ask Drush to make changes to the filesystem (e.g.: download a module, run <code class="language-text">drush make</code>, etc.) that the files are owned by me, not root (i.e.: so I don’t have to go around changing ownership permissions after I run the drush command)</p>
 <p>It may only be necessary on Windows/Macintosh, because the virtual machine that Docker runs in on Win/Mac has different user IDs — I think if you run a Docker command from a Linux machine, your user id is already correct; but because a Docker command on a Mac/Win is run with your Mac/Win user ID (e.g.: 501) but gets passed to the docker VM’s ‘docker’ user (which runs as user 1000), some problems arise unless you’re explicit about it.</p>
-
 <p>Acknowledgements
-Lastly, I would like to thank <a href="https://www.drupal.org/u/mparker17">Matt Parker</a> here, who has been mentoring me since the beginning of setting up docker and telling me better ways to do it. He also recommends reading the <a href="https://www.dockerbook.com/">Docker book</a> if you want to explore this further.</p>
-
-
-            </article>
-
-            <section class="share">
-    <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;Making Docker Compose Work with Drupal&quot;%20https://lhuria94.github.io/making-docker-compose-work-with-drupal/%20via%20&#64;LoveHuria&hashtags=continuous integration,docker,drupal,git,planet drupal,"
-    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
-        <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
-    </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=https://lhuria94.github.io/making-docker-compose-work-with-drupal/"
-    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
-        <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
-    </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=https://lhuria94.github.io/making-docker-compose-work-with-drupal/"
-    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
-        <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
-    </a>
-</section>
-            <section class="author" itemprop="author">
-    <div class="details" itemscope itemtype="http://schema.org/Person">
-        <img itemprop="image" class="img-rounded" src="/assets/img/blog-author.jpg" alt="">
-        <p class="def">Author</p>
-        <h3 class="name">
-            <a itemprop="name" href="https://plus.google.com/+lovehuria/posts">Love Huria</a>
-        </h3>
-        <p class="desc">Senior Full Stack Web Developer at Srijan Technologies</p>
-        <p><a itemprop="email" class="email" href="mailto:lovehuria@gmail.com">lovehuria@gmail.com</a></p>
-        <p><a itemprop="github" class="github" href="https://github.com/lhuria94">github.com/lhuria94</a></p>
-    </div>
-</section>
-
-            
-                <section class="comments">
-    <h3>Comments</h3>
-    <div id="disqus_thread"></div>
-</section>
-<script type="text/javascript">
-/**
- *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
- *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-
-var disqus_config = function() {
-    this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-
-(function() { // DON'T EDIT BELOW THIS LINE
-    var d = document,
-        s = d.createElement('script');
-    s.src = 'https://lhuria94-github-io.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-            
-            <footer>
-    <p>Copyright © 2019 Love Huria, Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a></p>
-</footer>
-<script src="/assets/js/main.js"></script>
-
-        </section>
-    </body>
-</html>
+Lastly, I would like to thank <a href="https://www.drupal.org/u/mparker17" target="_blank" rel="nofollow noopener noreferrer">Matt Parker</a> here, who has been mentoring me since the beginning of setting up docker and telling me better ways to do it. He also recommends reading the <a href="https://www.dockerbook.com/" target="_blank" rel="nofollow noopener noreferrer">Docker book</a> if you want to explore this further.</p></div></section><section class="styled__RecommendedWrapper-c0obzs-0 heKbJR"><a class="styled__RecommendedLink-c0obzs-1 DhHOv previous" direction="left" href="/docker-microcontainers-for-faster-workflows/">Docker: A Microcontainer for Faster Software Workflows</a><a class="styled__RecommendedLink-c0obzs-1 DhHOv next" direction="right" href="/coding-standards-that-matter/">Keeping It Clean: Coding Standards That Matter</a></section><section class="styled__CommentsWrapper-sc-1q8vbcb-0 hPHayL"><h2 class="styled__CommentsTitle-sc-1q8vbcb-1 bEUYFl">Comments</h2><div><div id="disqus_thread"></div></div></section></main></section></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/making-docker-compose-work-with-drupal/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-c5bded9e8116eaabdffc.js"],"app":["/app-82a12aa7f03a1e327cb7.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-ad6431e4664bcf916d19.js"],"component---src-pages-404-js":["/component---src-pages-404-js-e4d79d45234512f9474e.js"],"component---src-pages-about-js":["/component---src-pages-about-js-ff1eefa76dbdcd7cb7cb.js"],"component---src-pages-cursos-js":["/component---src-pages-cursos-js-b38f079114ef5acb8b9c.js"],"component---src-pages-search-js":["/component---src-pages-search-js-35a7c64a96ef5e25ea63.js"],"component---src-pages-series-js":["/component---src-pages-series-js-65f20223e6e7ac1f816e.js"],"component---src-templates-blog-list-js":["/component---src-templates-blog-list-js-b2a7c71f8dc68f3dd5a1.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-8dd243ec5ded56782f7e.js"]};/*]]>*/</script><script src="/polyfill-c5bded9e8116eaabdffc.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-8dd243ec5ded56782f7e.js" async=""></script><script src="/4525b1c2b02ad2e5ed069bdfee89f10821ffeb3f-88a41b98ac108115ea89.js" async=""></script><script src="/c920ec033e559e3d21b2f44264ae3005d993ef01-615806a2ce7e54440f22.js" async=""></script><script src="/app-82a12aa7f03a1e327cb7.js" async=""></script><script src="/532a2f07-98241c9de7d7b4ffe645.js" async=""></script><script src="/framework-a291878e40d05716050a.js" async=""></script><script src="/styles-540f25bd5e5cb35d6f53.js" async=""></script><script src="/webpack-runtime-49b21ad2fc5587bb9967.js" async=""></script></body></html>
