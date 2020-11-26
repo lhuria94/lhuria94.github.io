@@ -127,12 +127,12 @@ ES6 came up with the following features:
 After the huge gap in the release of ES4, the committee decided to release one version every year even if it's a small update starting with ES6. The idea was not to do humongous releases like ES6 rather have small ones.
 
 So, ES7 came up with only two new features:
-1. Exponential operator: In addition to existing arithmetic operators (-, *, +) which already exists in Javascript; they added a new operator (**) called the exponential operator. What it does is raises the first operand to the power of value from the second operand.
+1. `Exponential operator:` In addition to existing arithmetic operators (-, *, +) which already exists in Javascript; they added a new operator (**) called the exponential operator. What it does is raises the first operand to the power of value from the second operand.
 ```js
 // 5 to the power of 2 i.e 25 
 console.log(5 ** 2); // 25
 ```
-2. Array.prototype.includes(): This returns true if the existing array includes a passed value. As simple as that; but really handy.
+2. `Array.prototype.includes():` This returns true if the existing array includes a passed value. As simple as that; but really handy.
 ```js
 let sportsList = [‘cricket’, ‘volleyball’, ‘hockey’];
 sportsList.includes(sportsList, ‘cricket’); // true
