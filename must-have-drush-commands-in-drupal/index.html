@@ -1,0 +1,329 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="8kDtWUmUQEh7QXoj_shRaxcgYAVpHs_YQ7TeniN0kmI"/><style data-href="/styles.884fc4cd88bb91762961.css">.tl-edges{max-width:100%;overflow-x:hidden}.tl-wrapper{width:100%;float:left;position:relative}.tl-wrapper+.tl-wrapper{margin-left:-100%;margin-right:0}code[class*=language-],pre[class*=language-]{color:#ccc;background:none;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><meta name="generator" content="Gatsby 2.20.29"/><title data-react-helmet="true">Must have custom drush commands in every Drupal project | Love Huria</title><meta data-react-helmet="true" name="aplication-name" content="Love Huria Blog"/><meta data-react-helmet="true" name="description" content="This post explains how to create custom drush commands which are in must have list for every Drupal project"/><meta data-react-helmet="true" property="og:image" content="https://lhuria94.github.io/assets/img/"/><meta data-react-helmet="true" property="og:title" content="Must have custom drush commands in every Drupal project"/><meta data-react-helmet="true" property="og:description" content="This post explains how to create custom drush commands which are in must have list for every Drupal project"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"/><meta data-react-helmet="true" name="twitter:image:src" content="https://lhuria94.github.io/assets/img/"/><meta data-react-helmet="true" name="twitter:creator" content="@lovehuria"/><meta data-react-helmet="true" name="twitter:title" content="Must have custom drush commands in every Drupal project"/><meta data-react-helmet="true" name="twitter:description" content="This post explains how to create custom drush commands which are in must have list for every Drupal project"/><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><style data-styled="" data-styled-version="5.1.0">.hPLjUw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+@media (max-width:1170px){.hPLjUw{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding-top:4.125rem;}}/*!sc*/
+data-styled.g25[id="styled__LayoutWrapper-qchwrn-0"]{content:"hPLjUw,"}/*!sc*/
+.hQYTXd{background:var(--background);min-height:100vh;padding:0 3.75rem 0 20rem;-webkit-transition:background 0.5s ease,color 0.5s ease;transition:background 0.5s ease,color 0.5s ease;width:100%;}/*!sc*/
+body#card .hQYTXd{grid-template-areas:'cards' 'pagination';}/*!sc*/
+@media (max-width:1170px){.hQYTXd{padding:0 0 3rem 0;}}/*!sc*/
+data-styled.g26[id="styled__LayoutMain-qchwrn-1"]{content:"hQYTXd,"}/*!sc*/
+.huSLRw{color:var(--postColor);margin:auto;max-width:70rem;padding:5rem 5rem 0;}/*!sc*/
+@media (max-width:1170px){.huSLRw{padding:3rem 0 0;max-width:100%;}}/*!sc*/
+data-styled.g27[id="base__PostHeader-sc-17fg8w0-0"]{content:"huSLRw,"}/*!sc*/
+.cOlZFa{font-size:4rem;font-weight:700;padding:0 1.4rem;margin:1rem auto;}/*!sc*/
+@media (max-width:1170px){.cOlZFa{font-size:2.8rem;line-height:1.1;padding:0 1rem;}}/*!sc*/
+data-styled.g28[id="base__PostTitle-sc-17fg8w0-1"]{content:"cOlZFa,"}/*!sc*/
+.dQtoxT{font-size:2rem;font-weight:200;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.dQtoxT{font-size:1.6rem;line-height:1.3;padding:0 1rem;}}/*!sc*/
+data-styled.g29[id="base__PostDescription-sc-17fg8w0-2"]{content:"dQtoxT,"}/*!sc*/
+.dhsbwc{font-size:1.1rem;font-weight:100;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.dhsbwc{padding:0 1rem;}}/*!sc*/
+data-styled.g30[id="base__PostDate-sc-17fg8w0-3"]{content:"dhsbwc,"}/*!sc*/
+.kXGJvp{margin:auto;max-width:70rem;padding:2rem 5rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp{padding:2rem 0;max-width:100%;}}/*!sc*/
+.kXGJvp p,.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp ul,.kXGJvp ol,.kXGJvp .tags,.kXGJvp iframe,.kXGJvp .button-post{color:var(--postColor);font-size:1.25rem;font-weight:300;line-height:1.7;-webkit-letter-spacing:0.069rem;-moz-letter-spacing:0.069rem;-ms-letter-spacing:0.069rem;letter-spacing:0.069rem;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp p,.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp ul,.kXGJvp ol,.kXGJvp .tags,.kXGJvp iframe,.kXGJvp .button-post{padding:0 1rem;word-break:break-word;}}/*!sc*/
+.kXGJvp p{margin:0 auto 1.6rem;}/*!sc*/
+.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp h5{margin:2.4rem auto 1rem;}/*!sc*/
+.kXGJvp ul,.kXGJvp ol{list-style:disc;padding-left:2.5rem;margin:0 auto 1.6rem;}/*!sc*/
+.kXGJvp li{padding:0.625rem 0;}/*!sc*/
+.kXGJvp li > ul{margin-bottom:0;}/*!sc*/
+.kXGJvp p code,.kXGJvp li code{word-wrap:break-word;}/*!sc*/
+.kXGJvp img{display:block;max-width:100%;margin:1.875rem auto;}/*!sc*/
+.kXGJvp iframe{padding:0 1.6rem 1.6rem;width:100%;}/*!sc*/
+@media (max-width:1170px){.kXGJvp iframe{padding:0 1rem;}}/*!sc*/
+.kXGJvp blockquote{color:var(--postColor);border-left:0.3rem solid var(--highlight);padding:0 1.875rem;margin:3.125rem auto;}/*!sc*/
+.kXGJvp hr{border:1px solid var(--borders);margin:3rem auto;}/*!sc*/
+.kXGJvp #twitter-widget-0,.kXGJvp .instagram-media,.kXGJvp .twitter-tweet{margin:20px auto !important;}/*!sc*/
+.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp h5{font-weight:800;-webkit-letter-spacing:0.069rem;-moz-letter-spacing:0.069rem;-ms-letter-spacing:0.069rem;letter-spacing:0.069rem;line-height:1.4;}/*!sc*/
+.kXGJvp h1{font-size:2.8rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h1{font-size:1.875rem;}}/*!sc*/
+.kXGJvp h2{font-size:2.1rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h2{font-size:1.375rem;}}/*!sc*/
+.kXGJvp h3{font-size:1.6rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h3{font-size:1.125rem;}}/*!sc*/
+.kXGJvp h4{font-size:1.4rem;}/*!sc*/
+.kXGJvp h5{font-size:1.2rem;}/*!sc*/
+.kXGJvp strong{font-weight:700;}/*!sc*/
+.kXGJvp .gatsby-resp-image-background-image{z-index:2;opacity:1 !important;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image{box-shadow:none !important;-webkit-transition:opacity 0.2s;transition:opacity 0.2s;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image.lazyload{opacity:0;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image.lazyloaded{opacity:1;z-index:3;}/*!sc*/
+.kXGJvp .gatsby-highlight{padding:0 1.6rem 1.6rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp .gatsby-highlight{padding:0;}}/*!sc*/
+.kXGJvp .instagram-media{margin:1rem auto !important;}/*!sc*/
+.kXGJvp a{border-bottom:1px dashed var(--highlight);color:var(--highlight);-webkit-text-decoration:none;text-decoration:none;-webkit-transition:opacity 0.5s;transition:opacity 0.5s;}/*!sc*/
+.kXGJvp a svg{color:var(--postColor);}/*!sc*/
+.kXGJvp a:hover{opacity:0.8;}/*!sc*/
+data-styled.g31[id="base__MainContent-sc-17fg8w0-4"]{content:"kXGJvp,"}/*!sc*/
+.heKbJR{border-bottom:1px solid var(--borders);border-top:1px solid var(--borders);background:var(--mediumBackground);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+data-styled.g51[id="styled__RecommendedWrapper-c0obzs-0"]{content:"heKbJR,"}/*!sc*/
+.DhHOv{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:var(--mediumBackground);color:var(--highlight);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding:3rem;-webkit-text-decoration:none;text-decoration:none;-webkit-transition:background 0.5s ease;transition:background 0.5s ease;width:50%;}/*!sc*/
+@media (max-width:1170px){.DhHOv{padding:2rem 1rem;line-height:1.3;font-size:.9rem;}}/*!sc*/
+.DhHOv:hover{background:var(--borders);}/*!sc*/
+.DhHOv.previous{border-right:1px solid var(--borders);}/*!sc*/
+.DhHOv.next{-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;}/*!sc*/
+.DhHOv.next:only-child{margin-left:auto;border-left:1px solid var(--borders);}/*!sc*/
+.DhHOv.previous:before{content:'\2190';margin-right:0.5rem;}/*!sc*/
+.DhHOv.next:after{content:'\2192';margin-left:0.5rem;}/*!sc*/
+data-styled.g52[id="styled__RecommendedLink-c0obzs-1"]{content:"DhHOv,"}/*!sc*/
+.hPHayL{margin:auto;max-width:70rem;padding:3rem 6.4rem 3rem;}/*!sc*/
+@media (max-width:1170px){.hPHayL{padding:3rem 1.4rem 0;max-width:100%;}}/*!sc*/
+.hPHayL iframe[src*='ads-iframe']{display:none;}/*!sc*/
+.hPHayL #disqus_thread a{color:var(--highlight) !important;}/*!sc*/
+data-styled.g53[id="styled__CommentsWrapper-sc-1q8vbcb-0"]{content:"hPHayL,"}/*!sc*/
+.bEUYFl{color:var(--postColor);font-size:2.1rem;font-weight:700;padding-bottom:2rem;}/*!sc*/
+@media (max-width:1170px){.bEUYFl{font-size:1.375rem;}}/*!sc*/
+data-styled.g54[id="styled__CommentsTitle-sc-1q8vbcb-1"]{content:"bEUYFl,"}/*!sc*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}/*!sc*/
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}/*!sc*/
+body{line-height:1;}/*!sc*/
+ol,ul{list-style:none;}/*!sc*/
+blockquote,q{quotes:none;}/*!sc*/
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}/*!sc*/
+table{border-collapse:collapse;border-spacing:0;}/*!sc*/
+*{box-sizing:border-box;}/*!sc*/
+body{background:var(--background);line-height:1;font-size:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}/*!sc*/
+img{display:block;width:100%;height:auto;}/*!sc*/
+body.dark{--borders:#38444d;--texts:#8899a6;--postColor:#fff;--highlight:#1fa1f2;--mediumBackground:#192734;--background:#16202c;--white:#fff;--black:#222;}/*!sc*/
+body.light{--borders:#dedede;--postColor:#111;--texts:#555555;--highlight:#1fa1f2;--mediumBackground:#f0f0f3;--background:#fff;--white:#fff;--black:#222;}/*!sc*/
+data-styled.g55[id="sc-global-gLPWrd1"]{content:"sc-global-gLPWrd1,"}/*!sc*/
+</style><link rel="alternate" type="application/rss+xml" title="Love Huria Blog - RSS Feed" href="/feed.xml"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-2e5e23a6fd301fe77397.js"/><link as="script" rel="preload" href="/framework-8e210829bcc33c32949c.js"/><link as="script" rel="preload" href="/styles-7fe7e8372b9bcab21468.js"/><link as="script" rel="preload" href="/532a2f07-0d481acc37795e73d9c1.js"/><link as="script" rel="preload" href="/app-8cead0067b0f6e5dfbf6.js"/><link as="script" rel="preload" href="/c920ec033e559e3d21b2f44264ae3005d993ef01-fb7ae3b6807047542941.js"/><link as="script" rel="preload" href="/4525b1c2b02ad2e5ed069bdfee89f10821ffeb3f-c453a8d08c33cd6eaa1b.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-bcb5ff7f00ff7ef654ce.js"/><link as="fetch" rel="preload" href="/page-data/must-have-drush-commands-in-drupal/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body class="dark"><script>
+              (function() {
+                window.__onThemeChange = function() {};
+                function setTheme(newTheme) {
+                  window.__theme = newTheme;
+                  preferredTheme = newTheme;
+                  document.body.className = newTheme;
+                  window.__onThemeChange(newTheme);
+                }
+                var preferredTheme;
+                try {
+                  preferredTheme = localStorage.getItem('theme');
+                } catch (err) { }
+                window.__setPreferredTheme = function(newTheme) {
+                  setTheme(newTheme);
+                  try {
+                    localStorage.setItem('theme', newTheme);
+                  } catch (err) {}
+                }
+
+                setTheme(preferredTheme || 'dark');
+
+                window.__onDisplayChange = function() {};
+                function setDisplay(newDisplay) {
+                  window.__display = newDisplay;
+                  preferredDisplay = newDisplay;
+                  document.body.id = newDisplay;
+                  window.__onDisplayChange(newDisplay);
+                }
+                var preferredDisplay;
+                try {
+                  preferredDisplay = localStorage.getItem('display');
+                } catch (err) { }
+                window.__setPreferredDisplay = function(newDisplay) {
+                  setDisplay(newDisplay);
+                  try {
+                    localStorage.setItem('display', newDisplay);
+                  } catch (err) {}
+                }
+
+                setDisplay(preferredDisplay || 'list');
+              })();
+            </script><noscript>Your browser does not support JavaScript! =)</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="tl-edges"><div class="tl-wrapper tl-wrapper--mount tl-wrapper-status--entered" style="z-index:1;opacity:1"><section class="styled__LayoutWrapper-qchwrn-0 hPLjUw"><main class="styled__LayoutMain-qchwrn-1 hQYTXd"><header class="base__PostHeader-sc-17fg8w0-0 huSLRw"><p class="base__PostDate-sc-17fg8w0-3 dhsbwc">16 January 2018<!-- --> • <!-- -->6<!-- --> min read</p><h1 class="base__PostTitle-sc-17fg8w0-1 cOlZFa">Must have custom drush commands in every Drupal project</h1><h2 class="base__PostDescription-sc-17fg8w0-2 dQtoxT">This post explains how to create custom drush commands which are in must have list for every Drupal project</h2></header><section class="base__MainContent-sc-17fg8w0-4 kXGJvp"><div><p>I am working on a project where we use Drush commands a lot .... seriously like A LOT.. That said, while working on the project, I found few drush commands which come quite handy in our day to day operations. We use these commands mostly with deploy hooks and also while working locally.</p>
+<p>Everyone uses Drush commands which are kinda in daily use while working on Drupal and we just can’t imagine our life without it in terms of increasing our productivity.</p>
+<p>We want to be more and more productive right? Yes, we do. :)</p>
+<h2 id="a-little-bit-about-drush" style="position:relative;">A little bit about Drush</h2>
+<p>Drush is an awesome command line shell and Unix scripting interface for Drupal. It is a very useful tool and its core ships with lots of useful commands for interacting with code like modules/themes/profiles. It does a lot of things like running update.php, executes sql queries and DB migrations, run cron or clear cache etc.</p>
+<p>Even Though there are a bunch of commands available and can be found <a href="https://drushcommands.com/" target="_blank" rel="nofollow noopener noreferrer">here</a>, which are continuously making our lives easier, we still feel the urge to have custom Drush commands that suits our project needs and can improve overall team efficiency.</p>
+<p>Creating custom Drush commands is very easy, Drupal provides hooks to integrate with our custom modules. Infact, there is not much difference between creating custom Drush commands with Drupal 7/ Drupal 8.</p>
+<h2 id="coming-back-to-this-post" style="position:relative;">Coming back to this post</h2>
+<p>Here I am gonna mention few custom Drush commands which can be really handy while working on a project and can save plenty of your time.</p>
+<p>Following are the things we should have automated using Drush commands:</p>
+<ul>
+<li>Database checks: This includes checking the number of threats with respect to the database, as if any unwanted module is enabled, PHP filter, ensuring errors and warnings are off etc.</li>
+<li>Clearing specific cache: This is useful when we would like to target a specific cid and bin using cache<em>clear</em>all() via the Drush command.</li>
+<li>Rebuilding theme (This is not similar to clearing theme-registry): There is no option as of now to rebuild theme when we add CSS or JS files in a themes .info file.</li>
+</ul>
+<h2 id="database-checks" style="position:relative;">Database checks</h2>
+<p>The first step, we need is to call the hook provided by Drupal. This is required to define the description of the hook, defining an alias with an example.</p>
+<div class="gatsby-highlight" data-language="php"><pre class="language-php"><code class="language-php"><span class="token comment">/**
+ * Implements drush_command().
+ */</span>
+<span class="token keyword">function</span> <span class="token function">my_module_drush_command</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token variable">$items</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token variable">$items</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'my-module-run-db-checks'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token single-quoted-string string">'description'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token single-quoted-string string">'Checking potential issues on the database to ensure it is production ready.'</span><span class="token punctuation">,</span>
+    <span class="token single-quoted-string string">'callback'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token single-quoted-string string">'my_module_run_db_checks'</span><span class="token punctuation">,</span>
+    <span class="token single-quoted-string string">'examples'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">[</span>
+      <span class="token single-quoted-string string">'drush my-module-db-checks'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token single-quoted-string string">'Run few database checks on the respected target.'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token single-quoted-string string">'aliases'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token single-quoted-string string">'my-module-run-db-checks'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token variable">$items</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Now what is required is to create the callback function with whatever things we want to check to ensure that there isn't any potential threat to the system. Following are the things we must have:</p>
+<ul>
+<li>Checking if PHP Errors and warnings are off.</li>
+</ul>
+<div class="gatsby-highlight" data-language="php"><pre class="language-php"><code class="language-php"><span class="token comment">/**
+ * Run an audit against a database to check for potential issues.
+ */</span>
+<span class="token keyword">function</span> <span class="token function">my_module_run_db_checks</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token variable">$errors</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Hide all PHP errors.</span>
+  <span class="token variable">$er_query</span> <span class="token operator">=</span> <span class="token function">db_query</span><span class="token punctuation">(</span><span class="token double-quoted-string string">"SELECT CONVERT( value
+    USING utf8 ) AS error_reporting_level
+    FROM variable
+    WHERE name = 'error_level'
+    LIMIT 0 , 30
+  "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token variable">$record</span> <span class="token operator">=</span> <span class="token variable">$er_query</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">fetchObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token variable">$error_level</span> <span class="token operator">=</span> <span class="token function">unserialize</span><span class="token punctuation">(</span><span class="token variable">$record</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">error_reporting_level</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$error_level</span> <span class="token operator">!==</span> <span class="token double-quoted-string string">"0"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$errors</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'php_errors_visible'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token single-quoted-string string">'PHP errors are not hidden. Errors will be visible on the site.'</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Check if there is any error found.</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">empty</span><span class="token punctuation">(</span><span class="token variable">$errors</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">drush_log</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'DB checks completed. No problems were found.'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'success'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token function">drush_log</span><span class="token punctuation">(</span><span class="token double-quoted-string string">"\nThe following issues were found with this site:"</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'error'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$errors</span> <span class="token keyword">as</span> <span class="token variable">$key</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token variable">$value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">drush_log</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'- '</span> <span class="token punctuation">.</span> <span class="token variable">$value</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'error'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<ul>
+<li>Checking if all the unnecessary modules (For example: Devel, Since XSS vulnerabilities are the #1 vulnerability found in Drupal 7 contrib modules, it's always recommended to disable the 'devel' module on production sites and (if possible) entirely remove it.) are disabled. (We will just add the following to the above callback, also we can easily add more modules the list).</li>
+</ul>
+<div class="gatsby-highlight" data-language="php"><pre class="language-php"><code class="language-php"><span class="token comment">// Check if stage file proxy isn't enabled.</span>
+<span class="token variable">$sfp_status_query</span> <span class="token operator">=</span> <span class="token function">db_select</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'system'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'s'</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token operator">></span><span class="token function">fields</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'s'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token single-quoted-string string">'name'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'status'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token operator">></span><span class="token function">condition</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'s.name'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'stage_file_proxy'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'='</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token operator">></span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token operator">></span><span class="token function">fetchAssoc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$sfp_status_query</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'status'</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token variable">$errors</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'dblog_enabled'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token single-quoted-string string">'Stage file proxy module is still enabled.'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Check if database logging isn't enabled.</span>
+<span class="token variable">$dblog_status_query</span> <span class="token operator">=</span> <span class="token function">db_select</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'system'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'s'</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token operator">></span><span class="token function">fields</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'s'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token single-quoted-string string">'name'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'status'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token operator">></span><span class="token function">condition</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'s.name'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'dblog'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'='</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token operator">></span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token operator">></span><span class="token function">fetchAssoc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$dblog_status_query</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'status'</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token variable">$errors</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'dblog_enabled'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token single-quoted-string string">'Database logging is still enabled. This will cause unnecessary read and write queries.'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Make sure 'devel' module isn't enabled.</span>
+<span class="token variable">$devel_status_query</span> <span class="token operator">=</span> <span class="token function">db_select</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'system'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'s'</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token operator">></span><span class="token function">fields</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'s'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token single-quoted-string string">'name'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'status'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token operator">></span><span class="token function">condition</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'s.name'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'devel'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'='</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token operator">></span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token operator">></span><span class="token function">fetchAssoc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$devel_status_query</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'status'</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token variable">$errors</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'devel_module_enabled'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token single-quoted-string string">'Devel module is still enabled.'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<ul>
+<li>Checking if USER ID 1 is blocked or not. The Drupal account created during installation (i.e. with user ID or UID=1) behaves differently from others. Primarily, it can bypass all access callbacks: it has permission to do everything by default. Failing to secure this account could result in potential security risks. Treat the UID=1 account as you would with root on Linux systems.</li>
+</ul>
+<div class="gatsby-highlight" data-language="php"><pre class="language-php"><code class="language-php"><span class="token comment">// Check User ID 1 is blocked.</span>
+<span class="token variable">$user_status_query</span> <span class="token operator">=</span> <span class="token function">db_select</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'u'</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token operator">></span><span class="token function">fields</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'u'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token single-quoted-string string">'uid'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'status'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token operator">></span><span class="token function">condition</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'u.uid'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'='</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token operator">></span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token operator">></span><span class="token function">fetchAssoc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$user_status_query</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'status'</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token variable">$errors</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'user_id_1_enabled'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token single-quoted-string string">'User ID 1 is still enabled. This account should be blocked for security reasons.'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<ul>
+<li>Checking if PHP filter is enabled or not. There are a lot of downsides when we are using PHP filter and apparently, there is a pretty awesome explanation for that on this <a href="https://drupal.stackexchange.com/questions/2509/what-are-the-downsides-of-using-php-filter-code-in-blocks-nodes-views-args-et" target="_blank" rel="nofollow noopener noreferrer">post</a>.</li>
+</ul>
+<div class="gatsby-highlight" data-language="php"><pre class="language-php"><code class="language-php"><span class="token comment">// PHP filter should not be enabled on any site.</span>
+<span class="token variable">$php_filter_status_query</span> <span class="token operator">=</span> <span class="token function">db_select</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'filter_format'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'f'</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token operator">></span><span class="token function">fields</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'f'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token single-quoted-string string">'format'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'status'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token operator">></span><span class="token function">condition</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'f.format'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'php_code'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'='</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token operator">></span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token operator">></span><span class="token function">fetchAssoc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$php_filter_status_query</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'status'</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token variable">$errors</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'php_filter_enabled'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token single-quoted-string string">'The PHP filter is still enabled and could cause potential security issues.'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>For all these checks, we just need to go to the terminal and run the following command:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">drush my-module-run-db-checks</code></pre></div>
+<h2 id="clearing-specific-cache" style="position:relative;">Clearing specific cache</h2>
+<p>We need to follow the same step i.e. we need is to call the hook provided by Drupal for defining the command definition, description etc.</p>
+<div class="gatsby-highlight" data-language="php"><pre class="language-php"><code class="language-php"><span class="token comment">/**
+ * Implements drush_command().
+ */</span>
+<span class="token keyword">function</span> <span class="token function">my_module_drush_command</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token variable">$items</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token variable">$items</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'my-module-cc-cache-bin'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token single-quoted-string string">'description'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token single-quoted-string string">'Clear a specific cache bin.'</span><span class="token punctuation">,</span>
+    <span class="token single-quoted-string string">'callback'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token single-quoted-string string">'my_module_cc_cache_bin'</span><span class="token punctuation">,</span>
+    <span class="token single-quoted-string string">'examples'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">[</span>
+      <span class="token single-quoted-string string">'drush my-module-cc-cb cid_you_want_to_clear cache_table'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token single-quoted-string string">'Clear passed cid from passed table.'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token single-quoted-string string">'arguments'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">[</span>
+      <span class="token single-quoted-string string">'cid'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">dt</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'CID for items to clear'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token single-quoted-string string">'cache_bin'</span>   <span class="token operator">=</span><span class="token operator">></span> <span class="token function">dt</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'A required cache bin argument.'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token single-quoted-string string">'wildcard'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">dt</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'Whether to do a wildcard delete'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token single-quoted-string string">'aliases'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token single-quoted-string string">'my-module-cc-cb'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token variable">$items</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Now, we need to define the callback which will do the fun part:</p>
+<div class="gatsby-highlight" data-language="php"><pre class="language-php"><code class="language-php"><span class="token comment">/**
+ * Exposes cache_clear_all to drush for deploy hooks.
+ *
+ * @param string|string[] $cid
+ *   Cache id or array of cache ids to clear.
+ * @param string $bin
+ *   The bin name to clear.
+ * @param bool $wildcard
+ *   Default false, whether to use wildcard matching.
+ */</span>
+<span class="token keyword">function</span> <span class="token function">my_module_cc_cache_bin</span><span class="token punctuation">(</span><span class="token variable">$cid</span><span class="token punctuation">,</span> <span class="token variable">$bin</span><span class="token punctuation">,</span> <span class="token variable">$wildcard</span> <span class="token operator">=</span> <span class="token boolean constant">FALSE</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">cache_clear_all</span><span class="token punctuation">(</span><span class="token variable">$cid</span><span class="token punctuation">,</span> <span class="token variable">$bin</span><span class="token punctuation">,</span> <span class="token variable">$wildcard</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">drush_log</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'Cleared cids: '</span> <span class="token punctuation">.</span> <span class="token variable">$cid</span> <span class="token punctuation">.</span> <span class="token single-quoted-string string">' in bin: '</span> <span class="token punctuation">.</span> <span class="token variable">$bin</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'ok'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>To clear cache id or array of cids from specific cache table, we just need to go to the terminal and run the following command:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">drush my-module-cc-cb cid_you_want_to_clear cache_table</code></pre></div>
+<h2 id="rebuilding-theme-data" style="position:relative;">Rebuilding theme data</h2>
+<p>Since we know how to define an custom drush command, we can just skip to the callback directly. ;)</p>
+<div class="gatsby-highlight" data-language="php"><pre class="language-php"><code class="language-php"><span class="token comment">/**
+ * Rebuilding theme data properly.
+ */</span>
+<span class="token keyword">function</span> <span class="token function">my_module_rebuild_theme</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">system_rebuild_theme_data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">drush_log</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'Theme data rebuilt.'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'ok'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Now we can rebuild theme data easily with a custom drush command.</p>
+<blockquote>
+<p>Similarly, we can add custom Drush commands as per our use and project's need and obviously we can improvise the scripts, do additional work. This post covers important Drush commands which are essential in our day to day projects plus it also explains how we can create custom Drush commands, YAY BONUS!! :D</p>
+</blockquote></div></section><section class="styled__RecommendedWrapper-c0obzs-0 heKbJR"><a class="styled__RecommendedLink-c0obzs-1 DhHOv previous" direction="left" href="/time-to-level-up-code-reviews/">Time to level up Code Reviews</a><a class="styled__RecommendedLink-c0obzs-1 DhHOv next" direction="right" href="/drupal-camp-goa-2018-call-for-sessions/">Emboss your footprints in the Drupal Sand - Drupal Camp Goa 2018, Call for sessions</a></section><section class="styled__CommentsWrapper-sc-1q8vbcb-0 hPHayL"><h2 class="styled__CommentsTitle-sc-1q8vbcb-1 bEUYFl">Comments</h2><div><div id="disqus_thread"></div></div></section></main></section></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/must-have-drush-commands-in-drupal/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-8cead0067b0f6e5dfbf6.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-4efef167a65f33edc4e5.js"],"component---src-pages-404-js":["/component---src-pages-404-js-0700f2634e76af3151fc.js"],"component---src-pages-about-js":["/component---src-pages-about-js-b3f0e2593ed56990a531.js"],"component---src-pages-cursos-js":["/component---src-pages-cursos-js-358cdf72cb27b5259321.js"],"component---src-pages-search-js":["/component---src-pages-search-js-38c7a04cb01ede0f6fe2.js"],"component---src-pages-series-js":["/component---src-pages-series-js-19cbe539dc253f585729.js"],"component---src-templates-blog-list-js":["/component---src-templates-blog-list-js-a3fc7856c0577ac543d6.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-bcb5ff7f00ff7ef654ce.js"]};/*]]>*/</script><script src="/component---src-templates-blog-post-js-bcb5ff7f00ff7ef654ce.js" async=""></script><script src="/4525b1c2b02ad2e5ed069bdfee89f10821ffeb3f-c453a8d08c33cd6eaa1b.js" async=""></script><script src="/c920ec033e559e3d21b2f44264ae3005d993ef01-fb7ae3b6807047542941.js" async=""></script><script src="/app-8cead0067b0f6e5dfbf6.js" async=""></script><script src="/532a2f07-0d481acc37795e73d9c1.js" async=""></script><script src="/styles-7fe7e8372b9bcab21468.js" async=""></script><script src="/framework-8e210829bcc33c32949c.js" async=""></script><script src="/webpack-runtime-2e5e23a6fd301fe77397.js" async=""></script></body></html>

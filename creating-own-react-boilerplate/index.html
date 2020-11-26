@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="8kDtWUmUQEh7QXoj_shRaxcgYAVpHs_YQ7TeniN0kmI"/><style data-href="/styles.884fc4cd88bb91762961.css">.tl-edges{max-width:100%;overflow-x:hidden}.tl-wrapper{width:100%;float:left;position:relative}.tl-wrapper+.tl-wrapper{margin-left:-100%;margin-right:0}code[class*=language-],pre[class*=language-]{color:#ccc;background:none;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><meta name="generator" content="Gatsby 2.20.29"/><title data-react-helmet="true">Creating your own React Boilerplate - For Beginners | Love Huria</title><meta data-react-helmet="true" name="aplication-name" content="Love Huria Blog"/><meta data-react-helmet="true" name="description" content="Technical Lead | Consultant (Drupal/PHP/Laravel, React, React Native) at Srijan Technologies"/><meta data-react-helmet="true" property="og:image" content="https://lhuria94.github.io/assets/img/2019-10-20-creating-own-react-boilerplate"/><meta data-react-helmet="true" property="og:title" content="Creating your own React Boilerplate - For Beginners"/><meta data-react-helmet="true" property="og:description" content="Technical Lead | Consultant (Drupal/PHP/Laravel, React, React Native) at Srijan Technologies"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"/><meta data-react-helmet="true" name="twitter:image:src" content="https://lhuria94.github.io/assets/img/2019-10-20-creating-own-react-boilerplate"/><meta data-react-helmet="true" name="twitter:creator" content="@lovehuria"/><meta data-react-helmet="true" name="twitter:title" content="Creating your own React Boilerplate - For Beginners"/><meta data-react-helmet="true" name="twitter:description" content="Technical Lead | Consultant (Drupal/PHP/Laravel, React, React Native) at Srijan Technologies"/><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><style data-styled="" data-styled-version="5.1.0">.hPLjUw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+@media (max-width:1170px){.hPLjUw{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding-top:4.125rem;}}/*!sc*/
+data-styled.g25[id="styled__LayoutWrapper-qchwrn-0"]{content:"hPLjUw,"}/*!sc*/
+.hQYTXd{background:var(--background);min-height:100vh;padding:0 3.75rem 0 20rem;-webkit-transition:background 0.5s ease,color 0.5s ease;transition:background 0.5s ease,color 0.5s ease;width:100%;}/*!sc*/
+body#card .hQYTXd{grid-template-areas:'cards' 'pagination';}/*!sc*/
+@media (max-width:1170px){.hQYTXd{padding:0 0 3rem 0;}}/*!sc*/
+data-styled.g26[id="styled__LayoutMain-qchwrn-1"]{content:"hQYTXd,"}/*!sc*/
+.huSLRw{color:var(--postColor);margin:auto;max-width:70rem;padding:5rem 5rem 0;}/*!sc*/
+@media (max-width:1170px){.huSLRw{padding:3rem 0 0;max-width:100%;}}/*!sc*/
+data-styled.g27[id="base__PostHeader-sc-17fg8w0-0"]{content:"huSLRw,"}/*!sc*/
+.cOlZFa{font-size:4rem;font-weight:700;padding:0 1.4rem;margin:1rem auto;}/*!sc*/
+@media (max-width:1170px){.cOlZFa{font-size:2.8rem;line-height:1.1;padding:0 1rem;}}/*!sc*/
+data-styled.g28[id="base__PostTitle-sc-17fg8w0-1"]{content:"cOlZFa,"}/*!sc*/
+.dQtoxT{font-size:2rem;font-weight:200;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.dQtoxT{font-size:1.6rem;line-height:1.3;padding:0 1rem;}}/*!sc*/
+data-styled.g29[id="base__PostDescription-sc-17fg8w0-2"]{content:"dQtoxT,"}/*!sc*/
+.dhsbwc{font-size:1.1rem;font-weight:100;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.dhsbwc{padding:0 1rem;}}/*!sc*/
+data-styled.g30[id="base__PostDate-sc-17fg8w0-3"]{content:"dhsbwc,"}/*!sc*/
+.kXGJvp{margin:auto;max-width:70rem;padding:2rem 5rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp{padding:2rem 0;max-width:100%;}}/*!sc*/
+.kXGJvp p,.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp ul,.kXGJvp ol,.kXGJvp .tags,.kXGJvp iframe,.kXGJvp .button-post{color:var(--postColor);font-size:1.25rem;font-weight:300;line-height:1.7;-webkit-letter-spacing:0.069rem;-moz-letter-spacing:0.069rem;-ms-letter-spacing:0.069rem;letter-spacing:0.069rem;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp p,.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp ul,.kXGJvp ol,.kXGJvp .tags,.kXGJvp iframe,.kXGJvp .button-post{padding:0 1rem;word-break:break-word;}}/*!sc*/
+.kXGJvp p{margin:0 auto 1.6rem;}/*!sc*/
+.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp h5{margin:2.4rem auto 1rem;}/*!sc*/
+.kXGJvp ul,.kXGJvp ol{list-style:disc;padding-left:2.5rem;margin:0 auto 1.6rem;}/*!sc*/
+.kXGJvp li{padding:0.625rem 0;}/*!sc*/
+.kXGJvp li > ul{margin-bottom:0;}/*!sc*/
+.kXGJvp p code,.kXGJvp li code{word-wrap:break-word;}/*!sc*/
+.kXGJvp img{display:block;max-width:100%;margin:1.875rem auto;}/*!sc*/
+.kXGJvp iframe{padding:0 1.6rem 1.6rem;width:100%;}/*!sc*/
+@media (max-width:1170px){.kXGJvp iframe{padding:0 1rem;}}/*!sc*/
+.kXGJvp blockquote{color:var(--postColor);border-left:0.3rem solid var(--highlight);padding:0 1.875rem;margin:3.125rem auto;}/*!sc*/
+.kXGJvp hr{border:1px solid var(--borders);margin:3rem auto;}/*!sc*/
+.kXGJvp #twitter-widget-0,.kXGJvp .instagram-media,.kXGJvp .twitter-tweet{margin:20px auto !important;}/*!sc*/
+.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp h5{font-weight:800;-webkit-letter-spacing:0.069rem;-moz-letter-spacing:0.069rem;-ms-letter-spacing:0.069rem;letter-spacing:0.069rem;line-height:1.4;}/*!sc*/
+.kXGJvp h1{font-size:2.8rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h1{font-size:1.875rem;}}/*!sc*/
+.kXGJvp h2{font-size:2.1rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h2{font-size:1.375rem;}}/*!sc*/
+.kXGJvp h3{font-size:1.6rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h3{font-size:1.125rem;}}/*!sc*/
+.kXGJvp h4{font-size:1.4rem;}/*!sc*/
+.kXGJvp h5{font-size:1.2rem;}/*!sc*/
+.kXGJvp strong{font-weight:700;}/*!sc*/
+.kXGJvp .gatsby-resp-image-background-image{z-index:2;opacity:1 !important;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image{box-shadow:none !important;-webkit-transition:opacity 0.2s;transition:opacity 0.2s;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image.lazyload{opacity:0;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image.lazyloaded{opacity:1;z-index:3;}/*!sc*/
+.kXGJvp .gatsby-highlight{padding:0 1.6rem 1.6rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp .gatsby-highlight{padding:0;}}/*!sc*/
+.kXGJvp .instagram-media{margin:1rem auto !important;}/*!sc*/
+.kXGJvp a{border-bottom:1px dashed var(--highlight);color:var(--highlight);-webkit-text-decoration:none;text-decoration:none;-webkit-transition:opacity 0.5s;transition:opacity 0.5s;}/*!sc*/
+.kXGJvp a svg{color:var(--postColor);}/*!sc*/
+.kXGJvp a:hover{opacity:0.8;}/*!sc*/
+data-styled.g31[id="base__MainContent-sc-17fg8w0-4"]{content:"kXGJvp,"}/*!sc*/
+.heKbJR{border-bottom:1px solid var(--borders);border-top:1px solid var(--borders);background:var(--mediumBackground);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+data-styled.g51[id="styled__RecommendedWrapper-c0obzs-0"]{content:"heKbJR,"}/*!sc*/
+.DhHOv{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:var(--mediumBackground);color:var(--highlight);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding:3rem;-webkit-text-decoration:none;text-decoration:none;-webkit-transition:background 0.5s ease;transition:background 0.5s ease;width:50%;}/*!sc*/
+@media (max-width:1170px){.DhHOv{padding:2rem 1rem;line-height:1.3;font-size:.9rem;}}/*!sc*/
+.DhHOv:hover{background:var(--borders);}/*!sc*/
+.DhHOv.previous{border-right:1px solid var(--borders);}/*!sc*/
+.DhHOv.next{-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;}/*!sc*/
+.DhHOv.next:only-child{margin-left:auto;border-left:1px solid var(--borders);}/*!sc*/
+.DhHOv.previous:before{content:'\2190';margin-right:0.5rem;}/*!sc*/
+.DhHOv.next:after{content:'\2192';margin-left:0.5rem;}/*!sc*/
+data-styled.g52[id="styled__RecommendedLink-c0obzs-1"]{content:"DhHOv,"}/*!sc*/
+.hPHayL{margin:auto;max-width:70rem;padding:3rem 6.4rem 3rem;}/*!sc*/
+@media (max-width:1170px){.hPHayL{padding:3rem 1.4rem 0;max-width:100%;}}/*!sc*/
+.hPHayL iframe[src*='ads-iframe']{display:none;}/*!sc*/
+.hPHayL #disqus_thread a{color:var(--highlight) !important;}/*!sc*/
+data-styled.g53[id="styled__CommentsWrapper-sc-1q8vbcb-0"]{content:"hPHayL,"}/*!sc*/
+.bEUYFl{color:var(--postColor);font-size:2.1rem;font-weight:700;padding-bottom:2rem;}/*!sc*/
+@media (max-width:1170px){.bEUYFl{font-size:1.375rem;}}/*!sc*/
+data-styled.g54[id="styled__CommentsTitle-sc-1q8vbcb-1"]{content:"bEUYFl,"}/*!sc*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}/*!sc*/
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}/*!sc*/
+body{line-height:1;}/*!sc*/
+ol,ul{list-style:none;}/*!sc*/
+blockquote,q{quotes:none;}/*!sc*/
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}/*!sc*/
+table{border-collapse:collapse;border-spacing:0;}/*!sc*/
+*{box-sizing:border-box;}/*!sc*/
+body{background:var(--background);line-height:1;font-size:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}/*!sc*/
+img{display:block;width:100%;height:auto;}/*!sc*/
+body.dark{--borders:#38444d;--texts:#8899a6;--postColor:#fff;--highlight:#1fa1f2;--mediumBackground:#192734;--background:#16202c;--white:#fff;--black:#222;}/*!sc*/
+body.light{--borders:#dedede;--postColor:#111;--texts:#555555;--highlight:#1fa1f2;--mediumBackground:#f0f0f3;--background:#fff;--white:#fff;--black:#222;}/*!sc*/
+data-styled.g55[id="sc-global-gLPWrd1"]{content:"sc-global-gLPWrd1,"}/*!sc*/
+</style><link rel="alternate" type="application/rss+xml" title="Love Huria Blog - RSS Feed" href="/feed.xml"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-2e5e23a6fd301fe77397.js"/><link as="script" rel="preload" href="/framework-8e210829bcc33c32949c.js"/><link as="script" rel="preload" href="/styles-7fe7e8372b9bcab21468.js"/><link as="script" rel="preload" href="/532a2f07-0d481acc37795e73d9c1.js"/><link as="script" rel="preload" href="/app-8cead0067b0f6e5dfbf6.js"/><link as="script" rel="preload" href="/c920ec033e559e3d21b2f44264ae3005d993ef01-fb7ae3b6807047542941.js"/><link as="script" rel="preload" href="/4525b1c2b02ad2e5ed069bdfee89f10821ffeb3f-c453a8d08c33cd6eaa1b.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-bcb5ff7f00ff7ef654ce.js"/><link as="fetch" rel="preload" href="/page-data/creating-own-react-boilerplate/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body class="dark"><script>
+              (function() {
+                window.__onThemeChange = function() {};
+                function setTheme(newTheme) {
+                  window.__theme = newTheme;
+                  preferredTheme = newTheme;
+                  document.body.className = newTheme;
+                  window.__onThemeChange(newTheme);
+                }
+                var preferredTheme;
+                try {
+                  preferredTheme = localStorage.getItem('theme');
+                } catch (err) { }
+                window.__setPreferredTheme = function(newTheme) {
+                  setTheme(newTheme);
+                  try {
+                    localStorage.setItem('theme', newTheme);
+                  } catch (err) {}
+                }
+
+                setTheme(preferredTheme || 'dark');
+
+                window.__onDisplayChange = function() {};
+                function setDisplay(newDisplay) {
+                  window.__display = newDisplay;
+                  preferredDisplay = newDisplay;
+                  document.body.id = newDisplay;
+                  window.__onDisplayChange(newDisplay);
+                }
+                var preferredDisplay;
+                try {
+                  preferredDisplay = localStorage.getItem('display');
+                } catch (err) { }
+                window.__setPreferredDisplay = function(newDisplay) {
+                  setDisplay(newDisplay);
+                  try {
+                    localStorage.setItem('display', newDisplay);
+                  } catch (err) {}
+                }
+
+                setDisplay(preferredDisplay || 'list');
+              })();
+            </script><noscript>Your browser does not support JavaScript! =)</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="tl-edges"><div class="tl-wrapper tl-wrapper--mount tl-wrapper-status--entered" style="z-index:1;opacity:1"><section class="styled__LayoutWrapper-qchwrn-0 hPLjUw"><main class="styled__LayoutMain-qchwrn-1 hQYTXd"><header class="base__PostHeader-sc-17fg8w0-0 huSLRw"><p class="base__PostDate-sc-17fg8w0-3 dhsbwc">20 October 2019<!-- --> • <!-- -->7<!-- --> min read</p><h1 class="base__PostTitle-sc-17fg8w0-1 cOlZFa">Creating your own React Boilerplate - For Beginners</h1><h2 class="base__PostDescription-sc-17fg8w0-2 dQtoxT"></h2></header><section class="base__MainContent-sc-17fg8w0-4 kXGJvp"><div><p>Well, It's been a while working on React, still learning and it feels pretty awesome. We all understand how important it is to interpret the basic concepts before we set our path to work with any framework or library.</p>
+<p>Usually what happens, even as a beginner we tend to jump on things without understanding how it works, to see the practical usage, fancy stuff etc and hey <code class="language-text">You are not alone!</code></p>
+<p>But sometimes, it's good to come back on time and try to understand the underlying pieces. There are tons of boilerplates available which are really helpful to kickstart the project as a solid foundation and the plus point is most of these boilerplates are built by Industry experts.</p>
+<p>Taking my past experiences into account, there have been multiple React projects I have worked upon; so sooner or later we get to overcome the fear of setting up our own <code class="language-text">package.json</code> and <code class="language-text">webpack</code> configurations. </p>
+<p>So, here we will try to set up our own boilerplate or you can say our own way of <em>React</em> project set up with some interesting packages which normally get used at some point.</p>
+<p>Now in order to build our boilerplate, the very first thing we need to understand is <code class="language-text">package.json</code>.</p>
+<h2 id="what-is-packagejson-and-why-do-we-need-it" style="position:relative;">What is package.json and why do we need it</h2>
+<p>The <code class="language-text">package.json</code> file is an essential part of the Javascript (Node) eco-system. It’s like one of the very first baby step developers takes while starting development in Node.js. Also, It helps in streamlining the process, managing packages for your project. You can say, its essentially a manifest file that contains the metadata like name, description, package versioning etc of the project (All in one place). </p>
+<h3 id="setting-up-packagejson" style="position:relative;">Setting up package.json</h3>
+<p>Defining the metadata by typing it out i.e creating a <code class="language-text">package.json</code> is always an option, but we don't have to do it incase you are setting up a new project. Instead, there are existing ways to commandify it. We can use standard package managers such as <em>NPM, YARN</em> as they help interactively in creating/updating a <code class="language-text">package.json</code> file.</p>
+<p>You must have heard about <em>NPM, YARN</em>, but in this post, we will be using <em>Yarn</em> to setup our react boilerplate. In case, you would like to read about the differences, check this out <a href="https://waverleysoftware.com/blog/yarn-vs-npm/" target="_blank" rel="nofollow noopener noreferrer">here</a>.</p>
+<h3 id="continuing-lets-try-to-explain-yarn-in-the-simplest-way-possible" style="position:relative;">Continuing, Let’s try to explain Yarn in the simplest way possible</h3>
+<p><em>Yarn</em> is a package manager that lets you use code developed by the community from around the world which eventually makes things easier to build the solution. </p>
+<p>This collection of functionality is something called package.</p>
+<p>To set up <code class="language-text">package.json</code>, <em>Yarn</em> provides an initialize command, which will give you a kind of a questionnaire about the project and that tends to be your project’s metadata.</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">// Run <span class="token variable"><span class="token variable">`</span><span class="token function">yarn</span> init<span class="token variable">`</span></span> <span class="token keyword">in</span> terminal.
+<span class="token operator">></span> <span class="token function">yarn</span> init</code></pre></div>
+<p><img src="https://lhuria94.github.io/assets/img/2019-10-20-creating-own-react-boilerplate/yarn-init.png" alt="Yarn init">
+After filling in all the required information, it will create a <code class="language-text">package.json</code> file at the root of the project’s directory. It should look like:
+<img src="https://lhuria94.github.io/assets/img/2019-10-20-creating-own-react-boilerplate/yarn-init-package-json.png" alt="Yarn init package.json"></p>
+<h3 id="what-does-this-mean-to-us" style="position:relative;">What does this mean to us?</h3>
+<p>Let’s talk about it one by one:</p>
+<ul>
+<li><strong>name</strong>: This contains our package’s name and it does not allow spaces and instead it should be lowercase separated by hyphens/underscores. For example: <em>react-boilerplate</em>. 😊</li>
+<li><strong>version</strong>: This is the standard metadata for any kind of module, it should be in the format 'x.x.x' (Usually starts with 1.0.0). It follows semantic versioning (semver). Read more about it <a href="https://semver.org/" target="_blank" rel="nofollow noopener noreferrer">here</a>.</li>
+<li><strong>description</strong>: This is just a human-friendly description of your project/module. It helps developers to understand quickly regarding the intentions of the project or module. </li>
+<li><strong>main</strong>: This can be taken as the bootstrap file i.e an entry or lookup file when application boots up. Usually <code class="language-text">index.js</code>, but it's upto us to change it or not.</li>
+<li><strong>author</strong>: This is generally a piece of information about who’s writing the project/module, could be name, email address, etc.</li>
+<li><strong>license</strong>: This explains about the license the project/module belongs to. It could be MIT, ISC, etc.</li>
+</ul>
+<h4 id="while-can-be-few-other-questions-which-you-probably-wont-see-in-the-packagejson-file-but-can-add-such-as" style="position:relative;">While can be few other questions which you probably won't see in the package.json file, but can add such as:</h4>
+<ul>
+<li><strong>repository URL</strong>: Here we can mention the URL where the code is being hosted, so developers can check more details.</li>
+<li><strong>private</strong>: If set to true, then you won’t be able to publicly release your project/module to the community. Prevents accidental publication.</li>
+</ul>
+<p>Now that we understand the basic metadata of the <code class="language-text">package.json</code> file, let’s go ahead and set up our boilerplate (for which the post was intended for 😉).</p>
+<h2 id="setup-minimal-react-boilerplate" style="position:relative;">Setup minimal React boilerplate</h2>
+<blockquote>
+<p>Quicktip: To add packages using <em>YARN</em>, we can use <code class="language-text">yarn add &lt;package_name&gt;</code>, <code class="language-text">yarn add --dev &lt;package_name&gt;</code> (To add as dev dependency) similarly to remove; use <code class="language-text">yarn remove &lt;package_name&gt;</code></p>
+</blockquote>
+<ol>
+<li><strong>Installing React and ReactDOM</strong>: React (Javascript Library) package contains just the code required to define react components, state, props (All that is <em>React</em>) where React DOM works as a React renderer for the web, it works as a glue between React and the DOM.
+<img src="https://lhuria94.github.io/assets/img/2019-10-20-creating-own-react-boilerplate/react-rdom-install.png" alt="Yarn init package.json">
+If you see your <code class="language-text">package.json</code> file, there should be <em>React</em> and <em>ReactDOM</em> listing under the <code class="language-text">dependencies</code> of your project. It indicates, that now your project depends on <em>React</em> and <em>ReactDOM</em>. <br/> <br/>
+You might have noticed that there is a new directory created <em>node_modules</em> at the root of your project. This is where your installed packages will be kept. If you check there should be a <em>React</em> directory under <em>node_modules</em> which helps run React for the application. <br/> <br/>
+To use the React functionality, you might want to import it in your <code class="language-text">.js(x)</code> file like:
+<img src="https://lhuria94.github.io/assets/img/2019-10-20-creating-own-react-boilerplate/import-react.png" alt="Import React"></li>
+<li><strong>Webpack</strong>: In simple terms, its a bundler which helps bundles your files, images, assets, scripts, styles, module dependencies. It takes in modules with dependencies and spits bundled code which browsers can understand. <br/> <br/>
+We can install web pack using <em>Yarn</em> as a dev dependency:
+<img src="https://lhuria94.github.io/assets/img/2019-10-20-creating-own-react-boilerplate/yarn-add-webpack.png" alt="Yarn add webpack"></li>
+<li><strong>Babel</strong>: While working on React, we usually follow <a href="https://es6.io/" target="_blank" rel="nofollow noopener noreferrer">ES6</a>. Since older browsers can not understand the syntax say <em>Class</em> keyword, <em>import</em> statements. For these to be converted to ES5 which browsers can understand, we need Transpiler. That’s how <code class="language-text">Babel</code> comes in picture. <br/> <br/>
+<strong>You are probably thinking, then what is the use of Webpack?</strong> <br/> <br/>
+Webpack does not have the capability to transpile the code from ES6 to ES5, but it has this concept of loaders which helps in transforming the code and outputs the browser compatible code.<br/> <br/>
+Loader, which we will use is <code class="language-text">babel-loader</code> which internally used <code class="language-text">Babel</code> and requires certain level of configurations/presets i.e <code class="language-text">babel preset env</code> (Used for transpiling code from >=ES6 to ES5) &#x26; <code class="language-text">babel preset react</code> (Used for transpiling <code class="language-text">.Jsx</code> code to ES5). <br /> <br />
+Let's install and configure babel and the required dependencies:
+<img src="https://lhuria94.github.io/assets/img/2019-10-20-creating-own-react-boilerplate/yarn-add-babel.png" alt="Yarn add babel">
+To complete the setup, we would need to create a file called <code class="language-text">.babelrc</code> and define the configuration as below:
+<img src="https://lhuria94.github.io/assets/img/2019-10-20-creating-own-react-boilerplate/babelrc-file.png" alt="Babel rc file">
+To setup the <code class="language-text">babel-loader</code> and make it work as a web pack loader, we would need to define the configuration like below in a file called <code class="language-text">webpack.config.js</code> at the root of the project:
+<img src="https://lhuria94.github.io/assets/img/2019-10-20-creating-own-react-boilerplate/webpack-config.png" alt="Webpack config file">
+If we want to decode the configuration, then its just telling Webpack to take in js, jsx code and use babel for transpiling and output the ES5 browser compatible code.</li>
+<li><strong>HTML Webpack Plugin</strong>: This plugin helps to generate HTML files which ultimately serves Webpack generated bundles. That means, when webpack creates a new javascript bundled file, then it also needs a html file to server on the client side with the latest changes. <br/>
+Let's install the plugin and the loader as a dev dependency:
+<img src="https://lhuria94.github.io/assets/img/2019-10-20-creating-own-react-boilerplate/yarn-add-html-plugin.png" alt="Add html plugin"></li>
+</ol>
+<p>Wait, we are not done with the HTML plugin yet, we would need to configure it with Webpack as well. Earlier we defined, <code class="language-text">babel-loader</code> to transpile the code, now we would need to define <code class="language-text">html-loader</code> for generating the HTML.</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// Load the plugin in your webpack.config.js file.</span>
+<span class="token keyword">const</span> HtmlWebPackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"html-webpack-plugin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  module<span class="token operator">:</span> <span class="token punctuation">{</span>
+    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        test<span class="token operator">:</span> <span class="token regex">/\.(js|jsx)$/</span><span class="token punctuation">,</span>
+        exclude<span class="token operator">:</span> <span class="token regex">/node_modules/</span><span class="token punctuation">,</span>
+        use<span class="token operator">:</span> <span class="token punctuation">{</span>
+          loader<span class="token operator">:</span> <span class="token string">"babel-loader"</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// Add HTML loader to serve HTML files.</span>
+      <span class="token punctuation">{</span>
+        test<span class="token operator">:</span> <span class="token regex">/\.html$/</span><span class="token punctuation">,</span>
+        use<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            loader<span class="token operator">:</span> <span class="token string">"html-loader"</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// Call the Plugin here.</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token keyword">new</span> <span class="token class-name">HtmlWebPackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      template<span class="token operator">:</span> <span class="token string">"./public/index.html"</span><span class="token punctuation">,</span>
+      filename<span class="token operator">:</span> <span class="token string">"./index.html"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+<p>The setup is almost complete, but there is a downside to this. Whenever we will make any change to the code, we would need to manually refresh the page to see our changes. In order to overcome this problem, we can install another package called <code class="language-text">webpack-dev-server</code> as a dev dependency.
+<img src="https://lhuria94.github.io/assets/img/2019-10-20-creating-own-react-boilerplate/yarn-add-webpack-server.png" alt="Add webpack dev server package"></p>
+<p>To make this work either webpack command directly or its best that we modify our <code class="language-text">package.json</code> and add:</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token comment">// Open flag is for opening the browser as soon as we run `yarn start`.</span>
+<span class="token comment">// Hot flag is for hot reloading i.e refresh the page as soon as you make any change to the code.</span>
+<span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"webpack-dev-server --config webpack.config.js --open --hot"</span><span class="token punctuation">,</span>
+  <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"webpack --config webpack.config.js"</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre></div>
+<h2 id="running-the-react-application" style="position:relative;">Running the React Application</h2>
+<ul>
+<li>Start by creating a folder called <code class="language-text">src/</code> which will contain couple of files such as <code class="language-text">index.js</code> (Rendering the app) and <code class="language-text">App.js</code> (Contents of the App).</li>
+</ul>
+<p>This is just a dumb component which is exposing some static text:
+<img src="https://lhuria94.github.io/assets/img/2019-10-20-creating-own-react-boilerplate/app.png" alt="App.js"></p>
+<p>This is importing the dumb component we just created and rendering on the page, basically injecting on the element ID <code class="language-text">react-app-container</code>.
+<img src="https://lhuria94.github.io/assets/img/2019-10-20-creating-own-react-boilerplate/index.png" alt="Index.js">
+Now, you can start your application using:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token operator">></span> <span class="token function">yarn</span> start</code></pre></div>
+<p>Should get something like this in your terminal:
+<img src="https://lhuria94.github.io/assets/img/2019-10-20-creating-own-react-boilerplate/yarn-start-success.png" alt="Yarn start App">
+And we're all set here.</p>
+<blockquote>
+<p>You can check out the boilerplate for the complete folder structure <a href="https://github.com/lhuria94/minimal-react-boilerplate" target="_blank" rel="nofollow noopener noreferrer">here</a>.</p>
+</blockquote>
+<p>Thanks for reading. 😃</p></div></section><section class="styled__RecommendedWrapper-c0obzs-0 heKbJR"><a class="styled__RecommendedLink-c0obzs-1 DhHOv previous" direction="left" href="/cool-things-you-can-do-with-sass-part-1/">Cool things you can do with Sass - Part 1</a><a class="styled__RecommendedLink-c0obzs-1 DhHOv next" direction="right" href="/time-complexity-notations/">Understanding Time complexity - Big O Notations</a></section><section class="styled__CommentsWrapper-sc-1q8vbcb-0 hPHayL"><h2 class="styled__CommentsTitle-sc-1q8vbcb-1 bEUYFl">Comments</h2><div><div id="disqus_thread"></div></div></section></main></section></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/creating-own-react-boilerplate/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-8cead0067b0f6e5dfbf6.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-4efef167a65f33edc4e5.js"],"component---src-pages-404-js":["/component---src-pages-404-js-0700f2634e76af3151fc.js"],"component---src-pages-about-js":["/component---src-pages-about-js-b3f0e2593ed56990a531.js"],"component---src-pages-cursos-js":["/component---src-pages-cursos-js-358cdf72cb27b5259321.js"],"component---src-pages-search-js":["/component---src-pages-search-js-38c7a04cb01ede0f6fe2.js"],"component---src-pages-series-js":["/component---src-pages-series-js-19cbe539dc253f585729.js"],"component---src-templates-blog-list-js":["/component---src-templates-blog-list-js-a3fc7856c0577ac543d6.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-bcb5ff7f00ff7ef654ce.js"]};/*]]>*/</script><script src="/component---src-templates-blog-post-js-bcb5ff7f00ff7ef654ce.js" async=""></script><script src="/4525b1c2b02ad2e5ed069bdfee89f10821ffeb3f-c453a8d08c33cd6eaa1b.js" async=""></script><script src="/c920ec033e559e3d21b2f44264ae3005d993ef01-fb7ae3b6807047542941.js" async=""></script><script src="/app-8cead0067b0f6e5dfbf6.js" async=""></script><script src="/532a2f07-0d481acc37795e73d9c1.js" async=""></script><script src="/styles-7fe7e8372b9bcab21468.js" async=""></script><script src="/framework-8e210829bcc33c32949c.js" async=""></script><script src="/webpack-runtime-2e5e23a6fd301fe77397.js" async=""></script></body></html>

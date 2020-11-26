@@ -1,0 +1,186 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="8kDtWUmUQEh7QXoj_shRaxcgYAVpHs_YQ7TeniN0kmI"/><style data-href="/styles.884fc4cd88bb91762961.css">.tl-edges{max-width:100%;overflow-x:hidden}.tl-wrapper{width:100%;float:left;position:relative}.tl-wrapper+.tl-wrapper{margin-left:-100%;margin-right:0}code[class*=language-],pre[class*=language-]{color:#ccc;background:none;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><meta name="generator" content="Gatsby 2.20.29"/><title data-react-helmet="true">Bigpipe Caching: Making Web 2x Faster | Love Huria</title><meta data-react-helmet="true" name="aplication-name" content="Love Huria Blog"/><meta data-react-helmet="true" name="description" content="How Bigpipe came in picture for making web 2x faster"/><meta data-react-helmet="true" property="og:image" content="https://lhuria94.github.io/assets/img/"/><meta data-react-helmet="true" property="og:title" content="Bigpipe Caching: Making Web 2x Faster"/><meta data-react-helmet="true" property="og:description" content="How Bigpipe came in picture for making web 2x faster"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"/><meta data-react-helmet="true" name="twitter:image:src" content="https://lhuria94.github.io/assets/img/"/><meta data-react-helmet="true" name="twitter:creator" content="@lovehuria"/><meta data-react-helmet="true" name="twitter:title" content="Bigpipe Caching: Making Web 2x Faster"/><meta data-react-helmet="true" name="twitter:description" content="How Bigpipe came in picture for making web 2x faster"/><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><style data-styled="" data-styled-version="5.1.0">.hPLjUw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+@media (max-width:1170px){.hPLjUw{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding-top:4.125rem;}}/*!sc*/
+data-styled.g25[id="styled__LayoutWrapper-qchwrn-0"]{content:"hPLjUw,"}/*!sc*/
+.hQYTXd{background:var(--background);min-height:100vh;padding:0 3.75rem 0 20rem;-webkit-transition:background 0.5s ease,color 0.5s ease;transition:background 0.5s ease,color 0.5s ease;width:100%;}/*!sc*/
+body#card .hQYTXd{grid-template-areas:'cards' 'pagination';}/*!sc*/
+@media (max-width:1170px){.hQYTXd{padding:0 0 3rem 0;}}/*!sc*/
+data-styled.g26[id="styled__LayoutMain-qchwrn-1"]{content:"hQYTXd,"}/*!sc*/
+.huSLRw{color:var(--postColor);margin:auto;max-width:70rem;padding:5rem 5rem 0;}/*!sc*/
+@media (max-width:1170px){.huSLRw{padding:3rem 0 0;max-width:100%;}}/*!sc*/
+data-styled.g27[id="base__PostHeader-sc-17fg8w0-0"]{content:"huSLRw,"}/*!sc*/
+.cOlZFa{font-size:4rem;font-weight:700;padding:0 1.4rem;margin:1rem auto;}/*!sc*/
+@media (max-width:1170px){.cOlZFa{font-size:2.8rem;line-height:1.1;padding:0 1rem;}}/*!sc*/
+data-styled.g28[id="base__PostTitle-sc-17fg8w0-1"]{content:"cOlZFa,"}/*!sc*/
+.dQtoxT{font-size:2rem;font-weight:200;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.dQtoxT{font-size:1.6rem;line-height:1.3;padding:0 1rem;}}/*!sc*/
+data-styled.g29[id="base__PostDescription-sc-17fg8w0-2"]{content:"dQtoxT,"}/*!sc*/
+.dhsbwc{font-size:1.1rem;font-weight:100;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.dhsbwc{padding:0 1rem;}}/*!sc*/
+data-styled.g30[id="base__PostDate-sc-17fg8w0-3"]{content:"dhsbwc,"}/*!sc*/
+.kXGJvp{margin:auto;max-width:70rem;padding:2rem 5rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp{padding:2rem 0;max-width:100%;}}/*!sc*/
+.kXGJvp p,.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp ul,.kXGJvp ol,.kXGJvp .tags,.kXGJvp iframe,.kXGJvp .button-post{color:var(--postColor);font-size:1.25rem;font-weight:300;line-height:1.7;-webkit-letter-spacing:0.069rem;-moz-letter-spacing:0.069rem;-ms-letter-spacing:0.069rem;letter-spacing:0.069rem;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp p,.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp ul,.kXGJvp ol,.kXGJvp .tags,.kXGJvp iframe,.kXGJvp .button-post{padding:0 1rem;word-break:break-word;}}/*!sc*/
+.kXGJvp p{margin:0 auto 1.6rem;}/*!sc*/
+.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp h5{margin:2.4rem auto 1rem;}/*!sc*/
+.kXGJvp ul,.kXGJvp ol{list-style:disc;padding-left:2.5rem;margin:0 auto 1.6rem;}/*!sc*/
+.kXGJvp li{padding:0.625rem 0;}/*!sc*/
+.kXGJvp li > ul{margin-bottom:0;}/*!sc*/
+.kXGJvp p code,.kXGJvp li code{word-wrap:break-word;}/*!sc*/
+.kXGJvp img{display:block;max-width:100%;margin:1.875rem auto;}/*!sc*/
+.kXGJvp iframe{padding:0 1.6rem 1.6rem;width:100%;}/*!sc*/
+@media (max-width:1170px){.kXGJvp iframe{padding:0 1rem;}}/*!sc*/
+.kXGJvp blockquote{color:var(--postColor);border-left:0.3rem solid var(--highlight);padding:0 1.875rem;margin:3.125rem auto;}/*!sc*/
+.kXGJvp hr{border:1px solid var(--borders);margin:3rem auto;}/*!sc*/
+.kXGJvp #twitter-widget-0,.kXGJvp .instagram-media,.kXGJvp .twitter-tweet{margin:20px auto !important;}/*!sc*/
+.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp h5{font-weight:800;-webkit-letter-spacing:0.069rem;-moz-letter-spacing:0.069rem;-ms-letter-spacing:0.069rem;letter-spacing:0.069rem;line-height:1.4;}/*!sc*/
+.kXGJvp h1{font-size:2.8rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h1{font-size:1.875rem;}}/*!sc*/
+.kXGJvp h2{font-size:2.1rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h2{font-size:1.375rem;}}/*!sc*/
+.kXGJvp h3{font-size:1.6rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h3{font-size:1.125rem;}}/*!sc*/
+.kXGJvp h4{font-size:1.4rem;}/*!sc*/
+.kXGJvp h5{font-size:1.2rem;}/*!sc*/
+.kXGJvp strong{font-weight:700;}/*!sc*/
+.kXGJvp .gatsby-resp-image-background-image{z-index:2;opacity:1 !important;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image{box-shadow:none !important;-webkit-transition:opacity 0.2s;transition:opacity 0.2s;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image.lazyload{opacity:0;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image.lazyloaded{opacity:1;z-index:3;}/*!sc*/
+.kXGJvp .gatsby-highlight{padding:0 1.6rem 1.6rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp .gatsby-highlight{padding:0;}}/*!sc*/
+.kXGJvp .instagram-media{margin:1rem auto !important;}/*!sc*/
+.kXGJvp a{border-bottom:1px dashed var(--highlight);color:var(--highlight);-webkit-text-decoration:none;text-decoration:none;-webkit-transition:opacity 0.5s;transition:opacity 0.5s;}/*!sc*/
+.kXGJvp a svg{color:var(--postColor);}/*!sc*/
+.kXGJvp a:hover{opacity:0.8;}/*!sc*/
+data-styled.g31[id="base__MainContent-sc-17fg8w0-4"]{content:"kXGJvp,"}/*!sc*/
+.heKbJR{border-bottom:1px solid var(--borders);border-top:1px solid var(--borders);background:var(--mediumBackground);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+data-styled.g51[id="styled__RecommendedWrapper-c0obzs-0"]{content:"heKbJR,"}/*!sc*/
+.DhHOv{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:var(--mediumBackground);color:var(--highlight);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding:3rem;-webkit-text-decoration:none;text-decoration:none;-webkit-transition:background 0.5s ease;transition:background 0.5s ease;width:50%;}/*!sc*/
+@media (max-width:1170px){.DhHOv{padding:2rem 1rem;line-height:1.3;font-size:.9rem;}}/*!sc*/
+.DhHOv:hover{background:var(--borders);}/*!sc*/
+.DhHOv.previous{border-right:1px solid var(--borders);}/*!sc*/
+.DhHOv.next{-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;}/*!sc*/
+.DhHOv.next:only-child{margin-left:auto;border-left:1px solid var(--borders);}/*!sc*/
+.DhHOv.previous:before{content:'\2190';margin-right:0.5rem;}/*!sc*/
+.DhHOv.next:after{content:'\2192';margin-left:0.5rem;}/*!sc*/
+data-styled.g52[id="styled__RecommendedLink-c0obzs-1"]{content:"DhHOv,"}/*!sc*/
+.hPHayL{margin:auto;max-width:70rem;padding:3rem 6.4rem 3rem;}/*!sc*/
+@media (max-width:1170px){.hPHayL{padding:3rem 1.4rem 0;max-width:100%;}}/*!sc*/
+.hPHayL iframe[src*='ads-iframe']{display:none;}/*!sc*/
+.hPHayL #disqus_thread a{color:var(--highlight) !important;}/*!sc*/
+data-styled.g53[id="styled__CommentsWrapper-sc-1q8vbcb-0"]{content:"hPHayL,"}/*!sc*/
+.bEUYFl{color:var(--postColor);font-size:2.1rem;font-weight:700;padding-bottom:2rem;}/*!sc*/
+@media (max-width:1170px){.bEUYFl{font-size:1.375rem;}}/*!sc*/
+data-styled.g54[id="styled__CommentsTitle-sc-1q8vbcb-1"]{content:"bEUYFl,"}/*!sc*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}/*!sc*/
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}/*!sc*/
+body{line-height:1;}/*!sc*/
+ol,ul{list-style:none;}/*!sc*/
+blockquote,q{quotes:none;}/*!sc*/
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}/*!sc*/
+table{border-collapse:collapse;border-spacing:0;}/*!sc*/
+*{box-sizing:border-box;}/*!sc*/
+body{background:var(--background);line-height:1;font-size:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}/*!sc*/
+img{display:block;width:100%;height:auto;}/*!sc*/
+body.dark{--borders:#38444d;--texts:#8899a6;--postColor:#fff;--highlight:#1fa1f2;--mediumBackground:#192734;--background:#16202c;--white:#fff;--black:#222;}/*!sc*/
+body.light{--borders:#dedede;--postColor:#111;--texts:#555555;--highlight:#1fa1f2;--mediumBackground:#f0f0f3;--background:#fff;--white:#fff;--black:#222;}/*!sc*/
+data-styled.g55[id="sc-global-gLPWrd1"]{content:"sc-global-gLPWrd1,"}/*!sc*/
+</style><link rel="alternate" type="application/rss+xml" title="Love Huria Blog - RSS Feed" href="/feed.xml"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-2e5e23a6fd301fe77397.js"/><link as="script" rel="preload" href="/framework-8e210829bcc33c32949c.js"/><link as="script" rel="preload" href="/styles-7fe7e8372b9bcab21468.js"/><link as="script" rel="preload" href="/532a2f07-0d481acc37795e73d9c1.js"/><link as="script" rel="preload" href="/app-8cead0067b0f6e5dfbf6.js"/><link as="script" rel="preload" href="/c920ec033e559e3d21b2f44264ae3005d993ef01-fb7ae3b6807047542941.js"/><link as="script" rel="preload" href="/4525b1c2b02ad2e5ed069bdfee89f10821ffeb3f-c453a8d08c33cd6eaa1b.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-bcb5ff7f00ff7ef654ce.js"/><link as="fetch" rel="preload" href="/page-data/bigpipe-caching-making-webx-faster/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body class="dark"><script>
+              (function() {
+                window.__onThemeChange = function() {};
+                function setTheme(newTheme) {
+                  window.__theme = newTheme;
+                  preferredTheme = newTheme;
+                  document.body.className = newTheme;
+                  window.__onThemeChange(newTheme);
+                }
+                var preferredTheme;
+                try {
+                  preferredTheme = localStorage.getItem('theme');
+                } catch (err) { }
+                window.__setPreferredTheme = function(newTheme) {
+                  setTheme(newTheme);
+                  try {
+                    localStorage.setItem('theme', newTheme);
+                  } catch (err) {}
+                }
+
+                setTheme(preferredTheme || 'dark');
+
+                window.__onDisplayChange = function() {};
+                function setDisplay(newDisplay) {
+                  window.__display = newDisplay;
+                  preferredDisplay = newDisplay;
+                  document.body.id = newDisplay;
+                  window.__onDisplayChange(newDisplay);
+                }
+                var preferredDisplay;
+                try {
+                  preferredDisplay = localStorage.getItem('display');
+                } catch (err) { }
+                window.__setPreferredDisplay = function(newDisplay) {
+                  setDisplay(newDisplay);
+                  try {
+                    localStorage.setItem('display', newDisplay);
+                  } catch (err) {}
+                }
+
+                setDisplay(preferredDisplay || 'list');
+              })();
+            </script><noscript>Your browser does not support JavaScript! =)</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="tl-edges"><div class="tl-wrapper tl-wrapper--mount tl-wrapper-status--entered" style="z-index:1;opacity:1"><section class="styled__LayoutWrapper-qchwrn-0 hPLjUw"><main class="styled__LayoutMain-qchwrn-1 hQYTXd"><header class="base__PostHeader-sc-17fg8w0-0 huSLRw"><p class="base__PostDate-sc-17fg8w0-3 dhsbwc">21 January 2017<!-- --> • <!-- -->3<!-- --> min read</p><h1 class="base__PostTitle-sc-17fg8w0-1 cOlZFa">Bigpipe Caching: Making Web 2x Faster</h1><h2 class="base__PostDescription-sc-17fg8w0-2 dQtoxT">How Bigpipe came in picture for making web 2x faster</h2></header><section class="base__MainContent-sc-17fg8w0-4 kXGJvp"><div><p>Everyone loves a fast website. It’s one of the critical goals for every web developer to build a site that’s twice as fast than a previous one. And ‘BigPiping’ a website makes it super fast. BigPipe is a fundamental redesign of the dynamic web page serving system.</p>
+<p>Typically, 80-90% of the loading time is spent on front end which is very huge.</p>
+<p>A few important metrics to observe are:</p>
+<ul>
+<li>Time To First Byte (TTBF): Time taken between requesting html page and starting to receive the first byte of response. In this time, the client and the browser can’t do anything.</li>
+<li>Time To Interact (TTI): Completely dependent on use case, but it’s what really matters.</li>
+<li>Page load time: Total load time until loading is complete.</li>
+</ul>
+<h2 id="facebooks-story-on-bigpipe" style="position:relative;">Facebook’s story on Bigpipe</h2>
+<p>The basic idea here is to break the webpage into small chunks called pagelets and pipelining them to go through several execution. You know why Facebook loads very fast? That’s because Facebook uses Bigpipe for loading content. Facebook loads the structure of the page in chunks and the elements which are difficult to load come afterwards.</p>
+<p>It seems like Facebook loads very fast, but it actually takes 5-6 seconds for everything to load. What happens is that it loads the unchangeable parts first and personalised parts later, like friends list, groups, pages etc.</p>
+<p>Facebook’s homepage performance after using Bigpipe caching</p>
+<p><img src="https://lhuria94.github.io/assets/img/2016-04-21-bigpipe-caching-making-webx-faster/bigpipe-chart.jpg" alt="Bigpipe rating chart"></p>
+<div class="gatsby-highlight" data-language="php"><pre class="language-php"><code class="language-php">Source<span class="token punctuation">:</span> Facebook</code></pre></div>
+<p>The graph shows that BigPipe reduces user perceived latency by half in most browsers.</p>
+<h2 id="bigpipe-in-drupal-8" style="position:relative;">Bigpipe in Drupal 8</h2>
+<p>In Drupal 7 or any other CMS, the webpage gets comparatively slower ones we add customisations or personalisation it. After Using Bigpipe in Drupal 8, this is no longer an issue.</p>
+<p>This technology was only available to Linkedin and FB. But now it’s available as a module in Drupal 8.</p>
+<p>Facebook did the streaming of content in so called pagelets. Wim &#x26; Fabian (Author of Drupal 8 Bigpipe module) named it "auto-placeholdering” for Drupal 8 which differentiates the static sections of the page from dynamic ones.</p>
+<p>Here is the example of comparison between standard drupal caching &#x26; bigpipe:
+<a href="https://youtu.be/JwzX0Qv6u3A" target="_blank" rel="nofollow noopener noreferrer">Here is the link to video</a></p>
+<div class="gatsby-highlight" data-language="php"><pre class="language-php"><code class="language-php">Source<span class="token punctuation">:</span> Drie Buytaert<span class="token operator">/</span> Youtube</code></pre></div>
+<p>If we provide the correct cacheability metadata, Drupal will be able to automatically deliver personalised parts of the page later, without you having to write a single line of code.</p>
+<p>Wim Leers, the author of this module explained it as follows:</p>
+<p> “The problem we were solving: Drupal 7 can’t really cache its output because it lacks metadata for caching. It generates just about everything you see on the page on every page load, even things that don’t change. Drupal 8 does far less work when serving a page, because we brought cacheability metadata to everything. BigPipe is the most powerful way to put that cacheability metadata to use and it delivers the most significant performance improvements.</p>
+<p>BigPipe was not possible before Drupal 8. So, no, it's the other way around: BigPipe has changed Drupal 8 and made it the fastest Drupal yet.” - Wim Leers.</p>
+<h2 id="how-bigpipe-works" style="position:relative;">How BigPipe works</h2>
+<p>To exploit the parallelism between web server and browser, BigPipe first breaks web pages into multiple chunks called pagelets. Just as a pipelining microprocessor divides an instruction’s life cycle into multiple stages (such as “instruction fetch”, “instruction decode”, “execution”, “register write back” etc.), BigPipe breaks the page generation process into several stages:</p>
+<ul>
+<li>Request parsing: Web server parses and sanity checks the HTTP request.</li>
+<li>Data fetching: Web server fetches data from storage tier.</li>
+<li>Markup generation: Web server generates HTML markup for the response.</li>
+<li>Network transport: The response is transferred from web server to browser.</li>
+<li>CSS downloading: Browser downloads CSS required by the page.</li>
+<li>DOM tree construction and CSS styling: Browser constructs DOM tree of the document, and then applies CSS rules on it.</li>
+<li>JavaScript downloading: Browser downloads JavaScript resources referenced by the page.</li>
+<li>JavaScript execution: Browser executes JavaScript code of the page.</li>
+</ul>
+<p>(From the Facebook Engineering blog)</p>
+<p>I'd really like to thank Wim Leers &#x26; Fabian and others who worked really hard on bringing this caching strategy to Drupal 8 core with 8.1 release.</p></div></section><section class="styled__RecommendedWrapper-c0obzs-0 heKbJR"><a class="styled__RecommendedLink-c0obzs-1 DhHOv next" direction="right" href="/docker-microcontainers-for-faster-workflows/">Docker: A Microcontainer for Faster Software Workflows</a></section><section class="styled__CommentsWrapper-sc-1q8vbcb-0 hPHayL"><h2 class="styled__CommentsTitle-sc-1q8vbcb-1 bEUYFl">Comments</h2><div><div id="disqus_thread"></div></div></section></main></section></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/bigpipe-caching-making-webx-faster/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-8cead0067b0f6e5dfbf6.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-4efef167a65f33edc4e5.js"],"component---src-pages-404-js":["/component---src-pages-404-js-0700f2634e76af3151fc.js"],"component---src-pages-about-js":["/component---src-pages-about-js-b3f0e2593ed56990a531.js"],"component---src-pages-cursos-js":["/component---src-pages-cursos-js-358cdf72cb27b5259321.js"],"component---src-pages-search-js":["/component---src-pages-search-js-38c7a04cb01ede0f6fe2.js"],"component---src-pages-series-js":["/component---src-pages-series-js-19cbe539dc253f585729.js"],"component---src-templates-blog-list-js":["/component---src-templates-blog-list-js-a3fc7856c0577ac543d6.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-bcb5ff7f00ff7ef654ce.js"]};/*]]>*/</script><script src="/component---src-templates-blog-post-js-bcb5ff7f00ff7ef654ce.js" async=""></script><script src="/4525b1c2b02ad2e5ed069bdfee89f10821ffeb3f-c453a8d08c33cd6eaa1b.js" async=""></script><script src="/c920ec033e559e3d21b2f44264ae3005d993ef01-fb7ae3b6807047542941.js" async=""></script><script src="/app-8cead0067b0f6e5dfbf6.js" async=""></script><script src="/532a2f07-0d481acc37795e73d9c1.js" async=""></script><script src="/styles-7fe7e8372b9bcab21468.js" async=""></script><script src="/framework-8e210829bcc33c32949c.js" async=""></script><script src="/webpack-runtime-2e5e23a6fd301fe77397.js" async=""></script></body></html>

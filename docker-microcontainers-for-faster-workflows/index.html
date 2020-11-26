@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="8kDtWUmUQEh7QXoj_shRaxcgYAVpHs_YQ7TeniN0kmI"/><style data-href="/styles.884fc4cd88bb91762961.css">.tl-edges{max-width:100%;overflow-x:hidden}.tl-wrapper{width:100%;float:left;position:relative}.tl-wrapper+.tl-wrapper{margin-left:-100%;margin-right:0}code[class*=language-],pre[class*=language-]{color:#ccc;background:none;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><meta name="generator" content="Gatsby 2.20.29"/><title data-react-helmet="true">Docker: A Microcontainer for Faster Software Workflows | Love Huria</title><meta data-react-helmet="true" name="aplication-name" content="Love Huria Blog"/><meta data-react-helmet="true" name="description" content="First steps to use docker"/><meta data-react-helmet="true" property="og:image" content="https://lhuria94.github.io/assets/img/"/><meta data-react-helmet="true" property="og:title" content="Docker: A Microcontainer for Faster Software Workflows"/><meta data-react-helmet="true" property="og:description" content="First steps to use docker"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"/><meta data-react-helmet="true" name="twitter:image:src" content="https://lhuria94.github.io/assets/img/"/><meta data-react-helmet="true" name="twitter:creator" content="@lovehuria"/><meta data-react-helmet="true" name="twitter:title" content="Docker: A Microcontainer for Faster Software Workflows"/><meta data-react-helmet="true" name="twitter:description" content="First steps to use docker"/><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><style data-styled="" data-styled-version="5.1.0">.hPLjUw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+@media (max-width:1170px){.hPLjUw{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding-top:4.125rem;}}/*!sc*/
+data-styled.g25[id="styled__LayoutWrapper-qchwrn-0"]{content:"hPLjUw,"}/*!sc*/
+.hQYTXd{background:var(--background);min-height:100vh;padding:0 3.75rem 0 20rem;-webkit-transition:background 0.5s ease,color 0.5s ease;transition:background 0.5s ease,color 0.5s ease;width:100%;}/*!sc*/
+body#card .hQYTXd{grid-template-areas:'cards' 'pagination';}/*!sc*/
+@media (max-width:1170px){.hQYTXd{padding:0 0 3rem 0;}}/*!sc*/
+data-styled.g26[id="styled__LayoutMain-qchwrn-1"]{content:"hQYTXd,"}/*!sc*/
+.huSLRw{color:var(--postColor);margin:auto;max-width:70rem;padding:5rem 5rem 0;}/*!sc*/
+@media (max-width:1170px){.huSLRw{padding:3rem 0 0;max-width:100%;}}/*!sc*/
+data-styled.g27[id="base__PostHeader-sc-17fg8w0-0"]{content:"huSLRw,"}/*!sc*/
+.cOlZFa{font-size:4rem;font-weight:700;padding:0 1.4rem;margin:1rem auto;}/*!sc*/
+@media (max-width:1170px){.cOlZFa{font-size:2.8rem;line-height:1.1;padding:0 1rem;}}/*!sc*/
+data-styled.g28[id="base__PostTitle-sc-17fg8w0-1"]{content:"cOlZFa,"}/*!sc*/
+.dQtoxT{font-size:2rem;font-weight:200;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.dQtoxT{font-size:1.6rem;line-height:1.3;padding:0 1rem;}}/*!sc*/
+data-styled.g29[id="base__PostDescription-sc-17fg8w0-2"]{content:"dQtoxT,"}/*!sc*/
+.dhsbwc{font-size:1.1rem;font-weight:100;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.dhsbwc{padding:0 1rem;}}/*!sc*/
+data-styled.g30[id="base__PostDate-sc-17fg8w0-3"]{content:"dhsbwc,"}/*!sc*/
+.kXGJvp{margin:auto;max-width:70rem;padding:2rem 5rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp{padding:2rem 0;max-width:100%;}}/*!sc*/
+.kXGJvp p,.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp ul,.kXGJvp ol,.kXGJvp .tags,.kXGJvp iframe,.kXGJvp .button-post{color:var(--postColor);font-size:1.25rem;font-weight:300;line-height:1.7;-webkit-letter-spacing:0.069rem;-moz-letter-spacing:0.069rem;-ms-letter-spacing:0.069rem;letter-spacing:0.069rem;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp p,.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp ul,.kXGJvp ol,.kXGJvp .tags,.kXGJvp iframe,.kXGJvp .button-post{padding:0 1rem;word-break:break-word;}}/*!sc*/
+.kXGJvp p{margin:0 auto 1.6rem;}/*!sc*/
+.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp h5{margin:2.4rem auto 1rem;}/*!sc*/
+.kXGJvp ul,.kXGJvp ol{list-style:disc;padding-left:2.5rem;margin:0 auto 1.6rem;}/*!sc*/
+.kXGJvp li{padding:0.625rem 0;}/*!sc*/
+.kXGJvp li > ul{margin-bottom:0;}/*!sc*/
+.kXGJvp p code,.kXGJvp li code{word-wrap:break-word;}/*!sc*/
+.kXGJvp img{display:block;max-width:100%;margin:1.875rem auto;}/*!sc*/
+.kXGJvp iframe{padding:0 1.6rem 1.6rem;width:100%;}/*!sc*/
+@media (max-width:1170px){.kXGJvp iframe{padding:0 1rem;}}/*!sc*/
+.kXGJvp blockquote{color:var(--postColor);border-left:0.3rem solid var(--highlight);padding:0 1.875rem;margin:3.125rem auto;}/*!sc*/
+.kXGJvp hr{border:1px solid var(--borders);margin:3rem auto;}/*!sc*/
+.kXGJvp #twitter-widget-0,.kXGJvp .instagram-media,.kXGJvp .twitter-tweet{margin:20px auto !important;}/*!sc*/
+.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp h5{font-weight:800;-webkit-letter-spacing:0.069rem;-moz-letter-spacing:0.069rem;-ms-letter-spacing:0.069rem;letter-spacing:0.069rem;line-height:1.4;}/*!sc*/
+.kXGJvp h1{font-size:2.8rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h1{font-size:1.875rem;}}/*!sc*/
+.kXGJvp h2{font-size:2.1rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h2{font-size:1.375rem;}}/*!sc*/
+.kXGJvp h3{font-size:1.6rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h3{font-size:1.125rem;}}/*!sc*/
+.kXGJvp h4{font-size:1.4rem;}/*!sc*/
+.kXGJvp h5{font-size:1.2rem;}/*!sc*/
+.kXGJvp strong{font-weight:700;}/*!sc*/
+.kXGJvp .gatsby-resp-image-background-image{z-index:2;opacity:1 !important;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image{box-shadow:none !important;-webkit-transition:opacity 0.2s;transition:opacity 0.2s;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image.lazyload{opacity:0;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image.lazyloaded{opacity:1;z-index:3;}/*!sc*/
+.kXGJvp .gatsby-highlight{padding:0 1.6rem 1.6rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp .gatsby-highlight{padding:0;}}/*!sc*/
+.kXGJvp .instagram-media{margin:1rem auto !important;}/*!sc*/
+.kXGJvp a{border-bottom:1px dashed var(--highlight);color:var(--highlight);-webkit-text-decoration:none;text-decoration:none;-webkit-transition:opacity 0.5s;transition:opacity 0.5s;}/*!sc*/
+.kXGJvp a svg{color:var(--postColor);}/*!sc*/
+.kXGJvp a:hover{opacity:0.8;}/*!sc*/
+data-styled.g31[id="base__MainContent-sc-17fg8w0-4"]{content:"kXGJvp,"}/*!sc*/
+.heKbJR{border-bottom:1px solid var(--borders);border-top:1px solid var(--borders);background:var(--mediumBackground);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+data-styled.g51[id="styled__RecommendedWrapper-c0obzs-0"]{content:"heKbJR,"}/*!sc*/
+.DhHOv{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:var(--mediumBackground);color:var(--highlight);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding:3rem;-webkit-text-decoration:none;text-decoration:none;-webkit-transition:background 0.5s ease;transition:background 0.5s ease;width:50%;}/*!sc*/
+@media (max-width:1170px){.DhHOv{padding:2rem 1rem;line-height:1.3;font-size:.9rem;}}/*!sc*/
+.DhHOv:hover{background:var(--borders);}/*!sc*/
+.DhHOv.previous{border-right:1px solid var(--borders);}/*!sc*/
+.DhHOv.next{-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;}/*!sc*/
+.DhHOv.next:only-child{margin-left:auto;border-left:1px solid var(--borders);}/*!sc*/
+.DhHOv.previous:before{content:'\2190';margin-right:0.5rem;}/*!sc*/
+.DhHOv.next:after{content:'\2192';margin-left:0.5rem;}/*!sc*/
+data-styled.g52[id="styled__RecommendedLink-c0obzs-1"]{content:"DhHOv,"}/*!sc*/
+.hPHayL{margin:auto;max-width:70rem;padding:3rem 6.4rem 3rem;}/*!sc*/
+@media (max-width:1170px){.hPHayL{padding:3rem 1.4rem 0;max-width:100%;}}/*!sc*/
+.hPHayL iframe[src*='ads-iframe']{display:none;}/*!sc*/
+.hPHayL #disqus_thread a{color:var(--highlight) !important;}/*!sc*/
+data-styled.g53[id="styled__CommentsWrapper-sc-1q8vbcb-0"]{content:"hPHayL,"}/*!sc*/
+.bEUYFl{color:var(--postColor);font-size:2.1rem;font-weight:700;padding-bottom:2rem;}/*!sc*/
+@media (max-width:1170px){.bEUYFl{font-size:1.375rem;}}/*!sc*/
+data-styled.g54[id="styled__CommentsTitle-sc-1q8vbcb-1"]{content:"bEUYFl,"}/*!sc*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}/*!sc*/
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}/*!sc*/
+body{line-height:1;}/*!sc*/
+ol,ul{list-style:none;}/*!sc*/
+blockquote,q{quotes:none;}/*!sc*/
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}/*!sc*/
+table{border-collapse:collapse;border-spacing:0;}/*!sc*/
+*{box-sizing:border-box;}/*!sc*/
+body{background:var(--background);line-height:1;font-size:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}/*!sc*/
+img{display:block;width:100%;height:auto;}/*!sc*/
+body.dark{--borders:#38444d;--texts:#8899a6;--postColor:#fff;--highlight:#1fa1f2;--mediumBackground:#192734;--background:#16202c;--white:#fff;--black:#222;}/*!sc*/
+body.light{--borders:#dedede;--postColor:#111;--texts:#555555;--highlight:#1fa1f2;--mediumBackground:#f0f0f3;--background:#fff;--white:#fff;--black:#222;}/*!sc*/
+data-styled.g55[id="sc-global-gLPWrd1"]{content:"sc-global-gLPWrd1,"}/*!sc*/
+</style><link rel="alternate" type="application/rss+xml" title="Love Huria Blog - RSS Feed" href="/feed.xml"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-2e5e23a6fd301fe77397.js"/><link as="script" rel="preload" href="/framework-8e210829bcc33c32949c.js"/><link as="script" rel="preload" href="/styles-7fe7e8372b9bcab21468.js"/><link as="script" rel="preload" href="/532a2f07-0d481acc37795e73d9c1.js"/><link as="script" rel="preload" href="/app-8cead0067b0f6e5dfbf6.js"/><link as="script" rel="preload" href="/c920ec033e559e3d21b2f44264ae3005d993ef01-fb7ae3b6807047542941.js"/><link as="script" rel="preload" href="/4525b1c2b02ad2e5ed069bdfee89f10821ffeb3f-c453a8d08c33cd6eaa1b.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-bcb5ff7f00ff7ef654ce.js"/><link as="fetch" rel="preload" href="/page-data/docker-microcontainers-for-faster-workflows/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body class="dark"><script>
+              (function() {
+                window.__onThemeChange = function() {};
+                function setTheme(newTheme) {
+                  window.__theme = newTheme;
+                  preferredTheme = newTheme;
+                  document.body.className = newTheme;
+                  window.__onThemeChange(newTheme);
+                }
+                var preferredTheme;
+                try {
+                  preferredTheme = localStorage.getItem('theme');
+                } catch (err) { }
+                window.__setPreferredTheme = function(newTheme) {
+                  setTheme(newTheme);
+                  try {
+                    localStorage.setItem('theme', newTheme);
+                  } catch (err) {}
+                }
+
+                setTheme(preferredTheme || 'dark');
+
+                window.__onDisplayChange = function() {};
+                function setDisplay(newDisplay) {
+                  window.__display = newDisplay;
+                  preferredDisplay = newDisplay;
+                  document.body.id = newDisplay;
+                  window.__onDisplayChange(newDisplay);
+                }
+                var preferredDisplay;
+                try {
+                  preferredDisplay = localStorage.getItem('display');
+                } catch (err) { }
+                window.__setPreferredDisplay = function(newDisplay) {
+                  setDisplay(newDisplay);
+                  try {
+                    localStorage.setItem('display', newDisplay);
+                  } catch (err) {}
+                }
+
+                setDisplay(preferredDisplay || 'list');
+              })();
+            </script><noscript>Your browser does not support JavaScript! =)</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="tl-edges"><div class="tl-wrapper tl-wrapper--mount tl-wrapper-status--entered" style="z-index:1;opacity:1"><section class="styled__LayoutWrapper-qchwrn-0 hPLjUw"><main class="styled__LayoutMain-qchwrn-1 hQYTXd"><header class="base__PostHeader-sc-17fg8w0-0 huSLRw"><p class="base__PostDate-sc-17fg8w0-3 dhsbwc">11 February 2017<!-- --> • <!-- -->4<!-- --> min read</p><h1 class="base__PostTitle-sc-17fg8w0-1 cOlZFa">Docker: A Microcontainer for Faster Software Workflows</h1><h2 class="base__PostDescription-sc-17fg8w0-2 dQtoxT">First steps to use docker</h2></header><section class="base__MainContent-sc-17fg8w0-4 kXGJvp"><div><p>Docker, a container-based technology which I just came across, is great for setting up environments. It was first introduced to the world by Solomon Hykes, founder and CEO of dotCloud at Python Developers Conference in Santa Clara, California, in March 2013. The project was quickly open-sourced and made available on GitHub, where anyone can download and contribute to it.</p>
+<h2 id="containers-vs-virtual-machines" style="position:relative;">Containers vs. Virtual Machines</h2>
+<p>You might be wondering, "What is the difference between Containers (like Docker) and Virtual Machines"?</p>
+<p>Well, virtual machines (VM) work by creating a virtual copy of a computer's hardware, and running a full operating-system on that virtual hardware. Each new VM that you create results in a new copy of that virtual hardware, which is computationally expensive. Many people use VMs because they allow you to run an application in a separate environment which can have it's own versions of software and settings, which are different from the host machine.</p>
+<p>On the other hand, container technologies like Docker, isolate the container's environment, software, and settings, in a sandbox; but all sandboxes share the same operating-system kernel and hardware as the host computer. Each new container results in a new sandbox. This enables us to pack a lot more applications into a single physical server as compared to a virtual machine.</p>
+<p>Docker containers are isolated enough that the root process in a container cannot see the host machine’s processes or filesystem. However, it may still be able to make certain system calls to the kernel that a regular user would not, because in Docker, the kernel is shared with the host machine. This is also why Docker containers are not virtual machines and thus a lot faster.</p>
+<p>Note, however, that Docker relies on a technology which is only available in the Linux kernel. When you run Docker on a Windows or Macintosh host machine, Docker and all it's containers run in a virtual machine.</p>
+<p>That said, there are two projects trying to bring Docker-style containers natively to OS/X , Dlite and Xhyve. But last I heard, these projects were still very experimental. So consider yourself warned.</p>
+<p>When you are done with a container, on a Mac host machine, it’s probably good to suspend the containers, because they run in a virtual machine and that has a lot of overhead. But on a Linux host machine, there would be no need to suspend them because they would not create (much) additional overhead (no more than, say, MAMP).</p>
+<p>Docker is a tool that promises to scale into any environment, streamlining the workflow and responsiveness of agile software organizations.</p>
+<h2 id="dockers-architecture" style="position:relative;">Docker’s Architecture</h2>
+<p>This is a diagram explaining the basic client-server architecture which docker uses.
+<img src="https://lhuria94.github.io/assets/img/2016-07-11-docker-microcontainers-for-faster-workflows/architecture.png" alt="Docker architecture"></p>
+<p>{% highlight ruby %}
+Image source: <a href="http://www.docker.com" target="_blank" rel="nofollow noopener noreferrer">http://www.docker.com</a>
+{% endhighlight %}</p>
+<h2 id="important-terminology" style="position:relative;">Important Terminology</h2>
+<ul>
+<li>Docker daemon: A Docker engine which runs on the host machine as shown in the image above.</li>
+<li>Docker client: A Docker cli which is used to interact with the daemon.</li>
+</ul>
+<h2 id="workflow-components" style="position:relative;">Workflow components</h2>
+<ul>
+<li>Docker image: A read-only disk image in which environment &#x26; your application resides.</li>
+<li>Docker container: A read/writeable instance of an image, which you can start, stop, move, and  delete.</li>
+<li>Docker registry: A public or private repository to store images.</li>
+<li>Dockerfile: A Dockerfile is instructions for how to build a single image. You can think of a Dockerfile as kind of Vagrantfile, or a single Chef cookbook, or an Ansible script, or a Puppet script.</li>
+</ul>
+<h2 id="microservices" style="position:relative;">Microservices</h2>
+<p>Because Docker allows you to run so many containers at the same time, it has popularized the idea of microservices: a collection of containers, each of which contain a single program,  all of which work together to run a complex application (e.g. Drupal).</p>
+<p>Taking Drupal as an example, every Drupal site has at least two dependencies: an HTTP server (Apache, Nginx, etc.) running PHP; and MySQL. The idea of microservices would involve packaging Apache+PHP separately from MySQL; as opposed to most Drupal virtual machine images which bundle them together into the same VM. For more complicated setups, you could add another container for Solr, another container for LDAP, etc.</p>
+<p>For me, the main advantage of using microservices is that it’s easier to update or swap one dependency of an application without affecting the rest of it. Another way of looking at this is that microcontainers make it easier to modify one piece without waiting a long time for the virtual machine to rebuild.</p>
+<p>When I was using a virtual machine on a particularly complex project, if I needed to make a change to a setting, I had to make that change in the Puppet config, then run vagrant destroy &#x26;&#x26; vagrant up and wait two hours for it to tell me that the new configuration wasn’t compatible with some other piece of the system. At which point I had to repeat the two hour process, which wasted a lot of time.</p>
+<p>If I had been using Docker (properly), then I could have just changed the setting for that one program, rebuild that program's container (5 seconds), and not have to worry that one piece of the machine needed at least Java 6 and the other piece of the machine could not work without Java 5.</p>
+<p>Now that you know the possibilities with Docker, watch this space to find out how all this applies to Drupal.</p></div></section><section class="styled__RecommendedWrapper-c0obzs-0 heKbJR"><a class="styled__RecommendedLink-c0obzs-1 DhHOv previous" direction="left" href="/bigpipe-caching-making-webx-faster/">Bigpipe Caching: Making Web 2x Faster</a><a class="styled__RecommendedLink-c0obzs-1 DhHOv next" direction="right" href="/making-docker-compose-work-with-drupal/">Making Docker Compose Work with Drupal</a></section><section class="styled__CommentsWrapper-sc-1q8vbcb-0 hPHayL"><h2 class="styled__CommentsTitle-sc-1q8vbcb-1 bEUYFl">Comments</h2><div><div id="disqus_thread"></div></div></section></main></section></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/docker-microcontainers-for-faster-workflows/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-8cead0067b0f6e5dfbf6.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-4efef167a65f33edc4e5.js"],"component---src-pages-404-js":["/component---src-pages-404-js-0700f2634e76af3151fc.js"],"component---src-pages-about-js":["/component---src-pages-about-js-b3f0e2593ed56990a531.js"],"component---src-pages-cursos-js":["/component---src-pages-cursos-js-358cdf72cb27b5259321.js"],"component---src-pages-search-js":["/component---src-pages-search-js-38c7a04cb01ede0f6fe2.js"],"component---src-pages-series-js":["/component---src-pages-series-js-19cbe539dc253f585729.js"],"component---src-templates-blog-list-js":["/component---src-templates-blog-list-js-a3fc7856c0577ac543d6.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-bcb5ff7f00ff7ef654ce.js"]};/*]]>*/</script><script src="/component---src-templates-blog-post-js-bcb5ff7f00ff7ef654ce.js" async=""></script><script src="/4525b1c2b02ad2e5ed069bdfee89f10821ffeb3f-c453a8d08c33cd6eaa1b.js" async=""></script><script src="/c920ec033e559e3d21b2f44264ae3005d993ef01-fb7ae3b6807047542941.js" async=""></script><script src="/app-8cead0067b0f6e5dfbf6.js" async=""></script><script src="/532a2f07-0d481acc37795e73d9c1.js" async=""></script><script src="/styles-7fe7e8372b9bcab21468.js" async=""></script><script src="/framework-8e210829bcc33c32949c.js" async=""></script><script src="/webpack-runtime-2e5e23a6fd301fe77397.js" async=""></script></body></html>

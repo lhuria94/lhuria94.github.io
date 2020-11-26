@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="8kDtWUmUQEh7QXoj_shRaxcgYAVpHs_YQ7TeniN0kmI"/><style data-href="/styles.884fc4cd88bb91762961.css">.tl-edges{max-width:100%;overflow-x:hidden}.tl-wrapper{width:100%;float:left;position:relative}.tl-wrapper+.tl-wrapper{margin-left:-100%;margin-right:0}code[class*=language-],pre[class*=language-]{color:#ccc;background:none;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><meta name="generator" content="Gatsby 2.20.29"/><title data-react-helmet="true">Understanding Time complexity - Big O Notations | Love Huria</title><meta data-react-helmet="true" name="aplication-name" content="Love Huria Blog"/><meta data-react-helmet="true" name="description" content="Technical Lead | Consultant (Drupal/PHP/Laravel, React, React Native) at Srijan Technologies"/><meta data-react-helmet="true" property="og:image" content="https://lhuria94.github.io/assets/img/2019-10-26-time-complexity-notations"/><meta data-react-helmet="true" property="og:title" content="Understanding Time complexity - Big O Notations"/><meta data-react-helmet="true" property="og:description" content="Technical Lead | Consultant (Drupal/PHP/Laravel, React, React Native) at Srijan Technologies"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"/><meta data-react-helmet="true" name="twitter:image:src" content="https://lhuria94.github.io/assets/img/2019-10-26-time-complexity-notations"/><meta data-react-helmet="true" name="twitter:creator" content="@lovehuria"/><meta data-react-helmet="true" name="twitter:title" content="Understanding Time complexity - Big O Notations"/><meta data-react-helmet="true" name="twitter:description" content="Technical Lead | Consultant (Drupal/PHP/Laravel, React, React Native) at Srijan Technologies"/><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><style data-styled="" data-styled-version="5.1.0">.hPLjUw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+@media (max-width:1170px){.hPLjUw{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding-top:4.125rem;}}/*!sc*/
+data-styled.g25[id="styled__LayoutWrapper-qchwrn-0"]{content:"hPLjUw,"}/*!sc*/
+.hQYTXd{background:var(--background);min-height:100vh;padding:0 3.75rem 0 20rem;-webkit-transition:background 0.5s ease,color 0.5s ease;transition:background 0.5s ease,color 0.5s ease;width:100%;}/*!sc*/
+body#card .hQYTXd{grid-template-areas:'cards' 'pagination';}/*!sc*/
+@media (max-width:1170px){.hQYTXd{padding:0 0 3rem 0;}}/*!sc*/
+data-styled.g26[id="styled__LayoutMain-qchwrn-1"]{content:"hQYTXd,"}/*!sc*/
+.huSLRw{color:var(--postColor);margin:auto;max-width:70rem;padding:5rem 5rem 0;}/*!sc*/
+@media (max-width:1170px){.huSLRw{padding:3rem 0 0;max-width:100%;}}/*!sc*/
+data-styled.g27[id="base__PostHeader-sc-17fg8w0-0"]{content:"huSLRw,"}/*!sc*/
+.cOlZFa{font-size:4rem;font-weight:700;padding:0 1.4rem;margin:1rem auto;}/*!sc*/
+@media (max-width:1170px){.cOlZFa{font-size:2.8rem;line-height:1.1;padding:0 1rem;}}/*!sc*/
+data-styled.g28[id="base__PostTitle-sc-17fg8w0-1"]{content:"cOlZFa,"}/*!sc*/
+.dQtoxT{font-size:2rem;font-weight:200;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.dQtoxT{font-size:1.6rem;line-height:1.3;padding:0 1rem;}}/*!sc*/
+data-styled.g29[id="base__PostDescription-sc-17fg8w0-2"]{content:"dQtoxT,"}/*!sc*/
+.dhsbwc{font-size:1.1rem;font-weight:100;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.dhsbwc{padding:0 1rem;}}/*!sc*/
+data-styled.g30[id="base__PostDate-sc-17fg8w0-3"]{content:"dhsbwc,"}/*!sc*/
+.kXGJvp{margin:auto;max-width:70rem;padding:2rem 5rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp{padding:2rem 0;max-width:100%;}}/*!sc*/
+.kXGJvp p,.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp ul,.kXGJvp ol,.kXGJvp .tags,.kXGJvp iframe,.kXGJvp .button-post{color:var(--postColor);font-size:1.25rem;font-weight:300;line-height:1.7;-webkit-letter-spacing:0.069rem;-moz-letter-spacing:0.069rem;-ms-letter-spacing:0.069rem;letter-spacing:0.069rem;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp p,.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp ul,.kXGJvp ol,.kXGJvp .tags,.kXGJvp iframe,.kXGJvp .button-post{padding:0 1rem;word-break:break-word;}}/*!sc*/
+.kXGJvp p{margin:0 auto 1.6rem;}/*!sc*/
+.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp h5{margin:2.4rem auto 1rem;}/*!sc*/
+.kXGJvp ul,.kXGJvp ol{list-style:disc;padding-left:2.5rem;margin:0 auto 1.6rem;}/*!sc*/
+.kXGJvp li{padding:0.625rem 0;}/*!sc*/
+.kXGJvp li > ul{margin-bottom:0;}/*!sc*/
+.kXGJvp p code,.kXGJvp li code{word-wrap:break-word;}/*!sc*/
+.kXGJvp img{display:block;max-width:100%;margin:1.875rem auto;}/*!sc*/
+.kXGJvp iframe{padding:0 1.6rem 1.6rem;width:100%;}/*!sc*/
+@media (max-width:1170px){.kXGJvp iframe{padding:0 1rem;}}/*!sc*/
+.kXGJvp blockquote{color:var(--postColor);border-left:0.3rem solid var(--highlight);padding:0 1.875rem;margin:3.125rem auto;}/*!sc*/
+.kXGJvp hr{border:1px solid var(--borders);margin:3rem auto;}/*!sc*/
+.kXGJvp #twitter-widget-0,.kXGJvp .instagram-media,.kXGJvp .twitter-tweet{margin:20px auto !important;}/*!sc*/
+.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp h5{font-weight:800;-webkit-letter-spacing:0.069rem;-moz-letter-spacing:0.069rem;-ms-letter-spacing:0.069rem;letter-spacing:0.069rem;line-height:1.4;}/*!sc*/
+.kXGJvp h1{font-size:2.8rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h1{font-size:1.875rem;}}/*!sc*/
+.kXGJvp h2{font-size:2.1rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h2{font-size:1.375rem;}}/*!sc*/
+.kXGJvp h3{font-size:1.6rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h3{font-size:1.125rem;}}/*!sc*/
+.kXGJvp h4{font-size:1.4rem;}/*!sc*/
+.kXGJvp h5{font-size:1.2rem;}/*!sc*/
+.kXGJvp strong{font-weight:700;}/*!sc*/
+.kXGJvp .gatsby-resp-image-background-image{z-index:2;opacity:1 !important;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image{box-shadow:none !important;-webkit-transition:opacity 0.2s;transition:opacity 0.2s;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image.lazyload{opacity:0;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image.lazyloaded{opacity:1;z-index:3;}/*!sc*/
+.kXGJvp .gatsby-highlight{padding:0 1.6rem 1.6rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp .gatsby-highlight{padding:0;}}/*!sc*/
+.kXGJvp .instagram-media{margin:1rem auto !important;}/*!sc*/
+.kXGJvp a{border-bottom:1px dashed var(--highlight);color:var(--highlight);-webkit-text-decoration:none;text-decoration:none;-webkit-transition:opacity 0.5s;transition:opacity 0.5s;}/*!sc*/
+.kXGJvp a svg{color:var(--postColor);}/*!sc*/
+.kXGJvp a:hover{opacity:0.8;}/*!sc*/
+data-styled.g31[id="base__MainContent-sc-17fg8w0-4"]{content:"kXGJvp,"}/*!sc*/
+.heKbJR{border-bottom:1px solid var(--borders);border-top:1px solid var(--borders);background:var(--mediumBackground);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+data-styled.g51[id="styled__RecommendedWrapper-c0obzs-0"]{content:"heKbJR,"}/*!sc*/
+.DhHOv{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:var(--mediumBackground);color:var(--highlight);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding:3rem;-webkit-text-decoration:none;text-decoration:none;-webkit-transition:background 0.5s ease;transition:background 0.5s ease;width:50%;}/*!sc*/
+@media (max-width:1170px){.DhHOv{padding:2rem 1rem;line-height:1.3;font-size:.9rem;}}/*!sc*/
+.DhHOv:hover{background:var(--borders);}/*!sc*/
+.DhHOv.previous{border-right:1px solid var(--borders);}/*!sc*/
+.DhHOv.next{-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;}/*!sc*/
+.DhHOv.next:only-child{margin-left:auto;border-left:1px solid var(--borders);}/*!sc*/
+.DhHOv.previous:before{content:'\2190';margin-right:0.5rem;}/*!sc*/
+.DhHOv.next:after{content:'\2192';margin-left:0.5rem;}/*!sc*/
+data-styled.g52[id="styled__RecommendedLink-c0obzs-1"]{content:"DhHOv,"}/*!sc*/
+.hPHayL{margin:auto;max-width:70rem;padding:3rem 6.4rem 3rem;}/*!sc*/
+@media (max-width:1170px){.hPHayL{padding:3rem 1.4rem 0;max-width:100%;}}/*!sc*/
+.hPHayL iframe[src*='ads-iframe']{display:none;}/*!sc*/
+.hPHayL #disqus_thread a{color:var(--highlight) !important;}/*!sc*/
+data-styled.g53[id="styled__CommentsWrapper-sc-1q8vbcb-0"]{content:"hPHayL,"}/*!sc*/
+.bEUYFl{color:var(--postColor);font-size:2.1rem;font-weight:700;padding-bottom:2rem;}/*!sc*/
+@media (max-width:1170px){.bEUYFl{font-size:1.375rem;}}/*!sc*/
+data-styled.g54[id="styled__CommentsTitle-sc-1q8vbcb-1"]{content:"bEUYFl,"}/*!sc*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}/*!sc*/
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}/*!sc*/
+body{line-height:1;}/*!sc*/
+ol,ul{list-style:none;}/*!sc*/
+blockquote,q{quotes:none;}/*!sc*/
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}/*!sc*/
+table{border-collapse:collapse;border-spacing:0;}/*!sc*/
+*{box-sizing:border-box;}/*!sc*/
+body{background:var(--background);line-height:1;font-size:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}/*!sc*/
+img{display:block;width:100%;height:auto;}/*!sc*/
+body.dark{--borders:#38444d;--texts:#8899a6;--postColor:#fff;--highlight:#1fa1f2;--mediumBackground:#192734;--background:#16202c;--white:#fff;--black:#222;}/*!sc*/
+body.light{--borders:#dedede;--postColor:#111;--texts:#555555;--highlight:#1fa1f2;--mediumBackground:#f0f0f3;--background:#fff;--white:#fff;--black:#222;}/*!sc*/
+data-styled.g55[id="sc-global-gLPWrd1"]{content:"sc-global-gLPWrd1,"}/*!sc*/
+</style><link rel="alternate" type="application/rss+xml" title="Love Huria Blog - RSS Feed" href="/feed.xml"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-2e5e23a6fd301fe77397.js"/><link as="script" rel="preload" href="/framework-8e210829bcc33c32949c.js"/><link as="script" rel="preload" href="/styles-7fe7e8372b9bcab21468.js"/><link as="script" rel="preload" href="/532a2f07-0d481acc37795e73d9c1.js"/><link as="script" rel="preload" href="/app-8cead0067b0f6e5dfbf6.js"/><link as="script" rel="preload" href="/c920ec033e559e3d21b2f44264ae3005d993ef01-fb7ae3b6807047542941.js"/><link as="script" rel="preload" href="/4525b1c2b02ad2e5ed069bdfee89f10821ffeb3f-c453a8d08c33cd6eaa1b.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-bcb5ff7f00ff7ef654ce.js"/><link as="fetch" rel="preload" href="/page-data/time-complexity-notations/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body class="dark"><script>
+              (function() {
+                window.__onThemeChange = function() {};
+                function setTheme(newTheme) {
+                  window.__theme = newTheme;
+                  preferredTheme = newTheme;
+                  document.body.className = newTheme;
+                  window.__onThemeChange(newTheme);
+                }
+                var preferredTheme;
+                try {
+                  preferredTheme = localStorage.getItem('theme');
+                } catch (err) { }
+                window.__setPreferredTheme = function(newTheme) {
+                  setTheme(newTheme);
+                  try {
+                    localStorage.setItem('theme', newTheme);
+                  } catch (err) {}
+                }
+
+                setTheme(preferredTheme || 'dark');
+
+                window.__onDisplayChange = function() {};
+                function setDisplay(newDisplay) {
+                  window.__display = newDisplay;
+                  preferredDisplay = newDisplay;
+                  document.body.id = newDisplay;
+                  window.__onDisplayChange(newDisplay);
+                }
+                var preferredDisplay;
+                try {
+                  preferredDisplay = localStorage.getItem('display');
+                } catch (err) { }
+                window.__setPreferredDisplay = function(newDisplay) {
+                  setDisplay(newDisplay);
+                  try {
+                    localStorage.setItem('display', newDisplay);
+                  } catch (err) {}
+                }
+
+                setDisplay(preferredDisplay || 'list');
+              })();
+            </script><noscript>Your browser does not support JavaScript! =)</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="tl-edges"><div class="tl-wrapper tl-wrapper--mount tl-wrapper-status--entered" style="z-index:1;opacity:1"><section class="styled__LayoutWrapper-qchwrn-0 hPLjUw"><main class="styled__LayoutMain-qchwrn-1 hQYTXd"><header class="base__PostHeader-sc-17fg8w0-0 huSLRw"><p class="base__PostDate-sc-17fg8w0-3 dhsbwc">26 October 2019<!-- --> • <!-- -->4<!-- --> min read</p><h1 class="base__PostTitle-sc-17fg8w0-1 cOlZFa">Understanding Time complexity - Big O Notations</h1><h2 class="base__PostDescription-sc-17fg8w0-2 dQtoxT"></h2></header><section class="base__MainContent-sc-17fg8w0-4 kXGJvp"><div><p>Lately, I have gotten an interest in algorithms, the first one I chose to understand deeply is how sorting algorithms work and their time complexity. However, this post is not to explain sorting algorithms, instead, we will take a step back and understand time complexity [Big O Notation] in the simplest way possible.</p>
+<h3 id="before-we-go-any-further-lets-understand-what-is-an-algorithm" style="position:relative;">Before we go any further, let's understand what is an Algorithm:</h3>
+<p>An Algorithm is a step by step instruction, telling a program to execute in a certain way to solve a particular problem. And it's pretty obvious, that when we run a program in any language, it will have its own execution time depending on various factors such as input, operations being performed, etc.</p>
+<h4 id="now-the-next-question-would-what-is-time-complexity" style="position:relative;">Now the next question would "What is Time complexity"?</h4>
+<p>Time complexity is the execution time it takes for your algorithm to solve a problem. Simple, right?. </p>
+<p>To explain it a little further, the time complexity is driven by two things i.e. execution time &#x26; the space required by the program.</p>
+<h4 id="why-do-we-need-to-measure-the-time-complexity" style="position:relative;">Why do we need to measure the time complexity?</h4>
+<p>As programmers, when we write a program, it's kind of important to understand the different operations we are performing which can be checked by measuring the complexity. Normally, the execution time is taken for granted, we don’t care about mi-nute calculations which are happening behind the scene. So, overall, time complexity helps us to improve the efficiency of the code we’ve written.</p>
+<h4 id="how-do-we-measure-time-complexity" style="position:relative;">How do we measure time complexity?</h4>
+<p>The answer is <strong>Big O Notation</strong> when the letter O means <code class="language-text">Order of the program</code>.</p>
+<p>Big O Notation (a mathematical expression) helps to measure the time complexity by classifying how your program behaves with varying input and taking in different operations.</p>
+<p>Let’s understand the common types of notations, we will use Javascript here to explain with examples, although the idea is similar for different languages.</p>
+<h3 id="types-of-big-o-notations" style="position:relative;">Types of Big O Notations:</h3>
+<ul>
+<li><strong>Constant-Time Algorithm - O (1) - Order 1</strong>:</li>
+</ul>
+<p>This is the fastest time complexity since the time it takes to execute a program is always the same. It does not matter that what’s the size of the input, the execution and the space required to run this will be the same.</p>
+<p><em>For example</em>: Take a case of simple array lookup or getting the last item of the array.
+<img src="https://lhuria94.github.io/assets/img/2019-10-26-time-complexity-notations/constant.png" alt="Constant Time Algorithm">
+The above example will always go through the array once and finds the salary of an employee called <code class="language-text">Joe</code>. That means, only one iteration is involved i.e <code class="language-text">O(1)</code>.</p>
+<ul>
+<li><strong>Linear-Time Algorithm - O(n) - Order N</strong>:</li>
+</ul>
+<p>Linear Time complexity completely depends on the input size i.e directly proportional. One of the examples could be just printing the elements from an array OR finding a particular match in an array.</p>
+<p>While calculating, we should always think of both the “best” &#x26; “worst” scenario. </p>
+<p><em>For example</em>: If we were to match a specific element in an array, then it can be the very first one or the last one, so in that case, we can assume its O(n).
+<em>Let’s take an example here</em>:
+<img src="https://lhuria94.github.io/assets/img/2019-10-26-time-complexity-notations/linear-time.png" alt="Linear Time Algorithm"></p>
+<ul>
+<li><strong>Quadratic-Time complexity - O(n2) - Order N Squared</strong>:</li>
+</ul>
+<p>As the name suggests, the time to execute a program is proportional to the square of the input size. That means, in our program, when we are trying to perform two operations which are kind of a combination of Linear and Constant time complexity, then those are called Quadratic-time complexity.</p>
+<p>This type of complexity is commonly used with sorting algorithms. </p>
+<p><em>Let’s try to understand by taking an example</em>:
+<img src="https://lhuria94.github.io/assets/img/2019-10-26-time-complexity-notations/quad-time.png" alt="Quadratic Time Algorithm">
+In this example, it is clear that we first have a single filter loop at the top iterating over an array once, then we have a nested loop that is looking for similar salaries of the employees by iterating through the array again.</p>
+<ul>
+<li><strong>Logarithmic-Time Algorithm - O(log n) - Order log N</strong>:</li>
+</ul>
+<p>This is considered the most efficient way to deal with a large number of data in a set. The idea behind this approach is to divide the data into chunks and then perform operations. A logarithm is basically a quantity that represents the base power, that means if the data grows logarithmically then it's literally being divided.</p>
+<p>For example, if we want to find a salary of a few employees from 50 records, then that means we usually have to go through each record and look for it. Assuming if we use <code class="language-text">log base 2</code>, we would be able to find it in <code class="language-text">log2(50) = ~6</code> iterations. That is a lot of power!</p>
+<p>Its commonly used with different sorting algorithms such as QuickSort, Merge-sort which is usually used to find an element or sort a list. Or binary Search is a good example.
+<img src="https://lhuria94.github.io/assets/img/2019-10-26-time-complexity-notations/log.png" alt="Logarithmic Time Algorithm"></p>
+<p>I think we've covered most commonly used notations. If you would like to read more about it, I'd refer few good links to go through:</p>
+<ul>
+<li><a href="https://www.bigocheatsheet.com/" target="_blank" rel="nofollow noopener noreferrer">Big O CheatSheet</a></li>
+<li><a href="https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/" target="_blank" rel="nofollow noopener noreferrer">Beginner's Guide</a></li>
+</ul>
+<p>Thanks for reading. 😃</p></div></section><section class="styled__RecommendedWrapper-c0obzs-0 heKbJR"><a class="styled__RecommendedLink-c0obzs-1 DhHOv previous" direction="left" href="/creating-own-react-boilerplate/">Creating your own React Boilerplate - For Beginners</a><a class="styled__RecommendedLink-c0obzs-1 DhHOv next" direction="right" href="/structure-react-native-project copy/">Structure a React Native App</a></section><section class="styled__CommentsWrapper-sc-1q8vbcb-0 hPHayL"><h2 class="styled__CommentsTitle-sc-1q8vbcb-1 bEUYFl">Comments</h2><div><div id="disqus_thread"></div></div></section></main></section></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/time-complexity-notations/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-8cead0067b0f6e5dfbf6.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-4efef167a65f33edc4e5.js"],"component---src-pages-404-js":["/component---src-pages-404-js-0700f2634e76af3151fc.js"],"component---src-pages-about-js":["/component---src-pages-about-js-b3f0e2593ed56990a531.js"],"component---src-pages-cursos-js":["/component---src-pages-cursos-js-358cdf72cb27b5259321.js"],"component---src-pages-search-js":["/component---src-pages-search-js-38c7a04cb01ede0f6fe2.js"],"component---src-pages-series-js":["/component---src-pages-series-js-19cbe539dc253f585729.js"],"component---src-templates-blog-list-js":["/component---src-templates-blog-list-js-a3fc7856c0577ac543d6.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-bcb5ff7f00ff7ef654ce.js"]};/*]]>*/</script><script src="/component---src-templates-blog-post-js-bcb5ff7f00ff7ef654ce.js" async=""></script><script src="/4525b1c2b02ad2e5ed069bdfee89f10821ffeb3f-c453a8d08c33cd6eaa1b.js" async=""></script><script src="/c920ec033e559e3d21b2f44264ae3005d993ef01-fb7ae3b6807047542941.js" async=""></script><script src="/app-8cead0067b0f6e5dfbf6.js" async=""></script><script src="/532a2f07-0d481acc37795e73d9c1.js" async=""></script><script src="/styles-7fe7e8372b9bcab21468.js" async=""></script><script src="/framework-8e210829bcc33c32949c.js" async=""></script><script src="/webpack-runtime-2e5e23a6fd301fe77397.js" async=""></script></body></html>

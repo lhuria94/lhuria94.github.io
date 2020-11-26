@@ -1,0 +1,452 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="8kDtWUmUQEh7QXoj_shRaxcgYAVpHs_YQ7TeniN0kmI"/><style data-href="/styles.884fc4cd88bb91762961.css">.tl-edges{max-width:100%;overflow-x:hidden}.tl-wrapper{width:100%;float:left;position:relative}.tl-wrapper+.tl-wrapper{margin-left:-100%;margin-right:0}code[class*=language-],pre[class*=language-]{color:#ccc;background:none;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><meta name="generator" content="Gatsby 2.20.29"/><title data-react-helmet="true">Cool things you can do with Sass - Part 1 | Love Huria</title><meta data-react-helmet="true" name="aplication-name" content="Love Huria Blog"/><meta data-react-helmet="true" name="description" content="Technical Lead | Consultant (Drupal/PHP/Laravel, React, React Native) at Srijan Technologies"/><meta data-react-helmet="true" property="og:image" content="https://lhuria94.github.io/assets/img/2018-04-08-cool-things-you-can-do-with-sass-part-1"/><meta data-react-helmet="true" property="og:title" content="Cool things you can do with Sass - Part 1"/><meta data-react-helmet="true" property="og:description" content="Technical Lead | Consultant (Drupal/PHP/Laravel, React, React Native) at Srijan Technologies"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"/><meta data-react-helmet="true" name="twitter:image:src" content="https://lhuria94.github.io/assets/img/2018-04-08-cool-things-you-can-do-with-sass-part-1"/><meta data-react-helmet="true" name="twitter:creator" content="@lovehuria"/><meta data-react-helmet="true" name="twitter:title" content="Cool things you can do with Sass - Part 1"/><meta data-react-helmet="true" name="twitter:description" content="Technical Lead | Consultant (Drupal/PHP/Laravel, React, React Native) at Srijan Technologies"/><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><style data-styled="" data-styled-version="5.1.0">.hPLjUw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+@media (max-width:1170px){.hPLjUw{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding-top:4.125rem;}}/*!sc*/
+data-styled.g25[id="styled__LayoutWrapper-qchwrn-0"]{content:"hPLjUw,"}/*!sc*/
+.hQYTXd{background:var(--background);min-height:100vh;padding:0 3.75rem 0 20rem;-webkit-transition:background 0.5s ease,color 0.5s ease;transition:background 0.5s ease,color 0.5s ease;width:100%;}/*!sc*/
+body#card .hQYTXd{grid-template-areas:'cards' 'pagination';}/*!sc*/
+@media (max-width:1170px){.hQYTXd{padding:0 0 3rem 0;}}/*!sc*/
+data-styled.g26[id="styled__LayoutMain-qchwrn-1"]{content:"hQYTXd,"}/*!sc*/
+.huSLRw{color:var(--postColor);margin:auto;max-width:70rem;padding:5rem 5rem 0;}/*!sc*/
+@media (max-width:1170px){.huSLRw{padding:3rem 0 0;max-width:100%;}}/*!sc*/
+data-styled.g27[id="base__PostHeader-sc-17fg8w0-0"]{content:"huSLRw,"}/*!sc*/
+.cOlZFa{font-size:4rem;font-weight:700;padding:0 1.4rem;margin:1rem auto;}/*!sc*/
+@media (max-width:1170px){.cOlZFa{font-size:2.8rem;line-height:1.1;padding:0 1rem;}}/*!sc*/
+data-styled.g28[id="base__PostTitle-sc-17fg8w0-1"]{content:"cOlZFa,"}/*!sc*/
+.dQtoxT{font-size:2rem;font-weight:200;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.dQtoxT{font-size:1.6rem;line-height:1.3;padding:0 1rem;}}/*!sc*/
+data-styled.g29[id="base__PostDescription-sc-17fg8w0-2"]{content:"dQtoxT,"}/*!sc*/
+.dhsbwc{font-size:1.1rem;font-weight:100;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.dhsbwc{padding:0 1rem;}}/*!sc*/
+data-styled.g30[id="base__PostDate-sc-17fg8w0-3"]{content:"dhsbwc,"}/*!sc*/
+.kXGJvp{margin:auto;max-width:70rem;padding:2rem 5rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp{padding:2rem 0;max-width:100%;}}/*!sc*/
+.kXGJvp p,.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp ul,.kXGJvp ol,.kXGJvp .tags,.kXGJvp iframe,.kXGJvp .button-post{color:var(--postColor);font-size:1.25rem;font-weight:300;line-height:1.7;-webkit-letter-spacing:0.069rem;-moz-letter-spacing:0.069rem;-ms-letter-spacing:0.069rem;letter-spacing:0.069rem;padding:0 1.4rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp p,.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp ul,.kXGJvp ol,.kXGJvp .tags,.kXGJvp iframe,.kXGJvp .button-post{padding:0 1rem;word-break:break-word;}}/*!sc*/
+.kXGJvp p{margin:0 auto 1.6rem;}/*!sc*/
+.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp h5{margin:2.4rem auto 1rem;}/*!sc*/
+.kXGJvp ul,.kXGJvp ol{list-style:disc;padding-left:2.5rem;margin:0 auto 1.6rem;}/*!sc*/
+.kXGJvp li{padding:0.625rem 0;}/*!sc*/
+.kXGJvp li > ul{margin-bottom:0;}/*!sc*/
+.kXGJvp p code,.kXGJvp li code{word-wrap:break-word;}/*!sc*/
+.kXGJvp img{display:block;max-width:100%;margin:1.875rem auto;}/*!sc*/
+.kXGJvp iframe{padding:0 1.6rem 1.6rem;width:100%;}/*!sc*/
+@media (max-width:1170px){.kXGJvp iframe{padding:0 1rem;}}/*!sc*/
+.kXGJvp blockquote{color:var(--postColor);border-left:0.3rem solid var(--highlight);padding:0 1.875rem;margin:3.125rem auto;}/*!sc*/
+.kXGJvp hr{border:1px solid var(--borders);margin:3rem auto;}/*!sc*/
+.kXGJvp #twitter-widget-0,.kXGJvp .instagram-media,.kXGJvp .twitter-tweet{margin:20px auto !important;}/*!sc*/
+.kXGJvp h1,.kXGJvp h2,.kXGJvp h3,.kXGJvp h4,.kXGJvp h5{font-weight:800;-webkit-letter-spacing:0.069rem;-moz-letter-spacing:0.069rem;-ms-letter-spacing:0.069rem;letter-spacing:0.069rem;line-height:1.4;}/*!sc*/
+.kXGJvp h1{font-size:2.8rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h1{font-size:1.875rem;}}/*!sc*/
+.kXGJvp h2{font-size:2.1rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h2{font-size:1.375rem;}}/*!sc*/
+.kXGJvp h3{font-size:1.6rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp h3{font-size:1.125rem;}}/*!sc*/
+.kXGJvp h4{font-size:1.4rem;}/*!sc*/
+.kXGJvp h5{font-size:1.2rem;}/*!sc*/
+.kXGJvp strong{font-weight:700;}/*!sc*/
+.kXGJvp .gatsby-resp-image-background-image{z-index:2;opacity:1 !important;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image{box-shadow:none !important;-webkit-transition:opacity 0.2s;transition:opacity 0.2s;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image.lazyload{opacity:0;}/*!sc*/
+.kXGJvp .gatsby-resp-image-image.lazyloaded{opacity:1;z-index:3;}/*!sc*/
+.kXGJvp .gatsby-highlight{padding:0 1.6rem 1.6rem;}/*!sc*/
+@media (max-width:1170px){.kXGJvp .gatsby-highlight{padding:0;}}/*!sc*/
+.kXGJvp .instagram-media{margin:1rem auto !important;}/*!sc*/
+.kXGJvp a{border-bottom:1px dashed var(--highlight);color:var(--highlight);-webkit-text-decoration:none;text-decoration:none;-webkit-transition:opacity 0.5s;transition:opacity 0.5s;}/*!sc*/
+.kXGJvp a svg{color:var(--postColor);}/*!sc*/
+.kXGJvp a:hover{opacity:0.8;}/*!sc*/
+data-styled.g31[id="base__MainContent-sc-17fg8w0-4"]{content:"kXGJvp,"}/*!sc*/
+.heKbJR{border-bottom:1px solid var(--borders);border-top:1px solid var(--borders);background:var(--mediumBackground);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+data-styled.g51[id="styled__RecommendedWrapper-c0obzs-0"]{content:"heKbJR,"}/*!sc*/
+.DhHOv{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:var(--mediumBackground);color:var(--highlight);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding:3rem;-webkit-text-decoration:none;text-decoration:none;-webkit-transition:background 0.5s ease;transition:background 0.5s ease;width:50%;}/*!sc*/
+@media (max-width:1170px){.DhHOv{padding:2rem 1rem;line-height:1.3;font-size:.9rem;}}/*!sc*/
+.DhHOv:hover{background:var(--borders);}/*!sc*/
+.DhHOv.previous{border-right:1px solid var(--borders);}/*!sc*/
+.DhHOv.next{-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;}/*!sc*/
+.DhHOv.next:only-child{margin-left:auto;border-left:1px solid var(--borders);}/*!sc*/
+.DhHOv.previous:before{content:'\2190';margin-right:0.5rem;}/*!sc*/
+.DhHOv.next:after{content:'\2192';margin-left:0.5rem;}/*!sc*/
+data-styled.g52[id="styled__RecommendedLink-c0obzs-1"]{content:"DhHOv,"}/*!sc*/
+.hPHayL{margin:auto;max-width:70rem;padding:3rem 6.4rem 3rem;}/*!sc*/
+@media (max-width:1170px){.hPHayL{padding:3rem 1.4rem 0;max-width:100%;}}/*!sc*/
+.hPHayL iframe[src*='ads-iframe']{display:none;}/*!sc*/
+.hPHayL #disqus_thread a{color:var(--highlight) !important;}/*!sc*/
+data-styled.g53[id="styled__CommentsWrapper-sc-1q8vbcb-0"]{content:"hPHayL,"}/*!sc*/
+.bEUYFl{color:var(--postColor);font-size:2.1rem;font-weight:700;padding-bottom:2rem;}/*!sc*/
+@media (max-width:1170px){.bEUYFl{font-size:1.375rem;}}/*!sc*/
+data-styled.g54[id="styled__CommentsTitle-sc-1q8vbcb-1"]{content:"bEUYFl,"}/*!sc*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}/*!sc*/
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}/*!sc*/
+body{line-height:1;}/*!sc*/
+ol,ul{list-style:none;}/*!sc*/
+blockquote,q{quotes:none;}/*!sc*/
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}/*!sc*/
+table{border-collapse:collapse;border-spacing:0;}/*!sc*/
+*{box-sizing:border-box;}/*!sc*/
+body{background:var(--background);line-height:1;font-size:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}/*!sc*/
+img{display:block;width:100%;height:auto;}/*!sc*/
+body.dark{--borders:#38444d;--texts:#8899a6;--postColor:#fff;--highlight:#1fa1f2;--mediumBackground:#192734;--background:#16202c;--white:#fff;--black:#222;}/*!sc*/
+body.light{--borders:#dedede;--postColor:#111;--texts:#555555;--highlight:#1fa1f2;--mediumBackground:#f0f0f3;--background:#fff;--white:#fff;--black:#222;}/*!sc*/
+data-styled.g55[id="sc-global-gLPWrd1"]{content:"sc-global-gLPWrd1,"}/*!sc*/
+</style><link rel="alternate" type="application/rss+xml" title="Love Huria Blog - RSS Feed" href="/feed.xml"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-2e5e23a6fd301fe77397.js"/><link as="script" rel="preload" href="/framework-8e210829bcc33c32949c.js"/><link as="script" rel="preload" href="/styles-7fe7e8372b9bcab21468.js"/><link as="script" rel="preload" href="/532a2f07-0d481acc37795e73d9c1.js"/><link as="script" rel="preload" href="/app-8cead0067b0f6e5dfbf6.js"/><link as="script" rel="preload" href="/c920ec033e559e3d21b2f44264ae3005d993ef01-fb7ae3b6807047542941.js"/><link as="script" rel="preload" href="/4525b1c2b02ad2e5ed069bdfee89f10821ffeb3f-c453a8d08c33cd6eaa1b.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-bcb5ff7f00ff7ef654ce.js"/><link as="fetch" rel="preload" href="/page-data/cool-things-you-can-do-with-sass-part-1/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body class="dark"><script>
+              (function() {
+                window.__onThemeChange = function() {};
+                function setTheme(newTheme) {
+                  window.__theme = newTheme;
+                  preferredTheme = newTheme;
+                  document.body.className = newTheme;
+                  window.__onThemeChange(newTheme);
+                }
+                var preferredTheme;
+                try {
+                  preferredTheme = localStorage.getItem('theme');
+                } catch (err) { }
+                window.__setPreferredTheme = function(newTheme) {
+                  setTheme(newTheme);
+                  try {
+                    localStorage.setItem('theme', newTheme);
+                  } catch (err) {}
+                }
+
+                setTheme(preferredTheme || 'dark');
+
+                window.__onDisplayChange = function() {};
+                function setDisplay(newDisplay) {
+                  window.__display = newDisplay;
+                  preferredDisplay = newDisplay;
+                  document.body.id = newDisplay;
+                  window.__onDisplayChange(newDisplay);
+                }
+                var preferredDisplay;
+                try {
+                  preferredDisplay = localStorage.getItem('display');
+                } catch (err) { }
+                window.__setPreferredDisplay = function(newDisplay) {
+                  setDisplay(newDisplay);
+                  try {
+                    localStorage.setItem('display', newDisplay);
+                  } catch (err) {}
+                }
+
+                setDisplay(preferredDisplay || 'list');
+              })();
+            </script><noscript>Your browser does not support JavaScript! =)</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="tl-edges"><div class="tl-wrapper tl-wrapper--mount tl-wrapper-status--entered" style="z-index:1;opacity:1"><section class="styled__LayoutWrapper-qchwrn-0 hPLjUw"><main class="styled__LayoutMain-qchwrn-1 hQYTXd"><header class="base__PostHeader-sc-17fg8w0-0 huSLRw"><p class="base__PostDate-sc-17fg8w0-3 dhsbwc">09 April 2018<!-- --> • <!-- -->8<!-- --> min read</p><h1 class="base__PostTitle-sc-17fg8w0-1 cOlZFa">Cool things you can do with Sass - Part 1</h1><h2 class="base__PostDescription-sc-17fg8w0-2 dQtoxT"></h2></header><section class="base__MainContent-sc-17fg8w0-4 kXGJvp"><div><p>I have been using Sass for like past two years and now I’m a huge fan. Even though we were doing pretty much alright with writing CSS but it never gave us that kind of flexibility that Sass provides like one of the things could be managing the complexity in stylesheets as our apps get more and more substantial. Anyways, Enough about my experience already as today we have got a bunch of cool things to cover!</p>
+<h2 id="what-is-sass" style="position:relative;">What is Sass?</h2>
+<p>It's a CSS preprocessor, that’s what you will get if you start googling and its true but hold that thought as there’s more to it.</p>
+<p>Sass lets you use features like variables, nesting, inheritance and all with a CSS-compatible syntax. This is really obliging when you want to reduce repetition and make your massive stylesheets more organised.</p>
+<p><strong>Important:</strong> It's not a replacement for CSS, its kind of an interpreter/transpiler which spits out CSS in the end actually.</p>
+<p>You must be thinking, then what is the difference between Sass and Scss?</p>
+<p>Sass is itself carved into two types of syntaxes/file types: <code class="language-text">.sass</code> &#x26; <code class="language-text">.scss</code>.</p>
+<p><strong>Sass</strong> (Older syntax) was not quite accepted by a large audience. The reason was mostly because it's indent based instead of braces and it didn’t require semicolons, which increases the probability of human errors while writing.</p>
+<p>Where <strong>Scss</strong> (New syntax) was widely accepted because it's quite similar to the way how we write CSS. Its kind of a win-win using Scss as we get to write stylesheets like CSS but we still get the benefits of Sass. Awesome!</p>
+<blockquote>
+<p>From now on, this article will assume that you understand Sass and well versed with its basics and practical usage, if not refer to <a href="http://sass-lang.com/guide" target="_blank" rel="nofollow noopener noreferrer">this</a> for more information.</p>
+</blockquote>
+<p>Without further ado, let’s hop on the cool things we can use while writing scss:</p>
+<h2 id="using-variables-as-a-selector" style="position:relative;">Using variables as a selector</h2>
+<p>We can define our selectors and use it in our stylesheets.
+For example:</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css">// Define your base selector.
+$<span class="token property">header-base-class</span><span class="token punctuation">:</span> <span class="token string">'.header'</span><span class="token selector">;
+
+#</span><span class="token punctuation">{</span>$header-base-class<span class="token punctuation">}</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">// Compiles to css
+.header</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Or, there could be a whole lot of use-cases where this can be super useful! Like umm.. in Media queries? Let’s go through it:</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css">$<span class="token property">small-only</span><span class="token punctuation">:</span> 640px <span class="token punctuation">(</span>Define somewhere else like maybe in _settings.scss<span class="token punctuation">)</span>
+
+<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> #</span><span class="token punctuation">{</span>$small-only<span class="token punctuation">}</span><span class="token selector">)</span> <span class="token punctuation">{</span>
+  // Here do your thing<span class="token punctuation">,</span> the styles will only be applied to viewport &lt; $small-only breakpoint.
+<span class="token punctuation">}</span></code></pre></div>
+<p>Easy-peasy right? 😃</p>
+<p>Now you don’t have to define a hardcoded value in each of the media queries. Just change at one place like in this case <code class="language-text">_settings.scss</code> and get the results everywhere.</p>
+<h2 id="parent-referencing-using-a-prefix" style="position:relative;">Parent referencing using a prefix</h2>
+<p>You must be familiar with <code class="language-text">&amp;</code> ampersand prefix we generally use. This syntax generally allows you nest nested selector modifiers with reference to its parent.</p>
+<p>For example - You would like to change a div's background colour on hover.</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token selector">.highlight</span> <span class="token punctuation">{</span>
+  <span class="token selector">&amp;:hover</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">// Compiles to css
+
+.highlight:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>But <code class="language-text">&amp;</code> can also be used just as a prefix to reference its parent.</p>
+<p>Let’s say you have a base selector and want to apply particular style only when there is some specific class selector exists, usually, we tend to do something like this:</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css">$<span class="token property">base-item-selector</span><span class="token punctuation">:</span> <span class="token string">'.base-selector'</span><span class="token selector">;
+
+#</span><span class="token punctuation">{</span>$base-item-selector<span class="token punctuation">}</span> <span class="token punctuation">{</span>
+  <span class="token selector">&amp;--conditional-selector</span> <span class="token punctuation">{</span>
+    <span class="token selector">#</span><span class="token punctuation">{</span>$base-item-selector<span class="token punctuation">}</span> <span class="token punctuation">{</span>
+      <span class="token selector">&amp;__details</span> <span class="token punctuation">{</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">// Compiles to css
+
+.base-selector--conditional-selector .base-selector__details</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>With Parent referencing prefix, we can modify it to be:</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token selector">#</span><span class="token punctuation">{</span>$base-item-selector<span class="token punctuation">}</span> <span class="token punctuation">{</span>
+  <span class="token selector">&amp;--conditional-selector &amp;</span> <span class="token punctuation">{</span> <span class="token selector">// See the usage of ampersand here
+    &amp;__details</span> <span class="token punctuation">{</span>
+      <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">// This will also compiles to similar css.
+
+.base-selector--conditional-selector .base-selector__details</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Cool, right? Saved one depth and looks more organised.</p>
+<h2 id="defining-variables-as-defaults" style="position:relative;">Defining variables as defaults</h2>
+<p>Using Sass, we can set variable precedence &#x26; scope with the help of <code class="language-text">!default</code> flag.
+Placing <code class="language-text">!default</code> at the end of declaration actually does the following things:</p>
+<ul>
+<li>If you have defined a variable as <code class="language-text">null</code>, it will be considered unassigned and will be assigned with <code class="language-text">!default</code>.</li>
+<li>If the variable is assigned some value already, then it will not be re-assigned.</li>
+</ul>
+<p>Confused? ok, Let's talk it out.</p>
+<p>For instance, we have defined a text color as red, the normal process follows like this:</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css">// _my-component.scss
+$<span class="token property">text-color</span><span class="token punctuation">:</span> red !default<span class="token selector">;
+
+a</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> $text-color<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">// Compiles to css
+
+a</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Makes sense so far, right? ok, let's continue. So, now you can override the colour while importing the component styling.</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css">$<span class="token property">text-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token atrule"><span class="token rule">@import</span> ‘my-component’<span class="token punctuation">;</span></span>
+
+<span class="token selector">// Compiles to css
+
+a</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>What this means is <code class="language-text">!default</code> flag will only work if the values have not been already assigned/instantiated beforehand, otherwise it will be overridden.</p>
+<p>This is an important way of writing modular CSS. That’s why we tend to define most of our variables in a file for better accessibility. The <code class="language-text">!default</code> flag is very useful when using with mixins and plug-in type code.</p>
+<p>One more interesting example you can find <a href="https://anotheruiguy.gitbooks.io/sassintherealworld_book-i/handy-tools/default-flag.html" target="_blank" rel="nofollow noopener noreferrer">here</a></p>
+<h2 id="mixins-and-custom-functions" style="position:relative;">Mixins and Custom Functions</h2>
+<p>Mixins and functions both exist in the same family because both accept variables as arguments but have somewhat different responsibilities. Let’s discuss one by one.</p>
+<p><strong>Mixins:</strong> Mixins can accept arguments and do the required calculations you need but the output of a mixin would be a CSS rule.</p>
+<p>It will unfold itself when called with <code class="language-text">@include</code>.</p>
+<p>For example, suppose we need to defined different typographies in our app. Then creating mixins would make more sense:</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css">// _my-typography-rules.scss
+
+<span class="token atrule"><span class="token rule">@mixin</span> my-typography-small</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> .75rem<span class="token punctuation">;</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> 300<span class="token punctuation">;</span>
+  <span class="token property">letter-spacing</span><span class="token punctuation">:</span> .01em<span class="token punctuation">;</span>
+  <span class="token property">line-height</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">// _my-component.scss
+
+#</span><span class="token punctuation">{</span>$base-selector<span class="token punctuation">}</span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@include</span> my-typography-small<span class="token punctuation">;</span></span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">Compiles to
+
+.base-selector</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> .75rem<span class="token punctuation">;</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> 300<span class="token punctuation">;</span>
+  <span class="token property">letter-spacing</span><span class="token punctuation">:</span> .01em<span class="token punctuation">;</span>
+  <span class="token property">line-height</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p><strong>Functions:</strong> Its very much similar to mixins but in case of output it returns a single value.  Just like we have custom functions in every other language, using custom functions in sass can be very healthy for your application.</p>
+<p>The Return value from a custom function can be of any data type. e.g. number, string, bool etc.</p>
+<p>One of the best example we have here is calculating rems based on a base unit size. We are using this quite extensively in our application and this is something which can be used anywhere. Very generic!</p>
+<p>Let's say, we are using rem unit with font sizes and everytime we use rem unit, we had to do manual computations. Sucks!! Isn't it?</p>
+<p>How we really calculate <code class="language-text">rem</code> is by dividing the target <code class="language-text">size/base size</code> = <code class="language-text">your result</code>. So the below function will give us the desired results and we can use it throughout our application.</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css">//_utility.scss
+
+<span class="token comment">/**
+ * Calculate rems based on a base unit.
+ */</span>
+<span class="token atrule"><span class="token rule">@function</span> <span class="token function">remCalc</span><span class="token punctuation">(</span>$size<span class="token punctuation">,</span> $base<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  $<span class="token property">remSize</span><span class="token punctuation">:</span> $size / $font-base-size<span class="token punctuation">;</span>
+  <span class="token atrule"><span class="token rule">@return</span> #</span><span class="token punctuation">{</span>$remSize<span class="token punctuation">}</span>rem<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">// _my-component.scss
+
+a</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token function">remCalc</span><span class="token punctuation">(</span>20<span class="token punctuation">,</span> $font-base-size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>I hope that now you get why Custom functions are really helpful as they help us avoid repeated computations. SCSS gives us a ton of inbuilt functions which you can have a look <a href="http://sass-lang.com/documentation/Sass/Script/Functions.html" target="_blank" rel="nofollow noopener noreferrer">here</a></p>
+<p>It’s always best to check in-built function first rather than creating your own every other time.</p>
+<h2 id="default-arguments" style="position:relative;">Default Arguments</h2>
+<p>This is high time we talk about default arguments as we just wrapped up mixin and custom functions. They're kinda related.</p>
+<p>Mixins and custom functions both support arguments and icing on the cake is we can define default arguments as well.</p>
+<p>For example:</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@mixin</span> <span class="token function">abc-with-margin</span><span class="token punctuation">(</span>$x<span class="token punctuation">,</span> $y<span class="token punctuation">,</span> $z<span class="token punctuation">,</span> $<span class="token property">margin</span><span class="token punctuation">:</span> 20px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  // Do your stuff with x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z.
+  <span class="token property">margin</span><span class="token punctuation">:</span> $margin<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">// _my-component.scss
+
+#</span><span class="token punctuation">{</span>$selector<span class="token punctuation">}</span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@include</span> <span class="token function">abc-with-margin</span><span class="token punctuation">(</span>12<span class="token punctuation">,</span> 23<span class="token punctuation">,</span> 34<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">// Compiles to css
+
+.selector</span> <span class="token punctuation">{</span>
+  // Stuff we did with x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>z.
+  <span class="token property">margin</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">{</span>% endhighlight %<span class="token punctuation">}</span>
+
+<span class="token selector">We can also override the default value. e.g.</span>
+
+<span class="token punctuation">{</span>% highlight ruby %<span class="token punctuation">}</span>
+<span class="token selector">// _my-component.scss
+#</span><span class="token punctuation">{</span>$selector<span class="token punctuation">}</span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@include</span> <span class="token function">abc-with-margin</span><span class="token punctuation">(</span>12<span class="token punctuation">,</span> 23<span class="token punctuation">,</span> 34<span class="token punctuation">,</span> 10px<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">// Compiles to css
+
+.selector</span> <span class="token punctuation">{</span>
+  // Stuff we did with x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>z.
+  <span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span> // Overridden.
+<span class="token punctuation">}</span></code></pre></div>
+<h2 id="extending-your-selectors" style="position:relative;">Extending your selectors</h2>
+<p>Using Scss, you can combine your selector's styles in the CSS output. As we inherit properties from the parent class or whatever, this is quite comparable to other programming languages but the process is very different. Again, the aim is to reuse different selector’s styles so that we do not have to rewrite the code which is already being used.</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token selector">.menu</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.header-menu</span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@extend</span> .menu<span class="token punctuation">;</span></span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">// Compiles to css
+
+.menu, .header-menu</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.header-menu</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>As we can see now <code class="language-text">.header-menu</code> has all the properties of <code class="language-text">.menu</code> plus the properties it already had. Traditional inheritance right? Now, whatever .menu will define it will be inherited by <code class="language-text">.header-menu</code> and can be easily overridden as well.</p>
+<p>You must be thinking, why can’t we just use mixins here and just get it over with, why another logic. I'll show you why not.</p>
+<p><strong>If we go along with mixins:</strong></p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@mixin</span> menu</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> grey<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.header-menu</span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@include</span> menu<span class="token punctuation">;</span></span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.footer-menu</span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@include</span> menu<span class="token punctuation">;</span></span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">// Compiles to css
+
+.header-menu</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> grey<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.footer-menu</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> grey<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>See how the last property is different and as soon as the amount of menu types increases will result in more and more repeated styles with each type of menu keeps on growing. This problem can be overcome by extending your selectors.</p>
+<p>Another advantage is it can be used with UI libraries such as foundation, bootstrap etc. One interesting read is how we can extend complex selectors <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extending_complex_selectors" target="_blank" rel="nofollow noopener noreferrer">here</a>.</p>
+<h2 id="placeholders" style="position:relative;">Placeholders</h2>
+<p>We will take the help of a previous example, we just created a <code class="language-text">.menu</code> selector just so that child selectors can inherit styles. But what if the case is that this selector does not even exists or not being used anywhere but only through its child classes. We might as well get rid of it.</p>
+<p>Just to clarify few things before we move ahead:</p>
+<ul>
+<li><code class="language-text">.menu</code> is considered as a class.</li>
+<li><code class="language-text">#menu</code> is considered as id.</li>
+<li><code class="language-text">%menu</code> is considered as a placeholder.</li>
+</ul>
+<p>Just so we don't get confused between these.</p>
+<p>This will result in same output as it was with the previous one.
+For example:</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token selector">%menu</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.header-menu</span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@extend</span> %menu<span class="token punctuation">;</span></span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.footer-menu</span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@extend</span> %menu<span class="token punctuation">;</span></span>
+  <span class="token property">color</span><span class="token punctuation">:</span> gray<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">// Compiles to css
+
+.header-menu, .footer-menu</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.header-menu</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.header-menu</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> gray<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>The only difference is that the menu has disappeared from the output as it was just a placeholder selector. This is really helpful because you are using the things which should only be outputted into the resulting CSS. For more information, read about placeholders <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholders" target="_blank" rel="nofollow noopener noreferrer">here</a>.</p>
+<p>Ok, Let’s wrap up. I wanted to cover Control directives in this as well, but that's a vast topic in itself. We will figure it out in my next blog. Stay tuned!</p>
+<p>Thanks for reading. 😃</p></div></section><section class="styled__RecommendedWrapper-c0obzs-0 heKbJR"><a class="styled__RecommendedLink-c0obzs-1 DhHOv previous" direction="left" href="/drupal-camp-goa-2018-call-for-sessions/">Emboss your footprints in the Drupal Sand - Drupal Camp Goa 2018, Call for sessions</a><a class="styled__RecommendedLink-c0obzs-1 DhHOv next" direction="right" href="/creating-own-react-boilerplate/">Creating your own React Boilerplate - For Beginners</a></section><section class="styled__CommentsWrapper-sc-1q8vbcb-0 hPHayL"><h2 class="styled__CommentsTitle-sc-1q8vbcb-1 bEUYFl">Comments</h2><div><div id="disqus_thread"></div></div></section></main></section></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/cool-things-you-can-do-with-sass-part-1/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-8cead0067b0f6e5dfbf6.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-4efef167a65f33edc4e5.js"],"component---src-pages-404-js":["/component---src-pages-404-js-0700f2634e76af3151fc.js"],"component---src-pages-about-js":["/component---src-pages-about-js-b3f0e2593ed56990a531.js"],"component---src-pages-cursos-js":["/component---src-pages-cursos-js-358cdf72cb27b5259321.js"],"component---src-pages-search-js":["/component---src-pages-search-js-38c7a04cb01ede0f6fe2.js"],"component---src-pages-series-js":["/component---src-pages-series-js-19cbe539dc253f585729.js"],"component---src-templates-blog-list-js":["/component---src-templates-blog-list-js-a3fc7856c0577ac543d6.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-bcb5ff7f00ff7ef654ce.js"]};/*]]>*/</script><script src="/component---src-templates-blog-post-js-bcb5ff7f00ff7ef654ce.js" async=""></script><script src="/4525b1c2b02ad2e5ed069bdfee89f10821ffeb3f-c453a8d08c33cd6eaa1b.js" async=""></script><script src="/c920ec033e559e3d21b2f44264ae3005d993ef01-fb7ae3b6807047542941.js" async=""></script><script src="/app-8cead0067b0f6e5dfbf6.js" async=""></script><script src="/532a2f07-0d481acc37795e73d9c1.js" async=""></script><script src="/styles-7fe7e8372b9bcab21468.js" async=""></script><script src="/framework-8e210829bcc33c32949c.js" async=""></script><script src="/webpack-runtime-2e5e23a6fd301fe77397.js" async=""></script></body></html>
